@@ -1,0 +1,108 @@
+---
+import Icon from './Icon.astro';
+import { examSchedule, scheduleState } from '../data/exam-schedule';
+import '../styles/exam-schedule.css';
+const state = scheduleState();
+---
+
+<section
+  class="exam-schedule"
+  id="starting-point"
+  aria-labelledby="exam-schedule-title"
+  data-exam-schedule
+>
+  <div class="schedule-container" id="exam-schedule">
+    <div class="schedule-heading">
+      <h2 id="exam-schedule-title">考试安排一览</h2>
+      <span class="schedule-heading-accent" aria-hidden="true"><i></i><i></i></span>
+      <p>
+        <span data-exam-prefix>{state.ended ? '本场' : '下一场'}</span>：2026年11月14日至15日 <span
+          class="schedule-subtitle-separator">·</span
+        > 重要节点与准备提醒
+      </p>
+    </div>
+    <div class="schedule-board">
+      <ol class="schedule-timeline" aria-label="2026年11月考试重要节点">
+        {
+          examSchedule.milestones.map((milestone, index) => (
+            <li
+              class:list={[
+                'schedule-milestone',
+                `schedule-${milestone.kind}`,
+                { 'is-current': index === state.current },
+              ]}
+              data-milestone={index}
+              aria-current={index === state.current ? 'step' : undefined}
+            >
+              <span class="schedule-today" data-schedule-today hidden={index !== state.current}>
+                {state.label}
+              </span>
+              <span class="schedule-node" aria-hidden="true" />
+              <div class="schedule-event">
+                <h3>{milestone.title}</h3>
+                <div class="schedule-date">
+                  <span>{milestone.time}</span>
+                  {milestone.hours && <span class="schedule-hours">{milestone.hours}</span>}
+                </div>
+                <p>{milestone.detail}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+    <p class="schedule-notice">
+      <Icon name="clock" size={21} /><span
+        >未公布具体日期的节点仅显示月份，标注“预计”的日期与时刻为参考安排，所有时间均为北京时间，<a
+          href={examSchedule.sourceUrl}
+          target="_blank"
+          rel="noopener noreferrer">以 CSCA 官方公告为准 <span aria-hidden="true">↗</span></a
+        ></span
+      >
+    </p>
+    <div class="schedule-actions">
+      <a
+        class="button schedule-register"
+        href={examSchedule.registrationUrl}
+        target="_blank"
+        rel="noopener noreferrer">前往 csca.cn 报名 <Icon name="arrow" size={23} /></a
+      >
+      <details class="schedule-timezone" data-schedule-timezone>
+        <summary>你所在时区的考试当天时间 <Icon name="down" size={20} /></summary>
+        <div class="schedule-timezone-panel">
+          <label for="schedule-timezone-select">选择所在时区</label>
+          <select id="schedule-timezone-select" data-timezone-select>
+            <option value="Asia/Shanghai">北京 · UTC+8</option>
+            <option value="Asia/Hong_Kong">香港 · UTC+8</option>
+            <option value="Asia/Tokyo">东京 · UTC+9</option>
+            <option value="Asia/Bangkok">曼谷 · UTC+7</option>
+            <option value="Asia/Kolkata">新德里 · UTC+5:30</option>
+            <option value="Asia/Dubai">迪拜 · UTC+4</option>
+            <option value="Europe/London">伦敦</option>
+            <option value="Europe/Paris">巴黎</option>
+            <option value="America/New_York">纽约</option>
+            <option value="America/Los_Angeles">洛杉矶</option>
+            <option value="America/Argentina/Buenos_Aires">布宜诺斯艾利斯 · UTC−3</option>
+            <option value="Indian/Antananarivo">塔那那利佛 · UTC+3</option>
+            <option value="Australia/Sydney">悉尼</option>
+          </select>
+          <p class="timezone-caption">考试日期范围对应当地时间</p>
+          <output
+            class="timezone-range"
+            data-timezone-range
+            for="schedule-timezone-select"
+            aria-live="polite">2026年11月14日 00:00 — 11月15日 23:59</output
+          >
+          <p class="timezone-note">
+            此范围用于跨时区日期对照，并非考试持续时长，各科具体开考时间请以准考证为准
+          </p>
+          <noscript
+            ><p class="timezone-note">
+              启用 JavaScript 后可自动换算当地时间，以上默认显示北京时间
+            </p></noscript
+          >
+        </div>
+      </details>
+    </div>
+  </div>
+</section>

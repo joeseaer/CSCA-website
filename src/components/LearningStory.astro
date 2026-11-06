@@ -1,0 +1,215 @@
+---
+import Icon from './Icon.astro';
+import { testimonials } from '../data/content';
+import { communityMetrics, learningNodes } from '../data/community';
+---
+
+<section
+  class="learning-story"
+  id="community"
+  aria-labelledby="community-title"
+  data-learning-story
+>
+  <div class="story-waves" aria-hidden="true">
+    <svg class="story-wave story-wave-back" viewBox="0 0 1536 600" preserveAspectRatio="none"
+      ><defs
+        ><linearGradient id="wave-back"
+          ><stop stop-color="#8ccafa" stop-opacity=".25"></stop><stop
+            offset="1"
+            stop-color="#a8eaf5"
+            stop-opacity=".4"></stop></linearGradient
+        ></defs
+      ><path d="M0 155C340 135 480 400 840 300S1240 80 1536 10V600H0Z" fill="url(#wave-back)"
+      ></path></svg
+    >
+    <svg class="story-wave story-wave-blue" viewBox="0 0 1536 420" preserveAspectRatio="none"
+      ><defs
+        ><linearGradient id="wave-blue" x1="0" y1="0" x2="1" y2=".6"
+          ><stop stop-color="#0863ef" stop-opacity=".65"></stop><stop
+            offset=".65"
+            stop-color="#36bce8"
+            stop-opacity=".4"></stop><stop offset="1" stop-color="#6de5dc" stop-opacity=".1"
+          ></stop></linearGradient
+        ></defs
+      ><path d="M0 280C280-25 475 50 775 180S1220 15 1536 245V420H0Z" fill="url(#wave-blue)"
+      ></path></svg
+    >
+    <svg class="story-wave story-wave-teal" viewBox="0 0 1536 490" preserveAspectRatio="none"
+      ><defs
+        ><linearGradient id="wave-teal"
+          ><stop stop-color="#90caf8" stop-opacity=".28"></stop><stop
+            offset=".65"
+            stop-color="#00d6ce"
+            stop-opacity=".6"></stop><stop offset="1" stop-color="#6be0db" stop-opacity=".24"
+          ></stop></linearGradient
+        ></defs
+      ><path d="M0 245C270 65 380 295 690 215S1150-50 1536 150V490H0Z" fill="url(#wave-teal)"
+      ></path></svg
+    >
+  </div>
+
+  <div class="learning-story-inner">
+    <div class="trust-intro">
+      <h2>来自全球 CSCA 学生的<span>信赖与选择</span></h2><p>
+        专业的教学团队、完善的学习资源、线上线下相结合的高效备考体验
+      </p>
+    </div>
+    <div
+      class="student-stories"
+      id="stories"
+      aria-label="学生反馈"
+      aria-roledescription="轮播"
+      data-carousel="stories"
+    >
+      <div class="story-stage">
+        <span class="quote-decoration" aria-hidden="true">“</span>
+        {
+          testimonials.map((story, i) => (
+            <div
+              class="story-panel"
+              data-story-panel
+              hidden={i !== 0}
+              role="group"
+              aria-roledescription="幻灯片"
+              aria-label={`${i + 1} / ${testimonials.length}`}
+            >
+              <blockquote class="story-quote desktop-copy">
+                {story.lines.map((line, j) => (
+                  <span class:list={{ 'quote-highlight': j === 0 }}>{line}</span>
+                ))}
+              </blockquote>
+              <blockquote class="story-quote mobile-copy">
+                {story.mobileLines.map((line, j) => (
+                  <span class:list={{ 'quote-highlight': j === 0 }}>{line}</span>
+                ))}
+              </blockquote>
+              <div class="story-person">
+                <>
+                  <span class="initial-avatar" aria-hidden="true">
+                    {story.initials}
+                  </span>
+                  <div>
+                    <>
+                      <strong>{story.name}</strong>
+                      <p>{story.origin}</p>
+                    </>
+                  </div>
+                </>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+      <div class="carousel-controls">
+        <button class="round-button" type="button" aria-label="上一条学生故事" data-story-prev
+          ><Icon name="left" size={23} /></button
+        >
+        <div class="story-dots">
+          {
+            testimonials.map((story, i) => (
+              <button
+                type="button"
+                class:list={['story-dot', { active: i === 0 }]}
+                aria-label={`查看 ${story.name} 的学生反馈`}
+                aria-current={i === 0 ? 'true' : undefined}
+                data-story-dot={i}
+              >
+                <span class="sr-only">{story.name}</span>
+              </button>
+            ))
+          }
+        </div>
+        <button class="round-button" type="button" aria-label="下一条学生故事" data-story-next
+          ><Icon name="right" size={23} /></button
+        >
+      </div>
+      <p class="sr-only" role="status" data-story-status>
+        第 1 条，共 {testimonials.length} 条学生反馈
+      </p>
+    </div>
+
+    <div class="journey-heading">
+      <h2 id="community-title">同一场 CSCA，<wbr />一路有 <span>HubCSCA</span></h2>
+      <p>线下课程、在线练习、学习社群，陪你把备考走得更稳</p>
+    </div>
+
+    <div
+      class="learning-route"
+      role="img"
+      aria-label="从线下课堂，到在线练习、学习社群，一路走向备考目标"
+    >
+      <svg class="route-svg" viewBox="0 0 1200 250" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="learning-route-gradient"
+            ><stop stop-color="#338bff"></stop><stop offset=".45" stop-color="#62d7ff"></stop><stop
+              offset="1"
+              stop-color="#00dec0"></stop></linearGradient
+          >
+          <filter id="route-glow" x="-30%" y="-150%" width="160%" height="400%"
+            ><feGaussianBlur stdDeviation="5"></feGaussianBlur></filter
+          >
+        </defs>
+        <path
+          class="route-track"
+          data-route-track
+          d="M100 250C145 220 198 190 264 170S407 136 492 140S678 130 744 107.5S920 89 984 42.5"
+          pathLength="1"></path>
+        <path
+          class="route-glow"
+          data-route-draw
+          d="M100 250C145 220 198 190 264 170S407 136 492 140S678 130 744 107.5S920 89 984 42.5"
+          pathLength="1"></path>
+        <path
+          class="route-line"
+          data-route-draw
+          d="M100 250C145 220 198 190 264 170S407 136 492 140S678 130 744 107.5S920 89 984 42.5"
+          pathLength="1"></path>
+        <path
+          class="route-arrow"
+          data-route-arrow
+          d="m-9-6 9 6-9 6"
+          transform="translate(940 65) rotate(-25)"></path>
+      </svg>
+      <span class="route-tip" aria-hidden="true"></span>
+      <ol class="route-nodes">
+        {
+          learningNodes.map((node, i) => (
+            <li
+              class="route-node"
+              data-route-node={i}
+              style={`--node-x:${node.x}%;--node-y:${node.y}%;--mobile-x:${node.mobileX}%;--mobile-y:${node.mobileY}%;`}
+            >
+              <>
+                <span class="node-circle">
+                  <Icon name={node.icon} size={33} />
+                </span>
+                <span class="node-label">{node.label}</span>
+              </>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+
+    <div class="journey-metrics" aria-label="HubCSCA 品牌数据">
+      {
+        communityMetrics.map((metric) => (
+          <div class="journey-metric" data-journey-metric>
+            <strong
+              data-story-count={metric.confirmed ? metric.target : undefined}
+              data-count-suffix={metric.suffix}
+              data-final-value={metric.confirmed ? metric.display : '—'}
+              aria-label={metric.confirmed ? metric.display : '数据待确认'}
+            >
+              <span aria-hidden="true">{metric.confirmed ? metric.display : '—'}</span>
+            </strong>
+            <>
+              <span class="metric-rule" aria-hidden="true" />
+              <p>{metric.label}</p>
+            </>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
