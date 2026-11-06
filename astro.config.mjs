@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   output: 'static',
+  site: 'https://joeseaer.github.io',
   base: process.env.BASE_PATH || '/',
   trailingSlash: 'always',
   devToolbar: { enabled: false },

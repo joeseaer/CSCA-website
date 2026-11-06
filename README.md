@@ -37,7 +37,9 @@ $env:BASE_PATH = '/CSCA-website/'
 npm run build
 ```
 
-仓库不自动发布或部署
+GitHub Pages 地址：https://joeseaer.github.io/CSCA-website/
+
+`.github/workflows/deploy-pages.yml` 在 main 更新时自动检查、构建并部署到 GitHub Pages，也可在 Actions 中手动运行；发布来源设为 GitHub Actions
 
 ## 代码结构
 

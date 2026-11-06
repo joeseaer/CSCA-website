@@ -13,6 +13,7 @@
 !/src/
 !/scripts/
 !/public/
+!/.github/
 
 # Dependencies, builds, local research and credentials stay on this machine.
 node_modules/
