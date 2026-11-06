@@ -1,0 +1,214 @@
+/* Closing CTA shares the first screen's blue, mint and cyan brand palette */
+.closing-card {
+  overflow: clip;
+  background:
+    radial-gradient(ellipse at 0 10%, #0060ed77, transparent 48%),
+    radial-gradient(ellipse at 100% 45%, #00b8c54d, transparent 46%),
+    radial-gradient(ellipse at 10% 120%, #00d3ca70, transparent 48%),
+    linear-gradient(125deg, #073a96, #032665 43%, #053986 80%, #043eaa);
+  border-color: #2a8fc860;
+  box-shadow: 0 -20px 70px -48px #007eaf66;
+}
+.closing-card h2 {
+  letter-spacing: -0.045em;
+}
+.closing-card h2 > span {
+  color: #00e3c4;
+}
+.closing-kicker {
+  color: #a2e9ed;
+}
+.closing-card .closing-content > p {
+  color: #d7ecfa;
+}
+.closing-orbits {
+  opacity: 0.19;
+}
+.closing-orbits i {
+  border-color: #69dadd;
+}
+.closing-note {
+  color: #b2ddeb;
+}
+.closing-note > span {
+  background: var(--hub-mint);
+  box-shadow: 0 0 12px #00dfbd66;
+}
+.hub-primary {
+  min-height: 63px;
+  padding: 14px 24px 14px 31px;
+  font-size: 21px;
+  gap: 25px;
+  background: linear-gradient(108deg, #25e0b5 0%, #00bed6 53%, #0086ff 100%);
+  border: 1px solid #30e6edc4;
+  box-shadow:
+    0 16px 38px -18px #00d5e2a6,
+    inset 0 1px #ffffff45;
+}
+.hub-primary:hover {
+  background: linear-gradient(108deg, #44e8c5, #00d0de 53%, #1397ff);
+  box-shadow: 0 20px 42px -16px #00d5e2b3;
+}
+.hub-primary .button-arrow {
+  width: 34px;
+  height: 34px;
+  margin-right: -5px;
+  background: #ffffff21;
+  border-color: #ffffff14;
+}
+.closing-actions {
+  gap: 28px;
+}
+.closing-actions > .hero-link {
+  padding: 17px 3px 13px;
+  font-size: 20px;
+  gap: 19px;
+  border-color: #d7e5ffb8;
+}
+.closing-actions a:focus-visible,
+.closing-actions button:focus-visible,
+.site-footer a:focus-visible,
+.site-footer button:focus-visible,
+.hub-contact-dialog :focus-visible {
+  outline-color: var(--hub-mint);
+}
+.site-footer {
+  background: linear-gradient(110deg, #eef8fc, #f3f7ff 55%, #edf8fa);
+  border-top-color: #d8eaf2;
+}
+.footer-links a:hover,
+.footer-links button:hover,
+.back-top:hover {
+  color: #009d9c;
+}
+.footer-links h2 {
+  color: #688399;
+}
+.hub-contact-dialog {
+  width: min(460px, calc(100% - 32px));
+  background: linear-gradient(150deg, #fff, #effbfc);
+  border-color: #cde8ed;
+  border-radius: 28px;
+}
+.hub-contact-dialog .dialog-content {
+  padding: 33px 27px 23px;
+  text-align: center;
+}
+.hub-contact-dialog .dialog-close {
+  background: #eef8fb;
+  color: #376880;
+  border-color: #dcecf4;
+}
+.hub-contact-dialog .dialog-close:hover {
+  background: #dbf7f3;
+}
+.hub-contact-dialog .dialog-eyebrow {
+  color: #009eaa;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+}
+.hub-contact-dialog h2 {
+  color: #073487;
+  font-size: 27px;
+  margin-top: 10px;
+}
+.hub-contact-dialog .dialog-content > p {
+  margin-top: 8px;
+  color: #58708e;
+  font-size: 13px;
+}
+.contact-qr-frame {
+  padding: 10px;
+  margin: 19px auto 0;
+  width: fit-content;
+  max-width: 100%;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 10px 30px -18px #167d9b55;
+  border: 1px solid #dcecf4;
+}
+.contact-qr-frame img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: min(49dvh, 420px);
+  object-fit: contain;
+  border-radius: 11px;
+}
+.hub-contact-dialog .dialog-content > .contact-qr-tip {
+  font-size: 11px;
+  line-height: 1.7;
+  margin: 13px auto 0;
+  max-width: 320px;
+  color: #70849b;
+}
+.contact-qr-save {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 12px;
+  font-weight: 650;
+  margin-top: 12px;
+  color: #008c9d;
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+.contact-qr-save:hover {
+  background: #dff7f3;
+}
+@media (min-width: 1536px) {
+  .hub-primary {
+    font-size: 23px;
+    min-height: 68px;
+    padding-inline: 31px 24px;
+  }
+}
+@media (max-width: 760px) {
+  .closing-card h2 {
+    font-size: clamp(33px, 8.5vw, 47px);
+    line-height: 1.2;
+  }
+  .closing-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 26px;
+  }
+  .closing-actions .hub-primary {
+    width: auto;
+    max-width: 100%;
+    min-height: 54px;
+    font-size: 16px;
+    padding: 12px 19px 12px 22px;
+    gap: 15px;
+  }
+  .closing-actions > .hero-link {
+    font-size: 16px;
+    padding: 14px 3px 12px;
+    gap: 12px;
+  }
+  .hub-primary .button-arrow {
+    width: 29px;
+    height: 29px;
+  }
+  .hub-primary .button-arrow svg {
+    width: 20px;
+  }
+  .hub-contact-dialog .dialog-content {
+    padding: 32px 18px 20px;
+  }
+  .hub-contact-dialog h2 {
+    font-size: 24px;
+  }
+  .contact-qr-frame {
+    padding: 8px;
+    margin-top: 16px;
+  }
+  .contact-qr-frame img {
+    max-height: 48dvh;
+  }
+  .hub-contact-dialog .dialog-content > p {
+    font-size: 12px;
+  }
+}

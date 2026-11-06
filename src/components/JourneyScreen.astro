@@ -1,0 +1,27 @@
+---
+import { asset } from '../data/site';
+interface Props {
+  image: string;
+  alt: string;
+  class?: string;
+  caption?: string;
+}
+const { image, alt, class: className = '', caption } = Astro.props;
+---
+
+<figure class:list={['journey-screen', className]}>
+  <div class="journey-screen-chrome" aria-hidden="true">
+    <span></span><span></span><span></span><b>HubCSCA</b>
+  </div>
+  <div class="journey-screen-image">
+    <img
+      src={asset(`images/journey/${image}.webp`)}
+      alt={alt}
+      width="1179"
+      height="2556"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

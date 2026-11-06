@@ -1,0 +1,467 @@
+---
+import Icon from './Icon.astro';
+import BrandLogo from './BrandLogo.astro';
+import JourneyScreen from './JourneyScreen.astro';
+import { journeySteps } from '../data/journey';
+import { examSchedule, scheduleState } from '../data/exam-schedule';
+import { site } from '../data/site';
+import '../styles/preparation-journey.css';
+const today = scheduleState();
+---
+
+<section
+  class="preparation-journey"
+  id="preparation"
+  aria-labelledby="method-title"
+  data-carousel="method"
+>
+  <div class="journey-container">
+    <div class="prep-journey-heading">
+      <div class="journey-brand" aria-hidden="true"><span></span><BrandLogo /><span></span></div>
+      <h2 id="method-title">把备考，变成<span>一条清楚的路<i aria-hidden="true"></i></span></h2>
+      <p>用工具、练习、复盘和辅导，把每一步都走得更稳</p>
+    </div>
+    <div class="journey-shell">
+      <div class="journey-navigation">
+        <div class="journey-arrows">
+          <button class="journey-arrow" type="button" aria-label="上一个备考步骤" data-method-prev
+            ><Icon name="left" size={20} /></button
+          ><button class="journey-arrow" type="button" aria-label="下一个备考步骤" data-method-next
+            ><Icon name="right" size={20} /></button
+          >
+        </div>
+        <div
+          class="journey-tabs"
+          role="tablist"
+          aria-label="HubCSCA 四步备考路线"
+          aria-orientation="vertical"
+        >
+          {
+            journeySteps.map((step, i) => (
+              <div class:list={['journey-step', { 'is-active': i === 0 }]} data-method-item>
+                <button
+                  class="journey-tab"
+                  type="button"
+                  role="tab"
+                  id={`method-trigger-${i}`}
+                  aria-controls={`journey-panel-${i}`}
+                  aria-selected={i === 0 ? 'true' : 'false'}
+                  tabindex={i === 0 ? 0 : -1}
+                  data-method={i}
+                >
+                  <span class="journey-tab-icon">
+                    <Icon name={step.icon} size={29} />
+                  </span>
+                  <span class="journey-tab-copy">
+                    <>
+                      <strong>{step.title}</strong>
+                      <span>{step.description}</span>
+                    </>
+                  </span>
+                  <Icon name="down" size={18} class="journey-tab-chevron" />
+                  <span class="journey-step-progress" aria-hidden="true">
+                    <span />
+                  </span>
+                </button>
+              </div>
+            ))
+          }
+        </div>
+        <div class="journey-playback">
+          <span data-method-position aria-live="polite">01 <i>/ 04</i></span><button
+            type="button"
+            data-method-autoplay
+            aria-pressed="false">暂停自动切换 <span aria-hidden="true">Ⅱ</span></button
+          >
+        </div>
+      </div>
+      <div class="journey-panels">
+        <svg
+          class="journey-waves"
+          viewBox="0 0 1000 650"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+          ><defs
+            ><linearGradient id="journey-blue"
+              ><stop stop-color="#d0edff"></stop><stop offset=".55" stop-color="#3b91fc"
+              ></stop><stop offset="1" stop-color="#4fa6fa"></stop></linearGradient
+            ><linearGradient id="journey-mint"
+              ><stop stop-color="#a9f6f0"></stop><stop offset=".55" stop-color="#3bdae5"
+              ></stop><stop offset="1" stop-color="#238be9"></stop></linearGradient
+            ></defs
+          ><path
+            d="M50 480C310 250 490 30 780 60Q950 70 1040 190V650H80Z"
+            fill="url(#journey-blue)"
+            opacity=".35"></path><path
+            d="M0 570C240 590 440 220 760 220Q960 210 1070 420V650H0Z"
+            fill="url(#journey-mint)"
+            opacity=".55"></path><path
+            d="M50 650C230 360 420 440 600 510S930 600 1060 430V650Z"
+            fill="url(#journey-blue)"
+            opacity=".55"></path></svg
+        >
+        {
+          journeySteps.map((step, i) => (
+            <div
+              class:list={['journey-panel', `journey-panel-${i}`]}
+              id={`journey-panel-${i}`}
+              role="tabpanel"
+              aria-labelledby={`method-trigger-${i}`}
+              tabindex="0"
+              data-method-slide
+              hidden={i !== 0}
+            >
+              <div class="journey-panel-heading">
+                <>
+                  <span class="journey-feature-icon">
+                    <Icon name={i === 1 ? 'camera' : step.icon} size={30} />
+                  </span>
+                  <div>
+                    <>
+                      <h3>{step.headline}</h3>
+                      <p>{step.summary}</p>
+                    </>
+                  </div>
+                </>
+              </div>
+              <div class="journey-feature-tags" aria-label="本步骤包含的功能">
+                {step.features.map((text, j) => (
+                  <span class:list={{ 'is-emphasized': j === 0 }}>
+                    <Icon
+                      name={
+                        i === 0
+                          ? ['calendar', 'flag', 'laptop'][j]
+                          : i === 1
+                            ? ['camera', 'book', 'chat'][j]
+                            : i === 2
+                              ? ['target', 'book', 'clock'][j]
+                              : ['books', 'calendar', 'cap'][j]
+                      }
+                      size={18}
+                    />
+                    {text}
+                  </span>
+                ))}
+              </div>
+              <div class="journey-scene">
+                {i === 0 && (
+                  <>
+                    <JourneyScreen
+                      image="home"
+                      alt="HubCSCA 首页，包含拍照搜题、翻译助手、题库训练和我的笔记"
+                      class="journey-home-screen"
+                      caption="在线学习工具"
+                    />
+                    <div class="journey-schedule-preview journey-glass">
+                      <div class="journey-window-heading">
+                        <div>
+                          <span class="journey-card-kicker">PLAN YOUR NEXT STEP</span>
+                          <h4>考试安排一览</h4>
+                        </div>
+                        <span class="journey-calendar-badge">
+                          <Icon name="calendar" size={19} />
+                        </span>
+                      </div>
+                      <p class="journey-exam-date">
+                        2026年11月14日至15日 <span>· 北京时间</span>
+                      </p>
+                      <ol class="journey-mini-timeline" aria-label="考试节点预览">
+                        {examSchedule.milestones.map((item, index) => (
+                          <li
+                            class:list={{
+                              'is-current': index === today.current,
+                              'is-exam': item.kind === 'exam',
+                            }}
+                          >
+                            <i aria-hidden="true" />
+                            <strong>{item.title}</strong>
+                            <span>
+                              {index < 2
+                                ? ['10月15日', '10月21日'][index]
+                                : index === 6
+                                  ? '11月14—15日'
+                                  : '11月（预计）'}
+                            </span>
+                          </li>
+                        ))}
+                      </ol>
+                      <div class="journey-plan-note">
+                        <Icon name="check" size={17} />
+                        <span>先确认考试节点，再安排每天的学习与练习</span>
+                      </div>
+                      <a class="journey-action" href="#starting-point">
+                        查看完整考试安排 <Icon name="arrow" size={18} />
+                      </a>
+                    </div>
+                  </>
+                )}
+                {i === 1 && (
+                  <>
+                    <div class="journey-translation journey-glass">
+                      <div class="journey-window-heading">
+                        <h4>
+                          <Icon name="book" size={22} />
+                          翻译助手
+                        </h4>
+                        <Icon name="arrow" size={18} />
+                      </div>
+                      <div class="journey-language-pair">
+                        <span>中文</span>
+                        <Icon name="arrow" size={16} />
+                        <span>English</span>
+                      </div>
+                      <div class="journey-glossary-table">
+                        <div>
+                          <span>中文术语</span>
+                          <span>英文翻译</span>
+                        </div>
+                        <div>
+                          <strong>
+                            圆心<small>yuán xīn</small>
+                          </strong>
+                          <strong>center of a circle</strong>
+                        </div>
+                        <div>
+                          <strong>
+                            函数<small>hán shù</small>
+                          </strong>
+                          <strong>function</strong>
+                        </div>
+                      </div>
+                      <p>读懂题目，也读懂知识点</p>
+                    </div>
+                    <JourneyScreen
+                      image="scan"
+                      alt="拍照识题界面，可裁选试卷问题区域"
+                      class="journey-scan-screen"
+                      caption="拍照识题"
+                    />
+                    <div class="journey-answer-preview journey-glass">
+                      <div class="journey-answer-block">
+                        <h4>
+                          <Icon name="book" size={18} />
+                          原题
+                        </h4>
+                        <p>[07] sin 30° · cos 30° = ?</p>
+                      </div>
+                      <div class="journey-answer-block">
+                        <h4>
+                          <Icon name="globe" size={18} />
+                          翻译
+                        </h4>
+                        <p>Compute sin 30° · cos 30°</p>
+                      </div>
+                      <div class="journey-answer-block journey-solution">
+                        <h4>
+                          <Icon name="sparkles" size={18} />
+                          答案与解析
+                        </h4>
+                        <p>
+                          答案 <strong class="journey-answer-b">B</strong>
+                        </p>
+                        <div class="journey-equation">
+                          sin 30° · cos 30°
+                          <br />
+                          <span>
+                            ={' '}
+                            <span class="journey-fraction">
+                              <span>1</span>
+                              <span>2</span>
+                            </span>{' '}
+                            ×{' '}
+                            <span class="journey-fraction">
+                              <span>√3</span>
+                              <span>2</span>
+                            </span>{' '}
+                            ={' '}
+                            <span class="journey-fraction">
+                              <span>√3</span>
+                              <span>4</span>
+                            </span>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="journey-answer-topics">
+                        <Icon name="layers" size={16} />
+                        <span>三角函数的特殊值</span>
+                      </div>
+                      <a
+                        class="journey-action"
+                        href={site.platform}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Icon name="chat" size={17} />
+                        继续问 AI <Icon name="arrow" size={17} />
+                      </a>
+                    </div>
+                    <span class="journey-flow-arrow journey-flow-one" aria-hidden="true">
+                      <Icon name="arrow" size={32} />
+                    </span>
+                    <span class="journey-flow-arrow journey-flow-two" aria-hidden="true">
+                      <Icon name="arrow" size={32} />
+                    </span>
+                  </>
+                )}
+                {i === 2 && (
+                  <>
+                    <div class="journey-practice-overview journey-glass">
+                      <div class="journey-window-heading">
+                        <div>
+                          <h4>
+                            <Icon name="layers" size={25} />
+                            题库训练
+                          </h4>
+                          <p>知识点专项训练 + 历年试题 + 模拟考试</p>
+                        </div>
+                      </div>
+                      <div class="journey-practice-grid">
+                        {[
+                          { label: '知识点练习', icon: 'book' },
+                          { label: '专项训练', icon: 'target' },
+                          { label: '历年试题', icon: 'books' },
+                          { label: '模拟考试', icon: 'clock' },
+                        ].map((item, j) => (
+                          <div class={`practice-tile practice-tile-${j}`}>
+                            <Icon name={item.icon} size={30} />
+                            <strong>{item.label}</strong>
+                          </div>
+                        ))}
+                      </div>
+                      <h5>
+                        <Icon name="layers" size={20} />
+                        按知识点练习
+                      </h5>
+                      <div class="journey-subject-tags">
+                        {['代数', '函数', '几何', '概率', '数列', '三角函数'].map((name, j) => (
+                          <span class:list={{ active: j === 0 }}>{name}</span>
+                        ))}
+                      </div>
+                      <div class="journey-practice-record">
+                        <Icon name="clock" size={19} />
+                        <div>
+                          <strong>每一次练习，都看得见</strong>
+                          <p>记录答题过程，发现需要加强的知识点</p>
+                        </div>
+                      </div>
+                      <a
+                        class="journey-action"
+                        href={site.platform}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        进入题库训练 <Icon name="arrow" size={18} />
+                      </a>
+                    </div>
+                    <JourneyScreen
+                      image="mock"
+                      alt="模拟考试界面，展示 48 道题的试卷与倒计时"
+                      class="journey-mock-screen"
+                      caption="限时模拟 · 答题卡 · 提交复盘"
+                    />
+                  </>
+                )}
+                {i === 3 && (
+                  <>
+                    <div class="journey-notes-desktop journey-glass">
+                      <div class="journey-window-heading">
+                        <h4>
+                          <Icon name="books" size={24} />
+                          我的笔记
+                        </h4>
+                        <span class="journey-note-tag">错题整理</span>
+                      </div>
+                      <div class="journey-notes-body">
+                        <aside aria-label="笔记分类">
+                          <span class="active">
+                            <Icon name="books" size={16} />
+                            错题本
+                          </span>
+                          <span>
+                            <Icon name="book" size={16} />
+                            已保存题目
+                          </span>
+                          <span>
+                            <Icon name="layers" size={16} />
+                            自定义分类
+                          </span>
+                          <small>知识点标签</small>
+                          <span>函数与图像</span>
+                          <span>导数</span>
+                          <span>三角函数</span>
+                        </aside>
+                        <div class="journey-note-content">
+                          <span class="journey-card-kicker">REVIEW & UNDERSTAND</span>
+                          <h5>把做过的题，变成学会的题</h5>
+                          <JourneyScreen
+                            image="note-detail"
+                            alt="错题笔记与答案复盘界面"
+                            class="journey-notes-screen"
+                          />
+                          <div class="journey-note-summary">
+                            <Icon name="check" size={16} />
+                            归纳思路，带着问题继续学
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="journey-review-stack">
+                      <div class="journey-daily journey-glass">
+                        <h4>
+                          <Icon name="calendar" size={22} />
+                          每日巩固
+                        </h4>
+                        <div class="journey-daily-topic">
+                          <span>回顾重点知识</span>
+                          <strong>导数的应用</strong>
+                          <div class="journey-review-track">
+                            <i />
+                          </div>
+                          <small>复习知识点 · 巩固解题方法</small>
+                        </div>
+                      </div>
+                      <div class="journey-course journey-glass">
+                        <span class="journey-course-icon">
+                          <Icon name="cap" size={31} />
+                        </span>
+                        <h4>CSCA 课程辅导</h4>
+                        <p>
+                          <Icon name="check" size={16} />
+                          线上 / 线下授课
+                        </p>
+                        <p>
+                          <Icon name="check" size={16} />1 对 1 / 小班辅导
+                        </p>
+                        <p>
+                          <Icon name="check" size={16} />
+                          聚焦你的薄弱知识点
+                        </p>
+                        <button class="journey-action" type="button" data-open-contact>
+                          了解课程 <Icon name="arrow" size={18} />
+                        </button>
+                      </div>
+                    </div>
+                    <span class="journey-flow-arrow journey-review-arrow" aria-hidden="true">
+                      <Icon name="arrow" size={30} />
+                    </span>
+                  </>
+                )}
+              </div>
+              <div class="journey-scene-footer">
+                <>
+                  <span>
+                    <i aria-hidden="true" />
+                    HubCSCA 产品界面预览
+                  </span>
+                  <a href={site.platform} target="_blank" rel="noopener noreferrer">
+                    体验在线工具 <Icon name="arrow" size={16} />
+                  </a>
+                </>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

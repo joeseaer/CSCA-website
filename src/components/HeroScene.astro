@@ -1,0 +1,346 @@
+---
+import { asset } from '../data/site';
+import Icon from './Icon.astro';
+const appTools = [
+  { title: '拍照搜题', icon: 'camera', tone: 'camera' },
+  { title: '翻译助手', icon: 'globe', tone: 'translate' },
+  { title: '题库训练', icon: 'books', tone: 'practice' },
+  { title: '我的笔记', icon: 'book', tone: 'notes' },
+];
+const tabs = [
+  { title: '首页', icon: 'home' },
+  { title: '题库训练', icon: 'books' },
+  { title: '相机', icon: 'camera' },
+  { title: '我的笔记', icon: 'book' },
+  { title: '我的', icon: 'person' },
+];
+---
+
+<svg
+  class="hero-scene"
+  viewBox="0 0 1536 1024"
+  width="1536"
+  height="1024"
+  preserveAspectRatio="xMidYMid meet"
+  role="img"
+  aria-label="HubCSCA 智能学习场景：学生与学习界面，外圈和 APP 框沿用参考原图"
+>
+  <defs>
+    <clipPath id="scene-native-app-content"><rect width="374" height="354" rx="18"></rect></clipPath
+    >
+    <clipPath id="scene-original-laptop"
+      ><path
+        d="M918 632H1253Q1271 632 1268 651L1222 875Q1217 895 1174 897L734 907L706 895L831 863L902 647Q905 632 918 632Z"
+      ></path></clipPath
+    >
+  </defs>
+  <!-- Retain the source circle, glow, portrait and APP frame pixel for pixel. -->
+  <image
+    data-scene-original
+    href={asset('images/hubcsca-scene-reference.png')}
+    width="1536"
+    height="1024"
+  />
+  <!-- Content follows the original panel's measured plane, not a new floating box. -->
+  <g
+    data-scene-dashboard
+    transform="matrix(1 -.055 -.05 1 992 296)"
+    clip-path="url(#scene-native-app-content)"
+  >
+    <foreignObject width="374" height="354">
+      <div class="scene-app" aria-hidden="true">
+        <div class="app-top">
+          <div>
+            <Icon name="cap" size={21} /><span
+              ><small>国家与年级</small><strong>英国 · 大学一年级</strong></span
+            ><Icon name="down" size={11} />
+          </div>
+          <div>
+            <Icon name="calendar" size={21} /><span
+              ><small>下一场考试</small><strong>9 天 03:09:09</strong><small
+                >2026-11-14 · UTC+8</small
+              ></span
+            >
+          </div>
+        </div>
+        <div class="app-schedule">
+          <Icon name="clock" size={15} /><strong>CSCA 考试时间表</strong><Icon
+            name="down"
+            size={12}
+          />
+        </div>
+        <div class="app-tools">
+          {
+            appTools.map((tool) => (
+              <div class={`app-tool app-tool-${tool.tone}`}>
+                <>
+                  <Icon name={tool.icon} size={24} />
+                  <strong>{tool.title}</strong>
+                </>
+              </div>
+            ))
+          }
+        </div>
+        <div class="app-booking">
+          <span><strong>预约课程</strong><small>中英双语 · 线上 / 线下 · 多课程预约</small></span
+          ><Icon name="play" size={24} /><Icon name="right" size={15} />
+        </div>
+        <div class="app-review">
+          <div>
+            <Icon name="book" size={13} /><strong>每日巩固</strong><small>每天温习一点</small>
+          </div><article>
+            <small>AI 知识点总结</small><strong>导数的应用</strong><p>
+              导数的应用知识点复习总结
+            </p><span>精选总结 <Icon name="right" size={12} /></span>
+          </article>
+        </div>
+        <div class="app-ask"><Icon name="chat" size={16} /><strong>问AI</strong></div>
+        <div class="app-tabs">
+          {
+            tabs.map((tab, i) => (
+              <span class:list={{ active: i === 0 }}>
+                <>
+                  <Icon name={tab.icon} size={15} />
+                  <small>{tab.title}</small>
+                </>
+              </span>
+            ))
+          }
+        </div>
+      </div>
+    </foreignObject>
+  </g>
+  <!-- Preserve the original foreground laptop's occlusion of the APP. -->
+  <image
+    href={asset('images/hubcsca-scene-reference.png')}
+    width="1536"
+    height="1024"
+    clip-path="url(#scene-original-laptop)"
+  />
+</svg>
+
+<style>
+  .scene-app {
+    width: 374px;
+    height: 354px;
+    box-sizing: border-box;
+    padding: 8px 10px;
+    background: linear-gradient(135deg, #f8fcff, #eef6ff);
+    color: #0d2764;
+    font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4px;
+    overflow: hidden;
+  }
+  .scene-app :global(svg) {
+    flex: none;
+  }
+  .scene-app strong {
+    font-weight: 750;
+  }
+  .scene-app small {
+    font-size: 8px;
+    line-height: 1.3;
+  }
+  .app-top {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 6px;
+    height: 36px;
+    flex: none;
+  }
+  .app-top > div {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 6px;
+    border: 1px solid #d8e8ff;
+    border-radius: 10px;
+    color: #0874e9;
+    background: linear-gradient(125deg, #fff, #eaf4ff);
+  }
+  .app-top span {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+  .app-top small {
+    color: #7182a5;
+    font-size: 7px;
+  }
+  .app-top strong {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+  .app-top > div > :last-child:not(span) {
+    margin-left: auto;
+  }
+  .app-top > div + div strong {
+    color: #102864;
+  }
+  .app-schedule {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    background: #fff;
+    border: 1px solid #dae8fb;
+    border-radius: 9px;
+    padding: 5px 8px;
+    font-size: 10px;
+  }
+  .app-schedule :global(svg:last-child) {
+    margin-left: auto;
+  }
+  .app-tools {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+  }
+  .app-tool {
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #ffffffa0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    box-shadow: inset 0 1px #fff9;
+  }
+  .app-tool :global(svg) {
+    color: #fff;
+    stroke-width: 2.2;
+    filter: drop-shadow(0 3px 2px #215b9a30);
+  }
+  .app-tool strong {
+    font-size: 9px;
+  }
+  .app-tool-camera {
+    background: linear-gradient(135deg, #b8e7ff, #40abfc);
+  }
+  .app-tool-translate {
+    background: linear-gradient(135deg, #c3f8eb, #6edfc9);
+    color: #005453;
+  }
+  .app-tool-practice {
+    background: linear-gradient(135deg, #eddaff, #bc80f5);
+    color: #341975;
+  }
+  .app-tool-notes {
+    background: linear-gradient(135deg, #ffe2b8, #ffad78);
+    color: #71350f;
+  }
+  .app-booking {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 9px;
+    border-radius: 10px;
+    color: white;
+    background: linear-gradient(110deg, #00b5ed, #018cfa 60%, #2bd9ea);
+  }
+  .app-booking > span {
+    flex: 1;
+    display: grid;
+    gap: 3px;
+  }
+  .app-booking strong {
+    font-size: 15px;
+  }
+  .app-booking small {
+    font-size: 7px;
+  }
+  .app-booking :global(svg:nth-last-child(2)) {
+    padding: 3px;
+    box-sizing: content-box;
+    border-radius: 7px;
+    background: #ffffff42;
+    transform: rotate(7deg);
+  }
+  .app-review {
+    border: 1px solid #dfebfb;
+    background: #f7fbff;
+    border-radius: 10px;
+    padding: 5px;
+  }
+  .app-review > div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 10px;
+    padding: 0 2px 4px;
+  }
+  .app-review > div > small {
+    margin-left: auto;
+    color: #8191af;
+    font-size: 7px;
+  }
+  .app-review article {
+    position: relative;
+    border-radius: 8px;
+    background: linear-gradient(120deg, #fff7db, #ffecae);
+    padding: 6px 8px;
+    color: #674015;
+  }
+  .app-review article > small {
+    display: block;
+    font-size: 7px;
+  }
+  .app-review article > strong {
+    display: block;
+    font-size: 17px;
+    margin-top: 2px;
+    line-height: 1.3;
+  }
+  .app-review p {
+    font-size: 8px;
+    color: #173b83;
+    margin-top: 3px;
+  }
+  .app-review article > span {
+    position: absolute;
+    right: 8px;
+    top: 7px;
+    font-size: 7px;
+    color: #9a640b;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+  .app-ask {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: 1px solid #d4e5ff;
+    font-size: 10px;
+    background: #edf6ff;
+  }
+  .app-ask :global(svg) {
+    color: #0395f4;
+  }
+  .app-tabs {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 3px;
+    border: 1px solid #dce9fc;
+    border-radius: 9px;
+    background: linear-gradient(#fff, #eef6ff);
+  }
+  .app-tabs > span {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    color: #798cac;
+  }
+  .app-tabs > span.active {
+    color: #0075ff;
+  }
+  .app-tabs small {
+    font-size: 7px;
+  }
+</style>

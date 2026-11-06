@@ -1,0 +1,336 @@
+---
+import Icon from './Icon.astro';
+import BrandLogo from './BrandLogo.astro';
+import HeroScene from './HeroScene.astro';
+import { faqGroups } from '../data/content';
+import LearningStory from './LearningStory.astro';
+import ExamSchedule from './ExamSchedule.astro';
+import { site, asset } from '../data/site';
+import PreparationJourney from './PreparationJourney.astro';
+---
+
+<header class="site-header" data-header>
+  <nav class="nav-container" aria-label="主导航">
+    <a class="brand" href="#top" aria-label="HubCSCA 首页">
+      <BrandLogo />
+    </a>
+    <div class="desktop-nav">
+      <a class="nav-link is-current" href="#top" aria-current="page">首页</a>
+      <a class="nav-link" href="#preparation" data-method-link="0">CSCA 指南</a>
+      <details class="nav-dropdown nav-courses" data-nav-dropdown>
+        <summary class="nav-link">课程 <Icon name="down" size={16} /></summary>
+        <div class="dropdown-panel">
+          <a href="#contact">课程与辅导概览 <Icon name="arrow" size={15} /></a>
+          <a href={site.openClass} target="_blank" rel="noopener noreferrer"
+            >免费公开课 <span class="external-mark">↗</span></a
+          >
+          <a href={`${site.courses}/stem-classes`} target="_blank" rel="noopener noreferrer"
+            >理科系统学习班 <span class="external-mark">↗</span></a
+          >
+          <a href={`${site.courses}/chinese-classes`} target="_blank" rel="noopener noreferrer"
+            >专业中文系统学习班 <span class="external-mark">↗</span></a
+          >
+          <a href={`${site.courses}/one-to-one`} target="_blank" rel="noopener noreferrer"
+            >1 对 1 私教补习 <span class="external-mark">↗</span></a
+          >
+        </div>
+      </details>
+      <details class="nav-dropdown nav-resources" data-nav-dropdown>
+        <summary class="nav-link">资源 <Icon name="down" size={16} /></summary>
+        <div class="dropdown-panel">
+          <a href="#preparation">资源概览 <Icon name="arrow" size={15} /></a>
+          {
+            site.subjects.map((subject) => (
+              <a
+                href={`${site.reference}/resources/${subject.path}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {subject.label}学习资源 <span class="external-mark">↗</span>
+              </a>
+            ))
+          }
+        </div>
+      </details>
+      <a class="nav-link" href="#about">关于我们</a>
+    </div>
+    <div class="nav-actions">
+      <details class="language-dropdown nav-dropdown" data-nav-dropdown>
+        <summary class="nav-link" aria-label="网站语言：中文"
+          ><Icon name="globe" size={20} /><span>中文</span><Icon name="down" size={14} /></summary
+        >
+        <div class="dropdown-panel language-panel">
+          <span lang="zh-CN">中文 <Icon name="check" size={16} /></span>
+        </div>
+      </details>
+      <button class="button nav-contact" type="button" data-open-contact>联系我们</button>
+      <button
+        class="mobile-toggle"
+        type="button"
+        aria-label="打开导航菜单"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        data-mobile-toggle><Icon name="menu" size={25} /><Icon name="close" size={25} /></button
+      >
+    </div>
+  </nav>
+  <nav id="mobile-menu" class="mobile-menu" aria-label="手机导航" hidden>
+    <a href="#top">首页 <Icon name="arrow" size={20} /></a>
+    <a href="#preparation" data-method-link="0">CSCA 指南 <Icon name="arrow" size={20} /></a>
+    <details>
+      <summary>课程 <Icon name="down" size={18} /></summary><div>
+        <a href={site.openClass} target="_blank" rel="noopener noreferrer">免费公开课 ↗</a><a
+          href={site.courses}
+          target="_blank"
+          rel="noopener noreferrer">系统课程与一对一辅导 ↗</a
+        >
+      </div>
+    </details>
+    <details>
+      <summary>资源 <Icon name="down" size={18} /></summary><div>
+        {
+          site.subjects.map((subject) => (
+            <a
+              href={`${site.reference}/resources/${subject.path}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {subject.label}学习资源 ↗
+            </a>
+          ))
+        }
+      </div>
+    </details>
+    <a href="#faq">常见问题 <Icon name="arrow" size={20} /></a>
+    <a href="#about">关于我们 <Icon name="arrow" size={20} /></a>
+    <button type="button" class="button mobile-contact" data-open-contact
+      >联系我们 <Icon name="arrow" size={19} /></button
+    >
+    <p class="mobile-language"><Icon name="globe" size={18} /> 中文</p>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow"><Icon name="cap" size={23} />国际学生 CSCA 备考平台</p>
+        <h1 id="hero-title">
+          <span>HubCSCA 助力 CSCA 备考，</span><span>线下教学 + 线上工具，<em>双重赋能</em></span>
+        </h1>
+        <p class="hero-description">
+          提供全科备考支持，线下精品课程结合线上智能练习，系统提升学习效率与应试能力
+        </p>
+        <div class="hero-actions">
+          <a
+            class="button button-primary button-hero"
+            href={site.platform}
+            target="_blank"
+            rel="noopener noreferrer"
+            ><span>了解 HubCSCA</span><span class="button-arrow"
+              ><Icon name="arrow" size={22} /></span
+            ></a
+          >
+          <button class="text-link hero-link" type="button" data-open-contact
+            >了解我们 <Icon name="arrow" size={23} /></button
+          >
+        </div>
+      </div>
+      <div class="hero-visual hero-visual-exact">
+        <HeroScene />
+        <div class="subjects-float">
+          <Icon name="book" size={23} /><span>数学 · 物理 · 化学 · 专业中文</span>
+        </div>
+      </div>
+    </div>
+    <svg class="hero-curve" viewBox="0 0 1200 70" preserveAspectRatio="none" aria-hidden="true"
+      ><defs
+        ><linearGradient id="hero-wave-fill"
+          ><stop offset="0" stop-color="#eaf9fc"></stop><stop offset=".5" stop-color="#f5f8ff"
+          ></stop><stop offset="1" stop-color="#eaf7ff"></stop></linearGradient
+        ></defs
+      ><path d="M0 14Q600 65 1200 14V70H0Z" fill="url(#hero-wave-fill)"></path></svg
+    >
+  </section>
+
+  <LearningStory />
+
+  <ExamSchedule />
+
+  <PreparationJourney />
+
+  <section class="faq" id="faq" aria-labelledby="faq-title">
+    <div class="section-container">
+      <div class="section-heading">
+        <span class="faq-brand-label"
+          ><Icon name="chat" size={17} /><span>HubCSCA</span><i aria-hidden="true"
+          ></i>备考答疑</span
+        >
+        <h2 id="faq-title">常见问题</h2>
+        <span class="faq-heading-accent" aria-hidden="true"></span>
+        <p>关于 CSCA 备考，你可能想先知道这些</p>
+      </div>
+      <div class="faq-tabs" role="tablist" aria-label="常见问题分类">
+        {
+          faqGroups.map((group, i) => (
+            <button
+              type="button"
+              role="tab"
+              id={`faq-tab-${i}`}
+              aria-selected={i === 0 ? 'true' : 'false'}
+              aria-controls={`faq-panel-${i}`}
+              tabindex={i === 0 ? 0 : -1}
+              data-faq-tab={i}
+            >
+              {group.label}
+            </button>
+          ))
+        }
+      </div>
+      <div class="faq-panels">
+        {
+          faqGroups.map((group, i) => (
+            <section
+              role="tabpanel"
+              id={`faq-panel-${i}`}
+              aria-labelledby={`faq-tab-${i}`}
+              hidden={i !== 0}
+              data-faq-panel
+            >
+              <div class="faq-group-heading">
+                <>
+                  <h3>{group.label}</h3>
+                  <span>{group.questions.length} 个问题</span>
+                </>
+              </div>
+              {group.questions.map((item, index) => (
+                <details class="faq-item">
+                  <summary>
+                    <span class="faq-question">
+                      <span class="faq-question-number" aria-hidden="true">
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                      <span>{item.question.replaceAll('PrepPals', 'HubCSCA')}</span>
+                    </span>
+                    <span class="faq-plus">
+                      <Icon name="plus" size={21} />
+                    </span>
+                  </summary>
+                  <div class="faq-answer">
+                    <p>{item.answer.replaceAll('PrepPals', 'HubCSCA')}</p>
+                  </div>
+                </details>
+              ))}
+            </section>
+          ))
+        }
+      </div>
+      <div class="faq-help">
+        <div>
+          <span class="faq-help-icon"><Icon name="chat" size={21} /></span><p>
+            还有其他问题？<span>和我们聊聊你的备考安排</span>
+          </p>
+        </div><button class="button button-primary hub-primary" type="button" data-open-contact
+          >联系我们 <Icon name="arrow" size={18} /></button
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="closing-section" id="contact" aria-labelledby="contact-title">
+    <div class="closing-card">
+      <div class="closing-orbits" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="closing-content">
+        <span class="closing-kicker">YOUR NEXT CHAPTER WITH HUBCSCA</span>
+        <h2 id="contact-title">
+          和 <span>HubCSCA</span> 一起，<br class="mobile-break" />清晰地开始
+        </h2>
+        <p>线下精品课程 + 线上智能练习，让每一步备考更有方向</p>
+        <div class="closing-actions">
+          <a
+            class="button button-primary hub-primary"
+            href={site.platform}
+            target="_blank"
+            rel="noopener noreferrer"
+            ><span>了解 HubCSCA</span><span class="button-arrow"
+              ><Icon name="arrow" size={22} /></span
+            ></a
+          >
+          <button class="text-link hero-link" type="button" data-open-contact
+            >了解我们 <Icon name="arrow" size={23} /></button
+          >
+        </div>
+        <div class="closing-note"><span></span>数学 · 物理 · 化学 · 专业中文</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" id="about">
+  <div class="footer-main section-container">
+    <div class="footer-brand">
+      <a class="brand" href="#top" aria-label="HubCSCA 首页"><BrandLogo /></a><p>
+        {site.tagline}
+      </p><p class="footer-about">陪国际学生一起，把备考变成一条清楚的路</p>
+    </div><div class="footer-links">
+      <div>
+        <h2>课程与辅导</h2><button type="button" data-open-contact>线下课程</button><a
+          href={site.platform}
+          target="_blank"
+          rel="noopener noreferrer">在线学习 ↗</a
+        ><button type="button" data-open-contact>一对一辅导</button>
+      </div><div>
+        <h2>备考资源</h2><a href="#preparation" data-method-link="0">CSCA 指南</a><a
+          href="#preparation"
+          data-method-link="1">学习资源</a
+        ><a href="#faq">常见问题</a>
+      </div><div>
+        <h2>HUBCSCA</h2><a href={site.platform} target="_blank" rel="noopener noreferrer"
+          >了解 HubCSCA ↗</a
+        ><button type="button" data-open-contact>了解我们</button><button
+          type="button"
+          data-open-contact>联系我们</button
+        >
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom section-container">
+    <p>© {new Date().getFullYear()} HubCSCA All rights reserved</p><p>
+      HubCSCA 与官方 CSCA 组织无关
+    </p><a href="#top" class="back-top">返回顶部 <Icon name="arrow" size={17} /></a>
+  </div>
+</footer>
+
+<dialog
+  id="contact-dialog"
+  class="contact-dialog hub-contact-dialog"
+  aria-labelledby="dialog-title"
+  aria-describedby="dialog-description"
+>
+  <div class="dialog-content">
+    <button
+      class="dialog-close round-button"
+      type="button"
+      data-close-contact
+      aria-label="关闭咨询窗口"><Icon name="close" size={20} /></button
+    >
+    <span class="dialog-eyebrow">CONNECT WITH HUBCSCA</span>
+    <h2 id="dialog-title">了解 HubCSCA</h2>
+    <p id="dialog-description">微信扫码，了解课程与学习支持</p>
+    <div class="contact-qr-frame">
+      <img
+        src={asset('images/hubcsca-wechat-contact.jpg')}
+        alt="HubCSCA 微信联系二维码，联系人 Jason"
+        width="851"
+        height="1087"
+        loading="lazy"
+      />
+    </div>
+    <p class="contact-qr-tip">使用微信扫一扫，或保存图片后在微信中识别</p>
+    <a
+      class="contact-qr-save"
+      href={asset('images/hubcsca-wechat-contact.jpg')}
+      download="HubCSCA-微信联系二维码.jpg">保存二维码 <Icon name="down" size={16} /></a
+    >
+  </div>
+</dialog>

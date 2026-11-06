@@ -1,0 +1,28 @@
+# Only frontend source, tooling and runtime assets belong in this repository.
+/*
+!/.gitignore
+!/.gitattributes
+!/.nvmrc
+!/.prettierrc.json
+!/.prettierignore
+!/README.md
+!/astro.config.mjs
+!/package.json
+!/package-lock.json
+!/tsconfig.json
+!/src/
+!/scripts/
+!/public/
+!/.github/
+
+# Dependencies, builds, local research and credentials stay on this machine.
+node_modules/
+dist/
+.astro/
+.sites-runtime/
+docs/
+.env
+.env.*
+*.log
+.DS_Store
+Thumbs.db
