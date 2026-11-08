@@ -26,9 +26,30 @@ GitHub 地址固定为 `ssh://git@ssh.github.com:443/joeseaer/CSCA-website.git`�
 
 1. 新建纯静态网站，域名填写 `www.hubcsca.dcpstudios.top`。
 2. 网站根目录填写 `/wwwdata/wwwdata/CSCA-website-public`。
-3. 申请并启用该完整域名的 HTTPS 证书。
+3. 按下一节补齐本服务器的公网入口监听，再由管理员检查并重载 Nginx。
+4. 申请并启用该完整域名的 HTTPS 证书，并补齐 HTTPS 入口监听。
 
 `www` 站点与已有的 `hubcsca.dcpstudios.top` 小程序入口分别配置。下面的初始化步骤用于重建环境；已有发布产物时不必重复执行。
+
+## 本服务器的公网入口
+
+2026-11-08 实测：公网 HTTP 进入 `127.0.0.1:18080`，HTTPS 进入 `127.0.0.1:18443`，两者均携带 PROXY protocol。仅添加普通 `80` / `443` 监听会导致本机访问正常，公网请求却落到默认站点。
+
+在域名 `www.hubcsca.dcpstudios.top` 的 HTTP `server` 中保留原监听，并增加：
+
+```nginx
+listen 127.0.0.1:18080 proxy_protocol;
+```
+
+若已采用「HTML 项目 `127.0.0.1:5540` + 域名反向代理」结构，保留这一结构，将监听加在域名反代的 `server` 中；`5540` 的 HTML 项目无需修改。仓库中的 `.conf` 是直接提供静态文件的另一种配置，不要与已存在的同域名反代配置重复安装。
+
+在宝塔为完整域名配置好 HTTPS 证书后，在对应 HTTPS `server` 中保留 `listen 443 ssl;`，并增加：
+
+```nginx
+listen 127.0.0.1:18443 ssl proxy_protocol;
+```
+
+管理员保存后先运行 `/www/server/nginx/sbin/nginx -t`，通过后在宝塔重载 Nginx。验收时同时访问公网首页与 `/resources/`，并检查响应正文是网站内容；此前默认站点的首页曾以 HTTP 200 返回写着 404 的页面，仅看状态码不能确认成功。
 
 ## 首次准备
 
@@ -55,7 +76,7 @@ bash /wwwdata/wwwdata/CSCA-website/scripts/deployment/pull-build-release.sh
 
 管理员应先运行 `/www/server/nginx/sbin/nginx -t`，在有本次服务操作授权时应用配置，然后通过上述 ACME 目录为 **`www.hubcsca.dcpstudios.top`** 申请证书。现有其他域名证书不覆盖该域名。
 
-证书成功签发后，管理员将此 vhost 的静态 `location` 复制到专用 `listen 443 ssl` server，设置真实的 `ssl_certificate` 与 `ssl_certificate_key` 路径；HTTP server 保留 ACME location，并将其他请求重定向至 `https://$host$request_uri`。在证书存在之前不要启用带不存在证书路径的 HTTPS 配置。
+证书成功签发后，管理员将此 vhost 的静态 `location` 复制到同时监听 `443 ssl` 和 `127.0.0.1:18443 ssl proxy_protocol` 的 HTTPS server，设置真实的 `ssl_certificate` 与 `ssl_certificate_key` 路径；HTTP server 保留 ACME location，并将其他请求重定向至 `https://$host$request_uri`。在证书存在之前不要启用带不存在证书路径的 HTTPS 配置。
 
 本脚本不执行 Nginx 配置安装、证书签发或任何服务重载。静态版本切换本身不需要重载 Nginx。
 
