@@ -12,6 +12,59 @@ if (library) {
   const normalize = (value: string) => value.normalize('NFKC').toLocaleLowerCase().trim();
   let category = 'all';
   let searching = false;
+  const stage = library.querySelector<HTMLElement>('[data-app-stage]');
+  const moduleButtons = [...library.querySelectorAll<HTMLButtonElement>('[data-module-select]')];
+  const screens = [...library.querySelectorAll<HTMLElement>('[data-stage-screen]')];
+  let selectedModule = moduleButtons[0];
+
+  const selectModule = (button: HTMLButtonElement) => {
+    selectedModule = button;
+    moduleButtons.forEach((item) => {
+      const selected = item === button;
+      item.setAttribute('aria-pressed', String(selected));
+      item.closest('[data-module-row]')?.classList.toggle('is-active', selected);
+    });
+    const title = stage?.querySelector<HTMLElement>('[data-stage-title]');
+    const link = stage?.querySelector<HTMLAnchorElement>('[data-stage-open]');
+    if (title) title.textContent = button.dataset.moduleTitle || '';
+    if (link && button.dataset.moduleHref) {
+      link.href = button.dataset.moduleHref;
+      link.setAttribute('aria-label', `打开${button.dataset.moduleTitle}`);
+    }
+    screens.forEach((screen) => {
+      const selected = screen.dataset.stageScreen === button.dataset.moduleScreen;
+      screen.classList.toggle('is-active', selected);
+      screen.setAttribute('aria-hidden', String(!selected));
+    });
+  };
+  const visibleModules = () =>
+    moduleButtons.filter((button) => !button.closest<HTMLElement>('[data-module-row]')?.hidden);
+  const syncStage = () => {
+    const visible = visibleModules();
+    if (stage) stage.hidden = !visible.length;
+    if (visible.length && !visible.includes(selectedModule)) selectModule(visible[0]);
+  };
+  moduleButtons.forEach((button) => {
+    button.disabled = false;
+    button.addEventListener('click', () => selectModule(button));
+    button.addEventListener('keydown', (event) => {
+      if (!['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(event.key)) return;
+      event.preventDefault();
+      const visible = visibleModules();
+      const current = visible.indexOf(button);
+      const index =
+        event.key === 'Home'
+          ? 0
+          : event.key === 'End'
+            ? visible.length - 1
+            : (current + (event.key === 'ArrowDown' ? 1 : -1) + visible.length) % visible.length;
+      const next = visible[index];
+      if (next) {
+        next.focus();
+        selectModule(next);
+      }
+    });
+  });
 
   const applyFilters = () => {
     const query = normalize(search?.value || '');
@@ -59,9 +112,7 @@ if (library) {
       status.textContent = query ? `${count} 条匹配结果` : '';
     }
     if (empty) empty.hidden = visibleSections > 0;
-    library
-      .querySelector<HTMLElement>('.resource-app-showcase')
-      ?.toggleAttribute('hidden', Boolean(query));
+    syncStage();
   };
 
   categories.forEach((link) => {

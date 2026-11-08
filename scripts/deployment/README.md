@@ -49,6 +49,8 @@ bash /wwwdata/wwwdata/CSCA-website/scripts/deployment/pull-build-release.sh
 
 ## 域名与 HTTPS
 
+在宝塔新增纯静态站点时，域名填写 `www.hubcsca.dcpstudios.top`，根目录填写 `/wwwdata/wwwdata/CSCA-website-public`，默认文档为 `index.html`。该目录已经包含编译后的文件，不需要配置 Node 项目或反向代理。HTTPS 在站点的 SSL 设置中为这个完整域名单独申请并启用。
+
 `www.hubcsca.dcpstudios.top` 的 A 记录已指向 `124.222.29.242`。`www.hubcsca.dcpstudios.top.conf` 是可直接审查的独立 HTTP vhost，应由管理员安装到 `/www/server/panel/vhost/nginx/www.hubcsca.dcpstudios.top.conf`。保留现有 `hubcsca.dcpstudios.top` 配置。
 
 管理员应先运行 `/www/server/nginx/sbin/nginx -t`，在有本次服务操作授权时应用配置，然后通过上述 ACME 目录为 **`www.hubcsca.dcpstudios.top`** 申请证书。现有其他域名证书不覆盖该域名。

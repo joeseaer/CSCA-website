@@ -13,70 +13,128 @@ import {
 import '../styles/resources.css';
 
 const categories = [
-  { id: 'syllabus', label: '考试大纲', icon: 'book' },
-  { id: 'formulas', label: '数学公式', icon: 'chart' },
-  { id: 'glossary', label: '双语术语', icon: 'globe' },
-  { id: 'app', label: '小程序', icon: 'laptop' },
+  { id: 'syllabus', label: '考试大纲' },
+  { id: 'formulas', label: '数学公式' },
+  { id: 'glossary', label: '双语术语' },
+  { id: 'app', label: '小程序' },
 ];
 const termCount = glossaryGroups.reduce((count, group) => count + group.terms.length, 0);
 const formulaCount = formulaGroups.reduce((count, group) => count + group.formulas.length, 0);
-const subjectIcons: Record<string, string> = {
-  mathematics: 'chart',
-  'chinese-humanities': 'book',
-  'chinese-stem': 'languages',
-  physics: 'compass',
-  chemistry: 'flask',
+const subjectSymbols: Record<string, string> = {
+  mathematics: 'ƒ',
+  'chinese-humanities': '文',
+  'chinese-stem': '理',
+  physics: 'λ',
+  chemistry: 'H₂',
+};
+const formulaSymbols = ['∪', 'log', 'sin', '∑', 'ƒ′', 'π', 'i', 'P'];
+const screens = [
+  { id: 'home', title: '学习首页', file: 'home.webp' },
+  { id: 'mock', title: '模拟考试', file: 'mock.webp' },
+  { id: 'scan', title: '拍照搜题', file: 'scan.webp' },
+  { id: 'note', title: '笔记详情', file: 'note-detail.webp' },
+];
+const moduleScreens: Record<string, string> = {
+  home: 'home',
+  practice: 'mock',
+  exam: 'mock',
+  camera: 'scan',
+  chat: 'scan',
+  translate: 'scan',
+  document: 'home',
+  glossary: 'home',
+  notebook: 'note',
+  classroom: 'home',
+  booking: 'home',
+  profile: 'home',
 };
 ---
 
 <SiteHeader current="resources" />
 <main id="main" class="resource-library" data-library>
   <section class="resource-hero" id="top" aria-labelledby="resource-title">
-    <div class="resource-hero-grid resource-container">
-      <div class="resource-hero-copy">
-        <a class="resource-breadcrumb" href={asset('')}
-          ><span>首页</span><Icon name="right" size={13} />资源库</a
-        >
-
-        <h1 id="resource-title">备考<br /><em>资源库</em></h1>
-        <p class="resource-hero-intro">考试大纲 · 数学公式 · 双语术语 · 学习工具</p>
-        <a class="resource-hero-button" href="#collection"
-          >探索资源库<Icon name="arrow" size={21} /></a
-        >
-      </div>
-      <div class="resource-scene" aria-hidden="true">
-        <div class="resource-orbit resource-orbit-one"></div>
-        <div class="resource-orbit resource-orbit-two"></div>
-        <div class="resource-orbit-dot"></div>
-        <span class="scene-spark scene-spark-one">+</span><span class="scene-spark scene-spark-two"
-          >✦</span
-        >
-        <div class="resource-paper paper-back"><span>中 / 英</span><i></i><i></i><i></i></div>
-        <div class="resource-paper paper-main">
-          <div class="paper-top"><span>HubCSCA</span></div>
-          <div class="paper-rule"></div>
-
-          <strong>数学公式</strong>
-          <div class="paper-equation">a² + b² = c²</div>
-          <svg class="paper-graph" viewBox="0 0 230 85" fill="none"
-            ><path d="M10 73H220M31 6V78" stroke="#a9bdce"></path><path
-              d="M15 22C65 100 100 100 160 26S204 15 218 8"
-              stroke="#00a997"
-              stroke-width="3"></path><circle cx="114" cy="65" r="4" fill="#00a997"></circle></svg
+    <div class="resource-hero-art" aria-hidden="true">
+      <svg
+        class="hero-coordinate"
+        viewBox="0 0 1440 780"
+        preserveAspectRatio="xMidYMid slice"
+        fill="none"
+      >
+        <defs>
+          <linearGradient
+            id="resource-curve"
+            x1="450"
+            y1="650"
+            x2="1400"
+            y2="100"
+            gradientUnits="userSpaceOnUse"
           >
-        </div>
-        <div class="scene-label scene-label-top">
-          <span class="scene-label-icon"><Icon name="book" size={19} /></span><span>考试大纲</span
-          ><Icon name="check" size={15} />
-        </div>
-        <div class="scene-label scene-label-bottom">
-          <span class="scene-label-icon"><Icon name="globe" size={20} /></span><span
-            >数学 × 语言</span
-          >
-        </div>
-      </div>
+            <stop stop-color="#00e3c4" stop-opacity=".15"></stop>
+            <stop offset=".55" stop-color="#00e3c4"></stop>
+            <stop offset="1" stop-color="#00bfea"></stop>
+          </linearGradient>
+          <pattern id="resource-grid" width="76" height="76" patternUnits="userSpaceOnUse">
+            <path d="M76 0H0V76" stroke="#8dddf1" stroke-opacity=".12"></path>
+          </pattern>
+        </defs>
+        <path fill="url(#resource-grid)" d="M0 0H1440V780H0Z"></path>
+        <path d="M580 567H1440M1010 54V780" stroke="#91eaff" stroke-opacity=".4"></path>
+        <path
+          class="hero-wave-back"
+          d="M420 681C700 664 730 239 962 279S1150 679 1500 148"
+          stroke="#1f88e4"
+          stroke-width="80"
+          stroke-opacity=".2"></path>
+        <path
+          class="hero-wave-front"
+          d="M420 681C700 664 730 239 962 279S1150 679 1500 148"
+          stroke="url(#resource-curve)"
+          stroke-width="3"
+          pathLength="1"></path>
+        <circle cx="962" cy="279" r="8" fill="#00e3c4"></circle>
+        <circle
+          class="hero-coordinate-pulse"
+          cx="962"
+          cy="279"
+          r="23"
+          stroke="#00e3c4"
+          stroke-opacity=".5"></circle>
+        <circle cx="1133" cy="470" r="5" fill="#c5fff6"></circle>
+        <path d="m1415 557 15 10-15 10M1000 72l10-15 10 15" stroke="#91eaff" stroke-opacity=".6"
+        ></path>
+      </svg>
+      <div class="hero-orbit hero-orbit-one"></div>
+      <div class="hero-orbit hero-orbit-two"></div>
+      <span class="hero-math hero-math-one">ƒ(x)</span>
+      <span class="hero-math hero-math-two">∞</span>
+      <span class="hero-math hero-math-three">∑</span>
     </div>
-    <div class="resource-hero-bottom" aria-hidden="true"></div>
+    <div class="resource-container resource-hero-content">
+      <a class="resource-breadcrumb" href={asset('')}>
+        <span>首页</span>
+        <Icon name="right" size={14} />
+        <span>资源库</span>
+      </a>
+      <h1 id="resource-title">
+        <span class="hero-title-line">备考</span>
+        <span class="hero-title-line hero-title-accent"
+          >资源库<span class="hero-title-point">.</span></span
+        >
+      </h1>
+      <nav class="hero-subjects" aria-label="资源快捷入口">
+        {
+          categories.map((category) => (
+            <a href={`#${category.id}`}>
+              <span>{category.label}</span>
+              <Icon name="arrow" size={18} />
+            </a>
+          ))
+        }
+      </nav>
+    </div>
+    <a href="#collection" class="hero-scroll" aria-label="浏览资源"
+      ><Icon name="down" size={23} /></a
+    >
   </section>
 
   <div class="resource-container resource-collection" id="collection">
@@ -86,12 +144,11 @@ const subjectIcons: Record<string, string> = {
           href="#collection"
           class="resource-category is-selected"
           data-category="all"
-          aria-current="true">全部资源</a
+          aria-current="true">全部</a
         >
         {
           categories.map((category) => (
             <a href={`#${category.id}`} class="resource-category" data-category={category.id}>
-              <Icon name={category.icon} size={17} />
               {category.label}
             </a>
           ))
@@ -99,21 +156,22 @@ const subjectIcons: Record<string, string> = {
       </nav>
       <form class="resource-search" role="search" data-resource-search>
         <svg
-          width="18"
-          height="18"
+          width="19"
+          height="19"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
           stroke-width="1.8"
           aria-hidden="true"
-          ><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path></svg
         >
+          <circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path>
+        </svg>
         <label for="resource-query" class="sr-only">搜索资源、公式与中英文术语</label>
         <input
           type="search"
           id="resource-query"
           name="q"
-          placeholder="搜索资源、公式或术语"
+          placeholder="搜索资源"
           autocomplete="off"
         />
       </form>
@@ -121,64 +179,50 @@ const subjectIcons: Record<string, string> = {
     <p class="resource-search-status" data-search-status role="status" aria-live="polite" hidden>
     </p>
     <div class="resource-empty" data-resource-empty hidden>
-      <Icon name="book" size={34} /><h2>没有找到相关资源</h2><button type="button" data-clear-search
-        >查看全部资源 <Icon name="arrow" size={17} /></button
-      >
+      <h2>没有找到相关资源</h2>
+      <button type="button" data-clear-search>查看全部资源 <Icon name="arrow" size={18} /></button>
     </div>
 
     <section
-      class="resource-section"
+      class="resource-section syllabus-section"
       id="syllabus"
       data-resource-section="syllabus"
       aria-labelledby="syllabus-title"
     >
       <div class="resource-section-heading" data-resource-reveal>
-        <div>
-          <h2 id="syllabus-title">
-            考试大纲<span class="section-heading-dot">.</span>
-          </h2>
-        </div>
-        <span class="resource-section-meta">科目范围与考试要求</span>
+        <h2 id="syllabus-title">考试<span>大纲</span></h2>
+        <span class="section-heading-symbol" aria-hidden="true">↗</span>
       </div>
-      <div class="syllabus-grid">
+      <div class="syllabus-directory">
         {
-          syllabus.map((item, index) => (
+          syllabus.map((item) => (
             <article
-              class="syllabus-card"
+              class="syllabus-row"
               data-resource-item
               data-resource-reveal
               data-search={[item.title, item.subject, item.description, ...item.topics].join(' ')}
-              style={`--item-index:${index}`}
             >
-              <div class="syllabus-card-top">
-                <>
-                  <span class="syllabus-icon">
-                    <Icon name={subjectIcons[item.id] || 'book'} size={25} />
-                  </span>
-                  <span class="resource-file-type">{item.format}</span>
-                </>
-              </div>
-              <>
-                <h3>{item.title}</h3>
+              <span class="syllabus-symbol" aria-hidden="true">
+                {subjectSymbols[item.id]}
+              </span>
+              <div class="syllabus-name">
+                <h3>{item.title.replace('考试大纲', '')}</h3>
                 <p>{item.description}</p>
-              </>
-              <div class="resource-topic-list">
+              </div>
+              <div class="syllabus-topics">
                 {item.topics.map((topic) => (
                   <span>{topic}</span>
                 ))}
               </div>
               <a
-                class="resource-card-link"
+                class="syllabus-download"
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`查看${item.title}`}
               >
-                <>
-                  <span>查看大纲</span>
-                  <span class="resource-circle-arrow">
-                    <Icon name="arrow" size={18} />
-                  </span>
-                </>
+                <span>{item.format}</span>
+                <Icon name="arrow" size={25} />
               </a>
             </article>
           ))
@@ -187,34 +231,22 @@ const subjectIcons: Record<string, string> = {
     </section>
 
     <section
-      class="resource-section"
+      class="resource-section formula-section"
       id="formulas"
       data-resource-section="formulas"
       aria-labelledby="formulas-title"
     >
       <div class="resource-section-heading" data-resource-reveal>
-        <div>
-          <h2 id="formulas-title">
-            常用数学公式<span class="section-heading-dot">.</span>
-          </h2>
-        </div><span class="resource-section-meta">{formulaCount} 条公式</span>
+        <h2 id="formulas-title">数学<span>公式</span></h2>
+        <span class="resource-section-meta">{formulaCount} 条公式</span>
       </div>
-      <div class="formula-grid">
+      <div class="formula-book">
         {
           formulaGroups.map((group, index) => (
-            <article
-              class="formula-card"
-              data-resource-group
-              data-resource-reveal
-              style={`--item-index:${index % 3}`}
-            >
-              <div class="formula-group-heading">
-                <>
-                  <h3>{group.title}</h3>
-                  <span class="formula-group-symbol" aria-hidden="true">
-                    {['ƒ', '∑', '△', 'π', 'P', '∞', 'x²', '∫'][index % 8]}
-                  </span>
-                </>
+            <article class="formula-chapter" data-resource-group data-resource-reveal>
+              <div class="formula-chapter-heading">
+                <h3>{group.title}</h3>
+                <span aria-hidden="true">{formulaSymbols[index]}</span>
               </div>
               <div class="formula-list">
                 {group.formulas.map((formula) => (
@@ -236,213 +268,195 @@ const subjectIcons: Record<string, string> = {
     </section>
 
     <section
-      class="resource-section"
+      class="resource-section glossary-section"
       id="glossary"
       data-resource-section="glossary"
       aria-labelledby="glossary-title"
     >
+      <div class="glossary-heading-art" aria-hidden="true">中<span>⇄</span>英</div>
       <div class="resource-section-heading" data-resource-reveal>
-        <div>
-          <h2 id="glossary-title">
-            翻译术语对照表<span class="section-heading-dot">.</span>
-          </h2>
-        </div><div class="resource-heading-actions">
-          <span class="resource-section-meta">{termCount} 个词条</span>{
-            resourceDownloads.glossary && (
-              <a
-                class="resource-download"
-                href={asset(resourceDownloads.glossary.href.replace(/^\//, ''))}
-                download
-              >
-                <Icon name="down" size={16} />
-                {resourceDownloads.glossary.format}
-              </a>
-            )
-          }{
-            resourceDownloads.glossaryCsv && (
-              <a
-                class="resource-download"
-                href={asset(resourceDownloads.glossaryCsv.href.replace(/^\//, ''))}
-                download
-              >
-                <Icon name="down" size={16} />
-                {resourceDownloads.glossaryCsv.format}
-              </a>
-            )
-          }
+        <h2 id="glossary-title">双语<span>术语</span></h2>
+        <div class="resource-heading-actions">
+          <span class="resource-section-meta">{termCount} 个词条</span>
+          <a
+            class="resource-download"
+            href={asset(resourceDownloads.glossary.href.replace(/^\//, ''))}
+            download
+          >
+            <Icon name="down" size={16} /><span>{resourceDownloads.glossary.format}</span>
+          </a>
+          <a
+            class="resource-download"
+            href={asset(resourceDownloads.glossaryCsv.href.replace(/^\//, ''))}
+            download
+          >
+            <Icon name="down" size={16} /><span>{resourceDownloads.glossaryCsv.format}</span>
+          </a>
         </div>
       </div>
-      <div class="glossary-layout">
-        <aside class="glossary-note" data-resource-reveal>
-          <div class="glossary-letter" aria-hidden="true">
-            <span>数</span><span>ƒ</span>
-          </div><h3>中英数学词汇</h3><div class="glossary-note-example">
-            <span>函数</span><span>function <Icon name="arrow" size={16} /></span>
-          </div>
-        </aside>
-        <div class="glossary-groups">
-          {
-            glossaryGroups.map((group, index) => (
-              <details
-                class="glossary-group"
-                data-resource-group
-                data-glossary-group
-                open={index === 0}
-                data-resource-reveal
+      <div class="glossary-groups">
+        {
+          glossaryGroups.map((group) => (
+            <details
+              class="glossary-group"
+              data-resource-group
+              data-glossary-group
+              open
+              data-resource-reveal
+            >
+              <summary>
+                <span class="glossary-group-title">
+                  <>
+                    <strong>{group.title}</strong>
+                    <span>{group.terms.length}</span>
+                  </>
+                </span>
+                <Icon name="plus" size={22} />
+              </summary>
+              <div
+                class="glossary-table-wrap"
+                tabindex="0"
+                role="region"
+                aria-label={`${group.title}对照表`}
               >
-                <>
-                  <summary>
-                    <>
-                      <span class="glossary-group-title">
-                        <>
-                          <h3>{group.title}</h3>
-                          <span class="glossary-count">{group.terms.length}</span>
-                        </>
-                      </span>
-                      <span class="glossary-expand">
-                        <Icon name="plus" size={19} />
-                      </span>
-                    </>
-                  </summary>
-                  <div
-                    class="glossary-table-wrap"
-                    tabindex="0"
-                    role="region"
-                    aria-label={`${group.title}对照表`}
-                  >
-                    <table class="glossary-table">
+                <table class="glossary-table">
+                  <thead>
+                    <tr>
                       <>
-                        <thead>
-                          <tr>
-                            <>
-                              <th scope="col">中文 · 符号</th>
-                              <th scope="col">English</th>
-                            </>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {group.terms.map((term) => (
-                            <tr
-                              data-resource-item
-                              data-search={`${group.title} ${term.zh} ${term.en} ${term.pinyin} ${term.symbol} ${term.meaning}`}
-                            >
-                              <td lang="zh-CN">
-                                {term.symbol && <span class="glossary-symbol">{term.symbol}</span>}
-                                <span>{term.meaning || term.zh}</span>
-                                {term.pinyin && (
-                                  <small class="glossary-pinyin">{term.pinyin}</small>
-                                )}
-                              </td>
-                              <td lang="en">{term.en}</td>
-                            </tr>
-                          ))}
-                        </tbody>
+                        <th scope="col">中文 · 符号</th>
+                        <th scope="col">English</th>
                       </>
-                    </table>
-                  </div>
-                </>
-              </details>
-            ))
-          }
-        </div>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {group.terms.map((term) => (
+                      <tr
+                        data-resource-item
+                        data-search={`${group.title} ${term.zh} ${term.en} ${term.pinyin} ${term.symbol} ${term.meaning}`}
+                      >
+                        <td lang="zh-CN">
+                          {term.symbol && <span class="glossary-symbol">{term.symbol}</span>}
+                          <span>{term.meaning || term.zh}</span>
+                          {term.pinyin && <small class="glossary-pinyin">{term.pinyin}</small>}
+                        </td>
+                        <td lang="en">{term.en}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </details>
+          ))
+        }
       </div>
     </section>
 
     <section
-      class="resource-section resource-app-section"
+      class="resource-section app-section"
       id="app"
       data-resource-section="app"
       aria-labelledby="app-title"
     >
       <div class="resource-section-heading" data-resource-reveal>
-        <div>
-          <h2 id="app-title">
-            小程序功能<span class="section-heading-dot">.</span>
-          </h2>
-        </div><a
-          class="resource-open-app"
-          href={site.platform}
-          target="_blank"
-          rel="noopener noreferrer">进入在线学习 <Icon name="arrow" size={19} /></a
+        <h2 id="app-title">小程序<span>功能</span></h2>
+        <a class="resource-open-app" href={site.platform} target="_blank" rel="noopener noreferrer"
+          >打开 HubCSCA <Icon name="arrow" size={22} /></a
         >
       </div>
-      <div class="resource-app-showcase" data-resource-reveal>
-        <div class="app-showcase-copy">
-          <h3>HubCSCA<br />学习工具</h3><div class="app-showcase-pills">
-            <span>理解</span><i></i><span>练习</span><i></i><span>复盘</span>
-          </div><a
-            href={site.platform}
-            class="resource-hero-button"
+      <div class="app-theatre">
+        <div class="app-stage" data-app-stage>
+          <div class="app-stage-art" aria-hidden="true"><i></i><i></i><i></i><span>＋</span></div>
+          <div class="app-stage-heading">
+            <Icon name="sparkles" size={24} />
+            <h3 data-stage-title>{appModules[0].title}</h3>
+          </div>
+          <div class="app-screen-stack">
+            {
+              screens.map((screen, index) => (
+                <figure
+                  class:list={['app-screen', { 'is-active': index === 0 }]}
+                  data-stage-screen={screen.id}
+                  aria-hidden={index !== 0 ? 'true' : undefined}
+                >
+                  <div class="app-screen-image" data-image-frame>
+                    <div class="image-loading" aria-hidden="true">
+                      <>
+                        <i />
+                        <i />
+                        <i />
+                        <i />
+                      </>
+                    </div>
+                    <img
+                      src={asset(`images/journey/${screen.file}`)}
+                      alt={`HubCSCA ${screen.title}实际界面`}
+                      width="390"
+                      height="844"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <figcaption>{screen.title}</figcaption>
+                </figure>
+              ))
+            }
+          </div>
+          <a
+            class="app-stage-open"
+            href={appModules[0].href}
             target="_blank"
-            rel="noopener noreferrer">打开 HubCSCA <Icon name="arrow" size={19} /></a
+            rel="noopener noreferrer"
+            data-stage-open
           >
+            <span>打开功能</span><Icon name="arrow" size={22} />
+          </a>
         </div>
-        <div class="app-showcase-visual">
-          <div class="app-showcase-orbit" aria-hidden="true"></div><figure
-            class="resource-phone"
-            data-image-frame
-          >
-            <div class="phone-speaker" aria-hidden="true"></div><div
-              class="image-loading"
-              aria-hidden="true"
-            >
-              <i></i><i></i><i></i><i></i>
-            </div><img
-              src={asset('images/journey/home.webp')}
-              alt="HubCSCA 小程序首页，包含学习工具与备考功能入口"
-              width="390"
-              height="844"
-              loading="lazy"
-              decoding="async"
-            /><figcaption class="sr-only">小程序首页</figcaption>
-          </figure><span class="app-visual-badge app-badge-first"
-            ><Icon name="camera" size={18} />拍照搜题</span
-          ><span class="app-visual-badge app-badge-last"
-            ><Icon name="layers" size={18} />专项训练</span
-          >
-        </div>
-      </div>
-      <div class="app-module-grid">
-        {
-          appModules.map((module, index) => (
-            <article
-              class="app-module"
-              data-resource-item
-              data-resource-reveal
-              data-search={`${module.title} ${module.description} ${module.features.join(' ')}`}
-              style={`--item-index:${index % 3}`}
-            >
-              <div class="app-module-top">
-                <span class="app-module-icon">
-                  <Icon name={module.icon} size={24} />
-                </span>
-              </div>
-              <h3>{module.title}</h3>
-              <p>{module.description}</p>
-              <div class="app-module-features">
-                {module.features.map((feature) => (
-                  <span>{feature}</span>
-                ))}
-              </div>
-              {module.href && (
+        <div class="app-directory">
+          {
+            appModules.map((module, index) => (
+              <article
+                class:list={['app-module-row', { 'is-active': index === 0 }]}
+                data-resource-item
+                data-module-row
+                data-search={`${module.title} ${module.features.join(' ')}`}
+              >
+                <button
+                  type="button"
+                  class="app-module-select"
+                  data-module-select
+                  data-module-title={module.title}
+                  data-module-screen={moduleScreens[module.id]}
+                  data-module-href={module.href}
+                  aria-pressed={index === 0 ? 'true' : 'false'}
+                  disabled
+                >
+                  <span class="app-module-name">
+                    <>
+                      <Icon name={module.icon} size={24} />
+                      <strong>{module.title}</strong>
+                    </>
+                  </span>
+                  <span class="app-module-features">
+                    {module.features.map((feature) => (
+                      <span>{feature}</span>
+                    ))}
+                  </span>
+                </button>
                 <a
-                  class="app-module-link"
+                  class="app-module-open"
                   href={module.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`打开${module.title}`}
                 >
-                  <Icon name="arrow" size={19} />
+                  <Icon name="arrow" size={22} />
                 </a>
-              )}
-            </article>
-          ))
-        }
+              </article>
+            ))
+          }
+        </div>
       </div>
     </section>
-    <div class="resource-end-mark" aria-hidden="true">
-      <span></span><Icon name="books" size={20} /><span></span>
-    </div>
   </div>
 </main>
 <SiteFooter />
