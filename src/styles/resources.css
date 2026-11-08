@@ -697,6 +697,38 @@
   text-align: center;
   padding: 17px 0;
 }
+.app-concept {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  color: #00e3c4;
+}
+.app-concept.is-active {
+  transform: translateX(0);
+}
+.app-concept > svg {
+  width: clamp(84px, 10vw, 160px);
+  height: auto;
+  filter: drop-shadow(0 0 22px #00e3c430);
+}
+.app-concept figcaption {
+  font-size: 16px;
+  line-height: 1.8;
+  padding: 0;
+}
+.app-concept figcaption > span {
+  display: block;
+}
+@media (max-width: 560px) {
+  .app-concept {
+    gap: 20px;
+  }
+  .app-concept figcaption {
+    font-size: 12px;
+  }
+}
 .app-stage-open {
   position: relative;
   display: flex;

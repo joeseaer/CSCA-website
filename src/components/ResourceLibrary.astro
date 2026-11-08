@@ -36,17 +36,9 @@ const screens = [
 ];
 const moduleScreens: Record<string, string> = {
   home: 'home',
-  practice: 'mock',
   exam: 'mock',
   camera: 'scan',
-  chat: 'scan',
-  translate: 'scan',
-  document: 'home',
-  glossary: 'home',
   notebook: 'note',
-  classroom: 'home',
-  booking: 'home',
-  profile: 'home',
 };
 ---
 
@@ -400,6 +392,24 @@ const moduleScreens: Record<string, string> = {
                 </figure>
               ))
             }
+            {
+              appModules
+                .filter((module) => !moduleScreens[module.id])
+                .map((module) => (
+                  <figure
+                    class="app-screen app-concept"
+                    data-stage-screen={module.id}
+                    aria-hidden="true"
+                  >
+                    <Icon name={module.icon} size={160} />
+                    <figcaption>
+                      {module.features.map((feature) => (
+                        <span>{feature}</span>
+                      ))}
+                    </figcaption>
+                  </figure>
+                ))
+            }
           </div>
           <a
             class="app-stage-open"
@@ -425,7 +435,7 @@ const moduleScreens: Record<string, string> = {
                   class="app-module-select"
                   data-module-select
                   data-module-title={module.title}
-                  data-module-screen={moduleScreens[module.id]}
+                  data-module-screen={moduleScreens[module.id] || module.id}
                   data-module-href={module.href}
                   aria-pressed={index === 0 ? 'true' : 'false'}
                   disabled
