@@ -7,8 +7,14 @@ import '../styles/hub-faq.css';
 import { site, asset } from '../data/site';
 interface Props {
   title?: string;
+  description?: string;
+  preloadHero?: boolean;
 }
-const { title = 'HubCSCA | 线下教学 + 线上工具，CSCA 全科备考' } = Astro.props;
+const {
+  title = 'HubCSCA | 线下教学 + 线上工具，CSCA 全科备考',
+  description = site.description,
+  preloadHero = true,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -16,18 +22,22 @@ const { title = 'HubCSCA | 线下教学 + 线上工具，CSCA 全科备考' } = 
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={site.description} />
+    <meta name="description" content={description} />
     <meta name="theme-color" content="#062c77" />
     <meta property="og:title" content={title} />
-    <meta property="og:description" content={site.description} />
+    <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <link rel="icon" type="image/png" href={asset('images/hubcsca-logo.png')} />
-    <link
-      rel="preload"
-      as="image"
-      href={asset('images/hubcsca-scene-reference.png')}
-      fetchpriority="high"
-    />
+    {
+      preloadHero && (
+        <link
+          rel="preload"
+          as="image"
+          href={asset('images/hubcsca-scene-reference.png')}
+          fetchpriority="high"
+        />
+      )
+    }
     <title>{title}</title>
   </head>
   <body>

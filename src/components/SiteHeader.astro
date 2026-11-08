@@ -1,0 +1,116 @@
+---
+import Icon from './Icon.astro';
+import BrandLogo from './BrandLogo.astro';
+import { site, asset } from '../data/site';
+interface Props {
+  current?: 'home' | 'resources';
+}
+const { current = 'home' } = Astro.props;
+const home = asset('');
+const resources = asset('resources/');
+const resourceLinks = [
+  { id: 'syllabus', label: '考试大纲', icon: 'book' },
+  { id: 'formulas', label: '数学公式', icon: 'chart' },
+  { id: 'glossary', label: '双语术语', icon: 'globe' },
+  { id: 'app', label: '小程序', icon: 'laptop' },
+];
+---
+
+<header class="site-header" data-header>
+  <nav class="nav-container" aria-label="主导航">
+    <a class="brand" href={home} aria-label="HubCSCA 首页">
+      <BrandLogo />
+    </a>
+    <div class="desktop-nav">
+      <a
+        class:list={['nav-link', { 'is-current': current === 'home' }]}
+        href={home}
+        aria-current={current === 'home' ? 'page' : undefined}>首页</a
+      >
+      <a class="nav-link" href={`${home}#preparation`} data-method-link="0">CSCA 指南</a>
+      <details class="nav-dropdown nav-courses" data-nav-dropdown>
+        <summary class="nav-link">课程 <Icon name="down" size={16} /></summary>
+        <div class="dropdown-panel">
+          <a href={`${home}#contact`}>课程与辅导概览 <Icon name="arrow" size={15} /></a>
+          <a href={site.openClass} target="_blank" rel="noopener noreferrer"
+            >免费公开课 <span class="external-mark">↗</span></a
+          >
+          <a href={`${site.courses}/stem-classes`} target="_blank" rel="noopener noreferrer"
+            >理科系统学习班 <span class="external-mark">↗</span></a
+          >
+          <a href={`${site.courses}/chinese-classes`} target="_blank" rel="noopener noreferrer"
+            >专业中文系统学习班 <span class="external-mark">↗</span></a
+          >
+          <a href={`${site.courses}/one-to-one`} target="_blank" rel="noopener noreferrer"
+            >1 对 1 私教补习 <span class="external-mark">↗</span></a
+          >
+        </div>
+      </details>
+      <details class="nav-dropdown nav-resources" data-nav-dropdown>
+        <summary
+          class:list={['nav-link', { 'is-current': current === 'resources' }]}
+          aria-current={current === 'resources' ? 'page' : undefined}
+          >资源库 <Icon name="down" size={16} /></summary
+        >
+        <div class="dropdown-panel">
+          <a href={resources}>全部资源 <Icon name="arrow" size={15} /></a>
+          {
+            resourceLinks.map((item) => (
+              <a href={resources + '#' + item.id}>
+                {item.label}
+                <Icon name={item.icon} size={16} />
+              </a>
+            ))
+          }
+        </div>
+      </details>
+      <a class="nav-link" href={`${home}#about`}>关于我们</a>
+    </div>
+    <div class="nav-actions">
+      <details class="language-dropdown nav-dropdown" data-nav-dropdown>
+        <summary class="nav-link" aria-label="网站语言：中文"
+          ><Icon name="globe" size={20} /><span>中文</span><Icon name="down" size={14} /></summary
+        >
+        <div class="dropdown-panel language-panel">
+          <span lang="zh-CN">中文 <Icon name="check" size={16} /></span>
+        </div>
+      </details>
+      <button class="button nav-contact" type="button" data-open-contact>联系我们</button>
+      <button
+        class="mobile-toggle"
+        type="button"
+        aria-label="打开导航菜单"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        data-mobile-toggle><Icon name="menu" size={25} /><Icon name="close" size={25} /></button
+      >
+    </div>
+  </nav>
+  <nav id="mobile-menu" class="mobile-menu" aria-label="手机导航" hidden>
+    <a href={home}>首页 <Icon name="arrow" size={20} /></a>
+    <a href={`${home}#preparation`} data-method-link="0"
+      >CSCA 指南 <Icon name="arrow" size={20} /></a
+    >
+    <details>
+      <summary>课程 <Icon name="down" size={18} /></summary><div>
+        <a href={site.openClass} target="_blank" rel="noopener noreferrer">免费公开课 ↗</a><a
+          href={site.courses}
+          target="_blank"
+          rel="noopener noreferrer">系统课程与一对一辅导 ↗</a
+        >
+      </div>
+    </details>
+    <details>
+      <summary>资源库 <Icon name="down" size={18} /></summary><div>
+        <a href={resources}>全部资源 <Icon name="arrow" size={18} /></a>
+        {resourceLinks.map((item) => <a href={resources + '#' + item.id}>{item.label}</a>)}
+      </div>
+    </details>
+    <a href={`${home}#faq`}>常见问题 <Icon name="arrow" size={20} /></a>
+    <a href={`${home}#about`}>关于我们 <Icon name="arrow" size={20} /></a>
+    <button type="button" class="button button-primary hub-primary mobile-contact" data-open-contact
+      >联系我们 <Icon name="arrow" size={19} /></button
+    >
+    <p class="mobile-language"><Icon name="globe" size={18} /> 中文</p>
+  </nav>
+</header>

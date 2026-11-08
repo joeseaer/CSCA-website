@@ -1,0 +1,3327 @@
+[
+  {
+    "zh": "定义",
+    "en": "definition",
+    "pinyin": "dìngyì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "元素",
+    "en": "element",
+    "pinyin": "yuánsù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "集合",
+    "en": "set",
+    "pinyin": "jíhé",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "例如",
+    "en": "for example",
+    "pinyin": "lìrú",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "自然数集",
+    "en": "set of natural numbers",
+    "pinyin": "zìránshù jí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "整数集",
+    "en": "set of integers",
+    "pinyin": "zhěngshù jí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "正整数集",
+    "en": "set of positive integers",
+    "pinyin": "zhèng zhěngshù jí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "有理数集",
+    "en": "set of rational numbers",
+    "pinyin": "yǒulǐshù jí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "有限小数",
+    "en": "finite decimal",
+    "pinyin": "yǒuxiàn xiǎoshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "无限循环小数",
+    "en": "repeating infinite decimal",
+    "pinyin": "wúxiàn xúnhuán xiǎoshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "无理数集",
+    "en": "set of irrational numbers",
+    "pinyin": "wúlǐshù jí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "实数集",
+    "en": "set of real numbers",
+    "pinyin": "shíshù jí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "属于",
+    "en": "to belong to",
+    "pinyin": "shǔyú",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "不属于",
+    "en": "to not belong to",
+    "pinyin": "bù shǔyú",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "相等",
+    "en": "equality",
+    "pinyin": "xiāngděng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "子集",
+    "en": "subset",
+    "pinyin": "zǐjí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "包含于",
+    "en": "to be included in",
+    "pinyin": "bāohán yú",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "包含",
+    "en": "to include",
+    "pinyin": "bāohán",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "真子集",
+    "en": "proper subset",
+    "pinyin": "zhēn zǐjí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "空集",
+    "en": "empty set",
+    "pinyin": "kōngjí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "并集",
+    "en": "union set",
+    "pinyin": "bìngjí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "交集",
+    "en": "intersection set",
+    "pinyin": "jiāojí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "全集",
+    "en": "universal set",
+    "pinyin": "quánjí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "补集",
+    "en": "complementary set",
+    "pinyin": "bǔjí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "区间",
+    "en": "interval",
+    "pinyin": "qūjiān",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "闭区间",
+    "en": "closed interval",
+    "pinyin": "bìqūjiān",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "左开右闭区间",
+    "en": "left open and right closed interval",
+    "pinyin": "zuǒkāi-yòubì qūjiān",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "左闭右开区间",
+    "en": "left closed and right open interval",
+    "pinyin": "zuǒbì-yòukāi qūjiān",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "开区间",
+    "en": "open interval",
+    "pinyin": "kāiqūjiān",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "不等式",
+    "en": "inequality",
+    "pinyin": "bùděngshì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "性质",
+    "en": "property",
+    "pinyin": "xìngzhì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "加上",
+    "en": "to add",
+    "pinyin": "jiāshàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "减去",
+    "en": "to subtract",
+    "pinyin": "jiǎnqù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "不等号",
+    "en": "inequality sign",
+    "pinyin": "bùděnghào",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "乘以",
+    "en": "to multiply",
+    "pinyin": "chéng yǐ",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "除以",
+    "en": "to divide",
+    "pinyin": "chú yǐ",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "正数",
+    "en": "positive number",
+    "pinyin": "zhèngshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "负数",
+    "en": "negative number",
+    "pinyin": "fùshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "一元二次方程",
+    "en": "quadratic equation with one unknown",
+    "pinyin": "yī yuán èr cì fāngchéng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "实根",
+    "en": "real root",
+    "pinyin": "shígēn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "一元二次不等式",
+    "en": "quadratic inequality with one unknown",
+    "pinyin": "yī yuán èr cì bùděngshì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "解集",
+    "en": "solution set",
+    "pinyin": "jiějí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "图像",
+    "en": "graph",
+    "pinyin": "túxiàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "分式",
+    "en": "fraction",
+    "pinyin": "fēnshì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "分式不等式",
+    "en": "fractional inequality",
+    "pinyin": "fēnshì bùděngshì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "平面",
+    "en": "plane",
+    "pinyin": "píngmiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "垂直",
+    "en": "vertical",
+    "pinyin": "chuízhí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "数轴",
+    "en": "number axis",
+    "pinyin": "shùzhóu",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "直角坐标系",
+    "en": "rectangular coordinate system",
+    "pinyin": "zhíjiǎo zuòbiāoxì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "横轴",
+    "en": "axis of abscissa",
+    "pinyin": "héngzhóu",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "纵轴",
+    "en": "axis of ordinate",
+    "pinyin": "zòngzhóu",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "坐标轴",
+    "en": "axis of coordinates",
+    "pinyin": "zuòbiāozhóu",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "原点",
+    "en": "origin",
+    "pinyin": "yuándiǎn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "单位长度",
+    "en": "unit length",
+    "pinyin": "dānwèi chángdù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "坐标平面",
+    "en": "coordinate plane",
+    "pinyin": "zuòbiāo píngmiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "象限",
+    "en": "quadrant",
+    "pinyin": "xiàngxiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "第一象限",
+    "en": "the first quadrant",
+    "pinyin": "dì-yī xiàngxiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "第二象限",
+    "en": "the second quadrant",
+    "pinyin": "dì-èr xiàngxiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "第三象限",
+    "en": "the third quadrant",
+    "pinyin": "dì-sān xiàngxiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "第四象限",
+    "en": "the fourth quadrant",
+    "pinyin": "dì-sì xiàngxiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "坐标",
+    "en": "coordinate",
+    "pinyin": "zuòbiāo",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "横坐标",
+    "en": "abscissa",
+    "pinyin": "héngzuòbiāo",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "纵坐标",
+    "en": "ordinate",
+    "pinyin": "zòngzuòbiāo",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "距离",
+    "en": "distance",
+    "pinyin": "jùlí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "对称",
+    "en": "symmetry",
+    "pinyin": "duìchèn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "对称点",
+    "en": "symmetric point",
+    "pinyin": "duìchèndiǎn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "概念",
+    "en": "concept",
+    "pinyin": "gàiniàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "对应关系",
+    "en": "corresponding relationship",
+    "pinyin": "duìyìng guānxi",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "函数",
+    "en": "function",
+    "pinyin": "hánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "自变量",
+    "en": "independent variable",
+    "pinyin": "zìbiànliàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "因变量",
+    "en": "dependent variable",
+    "pinyin": "yīnbiànliàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "定义域",
+    "en": "domain",
+    "pinyin": "dìngyùyù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "值域",
+    "en": "range",
+    "pinyin": "zhíyù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "单调性",
+    "en": "monotonicity",
+    "pinyin": "dāndiàoxìng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "单调增函数",
+    "en": "monotone increasing function",
+    "pinyin": "dāndiào zēnghánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "单调增区间",
+    "en": "monotone increasing interval",
+    "pinyin": "dāndiào zēngqūjiān",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "严格单调增函数",
+    "en": "strictly monotone increasing function",
+    "pinyin": "yángé dāndiào zēnghánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "严格单调增区间",
+    "en": "strictly monotone increasing interval",
+    "pinyin": "yángé dāndiào zēngqūjiān",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "单调减函数",
+    "en": "monotone decreasing function",
+    "pinyin": "dāndiào jiǎnhánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "单调减区间",
+    "en": "monotone decreasing interval",
+    "pinyin": "dāndiào jiǎnqūjiān",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "严格单调减函数",
+    "en": "strictly monotone decreasing function",
+    "pinyin": "yángé dāndiào jiǎnhánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "严格单调减区间",
+    "en": "strictly monotone decreasing interval",
+    "pinyin": "yángé dāndiào jiǎnqūjiān",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "单调函数",
+    "en": "monotone function",
+    "pinyin": "dāndiào hánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "单调区间",
+    "en": "monotone interval",
+    "pinyin": "dāndiào qūjiān",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "奇偶性",
+    "en": "parity",
+    "pinyin": "jī-ǒuxìng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "关于原点对称",
+    "en": "symmetric with respect to the origin",
+    "pinyin": "guānyú yuándiǎn duìchèn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "奇函数",
+    "en": "odd function",
+    "pinyin": "jīhánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "偶函数",
+    "en": "even function",
+    "pinyin": "ǒuhánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "非奇非偶函数",
+    "en": "non-odd and non-even function",
+    "pinyin": "fēi jī fēi ǒu hánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "既奇又偶函数",
+    "en": "both odd and even function",
+    "pinyin": "jì jī yòu ǒu hánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "一一对应",
+    "en": "one-to-one correspondence",
+    "pinyin": "yīyī duìyìng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "反函数",
+    "en": "inverse function",
+    "pinyin": "fǎnhánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "常数",
+    "en": "constant",
+    "pinyin": "chángshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "幂函数",
+    "en": "power function",
+    "pinyin": "mìhánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "奇数",
+    "en": "odd number",
+    "pinyin": "jīshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "偶数",
+    "en": "even number",
+    "pinyin": "ǒushù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "指数函数",
+    "en": "exponential function",
+    "pinyin": "zhǐshù hánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "对数",
+    "en": "logarithm",
+    "pinyin": "duìshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "底数",
+    "en": "base number",
+    "pinyin": "dǐshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "真数",
+    "en": "antilogarithm",
+    "pinyin": "zhēnshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "值",
+    "en": "value",
+    "pinyin": "zhí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "常用对数",
+    "en": "common logarithm",
+    "pinyin": "chángyòng duìshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "自然对数",
+    "en": "natural logarithm",
+    "pinyin": "zìrán duìshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "对数函数",
+    "en": "logarithmic function",
+    "pinyin": "duìshù hánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "同理",
+    "en": "in like manner",
+    "pinyin": "tónglǐ",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "位置",
+    "en": "position",
+    "pinyin": "wèizhì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "旋转",
+    "en": "to rotate",
+    "pinyin": "xuánzhuǎn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "图形",
+    "en": "graph",
+    "pinyin": "túxíng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "角",
+    "en": "angle",
+    "pinyin": "jiǎo",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "顶点",
+    "en": "vertex",
+    "pinyin": "dǐngdiǎn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "始边",
+    "en": "initial side",
+    "pinyin": "shǐbiān",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "终边",
+    "en": "terminal side",
+    "pinyin": "zhōngbiān",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "逆时针",
+    "en": "anticlockwise",
+    "pinyin": "nìshízhēn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "正角",
+    "en": "positive angle",
+    "pinyin": "zhèngjiǎo",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "顺时针",
+    "en": "clockwise",
+    "pinyin": "shùnshízhēn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "负角",
+    "en": "negative angle",
+    "pinyin": "fùjiǎo",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "重合",
+    "en": "to coincide",
+    "pinyin": "chónghé",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "零角",
+    "en": "zero angle",
+    "pinyin": "língjiǎo",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "锐角",
+    "en": "acute angle",
+    "pinyin": "ruìjiǎo",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "直角",
+    "en": "right angle",
+    "pinyin": "zhíjiǎo",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "钝角",
+    "en": "obtuse angle",
+    "pinyin": "dùnjiǎo",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "象限角",
+    "en": "quadrant angle",
+    "pinyin": "xiàngxiànjiǎo",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "第一象限角",
+    "en": "the first quadrant angle",
+    "pinyin": "dì-yī xiàngxiànjiǎo",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "第二象限角",
+    "en": "the second quadrant angle",
+    "pinyin": "dì-èr xiàngxiànjiǎo",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "第三象限角",
+    "en": "the third quadrant angle",
+    "pinyin": "dì-sān xiàngxiànjiǎo",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "第四象限角",
+    "en": "the fourth quadrant angle",
+    "pinyin": "dì-sì xiàngxiànjiǎo",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "弧度",
+    "en": "radian measure",
+    "pinyin": "húdù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "三角函数",
+    "en": "trigonometric function",
+    "pinyin": "sānjiǎo hánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "正弦",
+    "en": "sine",
+    "pinyin": "zhèngxián",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "余弦",
+    "en": "cosine",
+    "pinyin": "yúxián",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "正切",
+    "en": "tangent",
+    "pinyin": "zhèngqiē",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "余切",
+    "en": "cotangent",
+    "pinyin": "yúqiē",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "正割",
+    "en": "secant",
+    "pinyin": "zhènggē",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "余割",
+    "en": "cosecant",
+    "pinyin": "yúgē",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "公式",
+    "en": "formula",
+    "pinyin": "gōngshì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "符号",
+    "en": "sign",
+    "pinyin": "fúhào",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "诱导公式",
+    "en": "induction formula",
+    "pinyin": "yòudǎo gōngshì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "化简",
+    "en": "to simplify",
+    "pinyin": "huàjiǎn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "周期函数",
+    "en": "periodic function",
+    "pinyin": "zhōuqī hánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "周期",
+    "en": "period",
+    "pinyin": "zhōuqī",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "正弦函数",
+    "en": "sine function",
+    "pinyin": "zhèngxián hánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "周期性",
+    "en": "periodicity",
+    "pinyin": "zhōuqīxìng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "最小正周期",
+    "en": "minimal positive period",
+    "pinyin": "zuìxiǎo zhèngzhōuqī",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "余弦函数",
+    "en": "cosine function",
+    "pinyin": "yúxián hánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "正切函数",
+    "en": "tangent function",
+    "pinyin": "zhèngqiē hánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "余切函数",
+    "en": "cotangent function",
+    "pinyin": "yúqiē hánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "反三角函数",
+    "en": "inverse trigonometric function",
+    "pinyin": "fǎnsānjiǎo hánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "反正弦函数",
+    "en": "inverse sine function",
+    "pinyin": "fǎnzhèngxián hánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "反余弦函数",
+    "en": "inverse cosine function",
+    "pinyin": "fǎnyúxián hánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "反正切函数",
+    "en": "inverse tangent function",
+    "pinyin": "fǎnzhèngqiē hánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "反余切函数",
+    "en": "inverse cotangent function",
+    "pinyin": "fǎnyúqiē hánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "两角",
+    "en": "two angles",
+    "pinyin": "liǎng jiǎo",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "和与差",
+    "en": "sum and difference",
+    "pinyin": "hé yǔ chā",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "计算",
+    "en": "to calculate",
+    "pinyin": "jìsuàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "最大值",
+    "en": "maximum value",
+    "pinyin": "zuìdàzhí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "最小值",
+    "en": "minimum value",
+    "pinyin": "zuìxiǎozhí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "二倍角",
+    "en": "double angle",
+    "pinyin": "èrbèijiǎo",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "半角",
+    "en": "half-angle",
+    "pinyin": "bànjiǎo",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "积化和差公式",
+    "en": "product to sum or difference formula",
+    "pinyin": "jī huà hé chā gōngshì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "和差化积公式",
+    "en": "sum or difference to product formula",
+    "pinyin": "hé chā huà jī gōngshì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "次序",
+    "en": "order",
+    "pinyin": "cìxù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "数列",
+    "en": "sequence of numbers",
+    "pinyin": "shùliè",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "项",
+    "en": "term",
+    "pinyin": "xiàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "首项",
+    "en": "the first term",
+    "pinyin": "shǒuxiàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "有穷数列",
+    "en": "finite sequence of numbers",
+    "pinyin": "yǒuqióng shùliè",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "无穷数列",
+    "en": "infinite sequence of numbers",
+    "pinyin": "wúqióng shùliè",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "通项公式",
+    "en": "formula of general term",
+    "pinyin": "tōngxiàng gōngshì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "前n项和",
+    "en": "sum of preceding n terms",
+    "pinyin": "qián n xiàng hé",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "等差数列",
+    "en": "arithmetic progression",
+    "pinyin": "děngchā shùliè",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "公差",
+    "en": "common difference",
+    "pinyin": "gōngchā",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "等差中项",
+    "en": "arithmetic mean",
+    "pinyin": "děngchā zhōngxiàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "下标",
+    "en": "subscript",
+    "pinyin": "xiàbiāo",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "等比数列",
+    "en": "geometric progression",
+    "pinyin": "děngbǐ shùliè",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "公比",
+    "en": "common ratio",
+    "pinyin": "gōngbǐ",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "等比中项",
+    "en": "geometric mean",
+    "pinyin": "děngbǐ zhōngxiàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "复数",
+    "en": "complex number",
+    "pinyin": "fùshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "虚数单位",
+    "en": "imaginary unit",
+    "pinyin": "xūshù dānwèi",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "实部",
+    "en": "real part",
+    "pinyin": "shíbù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "虚部",
+    "en": "imaginary part",
+    "pinyin": "xūbù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "模",
+    "en": "modulus",
+    "pinyin": "mó",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "复数集",
+    "en": "set of complex numbers",
+    "pinyin": "fùshù jí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "虚数",
+    "en": "imaginary number",
+    "pinyin": "xūshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "纯虚数",
+    "en": "purely imaginary number",
+    "pinyin": "chúnxūshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "共轭复数",
+    "en": "conjugate complex number",
+    "pinyin": "gòng'è fùshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "四则运算",
+    "en": "four arithmetic operations",
+    "pinyin": "sìzé yùnsuàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "加法",
+    "en": "addition",
+    "pinyin": "jiāfǎ",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "交换律",
+    "en": "commutative law",
+    "pinyin": "jiāohuànlǜ",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "结合律",
+    "en": "associative law",
+    "pinyin": "jiéhélǜ",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "减法",
+    "en": "subtraction",
+    "pinyin": "jiǎnfǎ",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "相反数",
+    "en": "opposite number",
+    "pinyin": "xiāngfǎnshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "乘法",
+    "en": "multiplication",
+    "pinyin": "chéngfǎ",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "积",
+    "en": "product",
+    "pinyin": "jī",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "分配律",
+    "en": "distributive law",
+    "pinyin": "fēnpèilǜ",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "除法",
+    "en": "division",
+    "pinyin": "chúfǎ",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "商",
+    "en": "quotient",
+    "pinyin": "shāng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "系数",
+    "en": "coefficient",
+    "pinyin": "xìshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "直线",
+    "en": "line",
+    "pinyin": "zhíxiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "相交",
+    "en": "to intersect",
+    "pinyin": "xiāngjiāo",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "倾斜角",
+    "en": "angle of inclination",
+    "pinyin": "qīngxiéjiǎo",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "平行",
+    "en": "to parallel",
+    "pinyin": "píngxíng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "斜率",
+    "en": "slope",
+    "pinyin": "xiélǜ",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "点斜式",
+    "en": "point-slope form",
+    "pinyin": "diǎnxiéshì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "斜截式",
+    "en": "slope-intercept form",
+    "pinyin": "xiéjiéshì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "截距",
+    "en": "intercept",
+    "pinyin": "jiéjù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "两点式",
+    "en": "two-point form",
+    "pinyin": "liǎngdiǎnshì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "截距式",
+    "en": "intercept form",
+    "pinyin": "jiéjùshì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "一般式",
+    "en": "general form",
+    "pinyin": "yībānshì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "交点",
+    "en": "intersection point",
+    "pinyin": "jiāodiǎn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "圆锥曲线",
+    "en": "conic section",
+    "pinyin": "yuánzhuī qūxiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "定点",
+    "en": "fixed point",
+    "pinyin": "dìngdiǎn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "定长",
+    "en": "fixed length",
+    "pinyin": "dìngcháng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "动点",
+    "en": "moving point",
+    "pinyin": "dòngdiǎn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "轨迹",
+    "en": "locus",
+    "pinyin": "guǐjì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "圆",
+    "en": "circle",
+    "pinyin": "yuán",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "圆心",
+    "en": "center of a circle",
+    "pinyin": "yuánxīn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "半径",
+    "en": "radius",
+    "pinyin": "bànjìng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "标准方程",
+    "en": "standard equation",
+    "pinyin": "biāozhǔn fāngchéng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "一般方程",
+    "en": "general equation",
+    "pinyin": "yībān fāngchéng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "正常数",
+    "en": "positive constant",
+    "pinyin": "zhèng chángshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "椭圆",
+    "en": "ellipse",
+    "pinyin": "tuǒyuán",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "焦点",
+    "en": "focus",
+    "pinyin": "jiāodiǎn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "线段",
+    "en": "line segment",
+    "pinyin": "xiànduàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "垂直平分线",
+    "en": "perpendicular bisector",
+    "pinyin": "chuízhí píngfēnxiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "焦距",
+    "en": "focal length",
+    "pinyin": "jiāojù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "长轴",
+    "en": "major axis",
+    "pinyin": "chángzhóu",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "短轴",
+    "en": "minor axis",
+    "pinyin": "duǎnzhóu",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "离心率",
+    "en": "eccentricity",
+    "pinyin": "líxīn lǜ",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "绝对值",
+    "en": "absolute value",
+    "pinyin": "juéduìzhí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "双曲线",
+    "en": "hyperbola",
+    "pinyin": "shuāngqūxiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "实轴",
+    "en": "real axis",
+    "pinyin": "shízhóu",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "虚轴",
+    "en": "imaginary axis",
+    "pinyin": "xūzhóu",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "渐近线",
+    "en": "asymptote",
+    "pinyin": "jiànjìnxiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "定直线",
+    "en": "fixed line",
+    "pinyin": "dìngzhíxiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "抛物线",
+    "en": "parabola",
+    "pinyin": "pāowùxiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "准线",
+    "en": "directrix",
+    "pinyin": "zhǔnxiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "垂线",
+    "en": "vertical line",
+    "pinyin": "chuíxiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "垂足",
+    "en": "pedal",
+    "pinyin": "chuízú",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "大小",
+    "en": "magnitude",
+    "pinyin": "dàxiǎo",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "方向",
+    "en": "direction",
+    "pinyin": "fāngxiàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "向量",
+    "en": "vector",
+    "pinyin": "xiàngliàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "有向线段",
+    "en": "directed line segment",
+    "pinyin": "yǒu xiàng xiànduàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "起点",
+    "en": "initial point",
+    "pinyin": "qǐdiǎn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "终点",
+    "en": "terminal point",
+    "pinyin": "zhōngdiǎn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "零向量",
+    "en": "zero vector",
+    "pinyin": "língxiàngliàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "长度",
+    "en": "length",
+    "pinyin": "chángdù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "单位向量",
+    "en": "unit vector",
+    "pinyin": "dānwèi xiàngliàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "平行四边形",
+    "en": "parallelogram",
+    "pinyin": "píngxíng sìbiānxíng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "共线",
+    "en": "collinear",
+    "pinyin": "gòngxiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "线性运算",
+    "en": "linear operation",
+    "pinyin": "xiànxìng yùnsuàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "三角形法则",
+    "en": "triangle rule",
+    "pinyin": "sānjiǎoxíng fǎzé",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "平行四边形法则",
+    "en": "parallelogram rule",
+    "pinyin": "píngxíng sìbiānxíng fǎzé",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "负向量",
+    "en": "negative vector",
+    "pinyin": "fù xiàngliàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "逆运算",
+    "en": "inverse operation",
+    "pinyin": "nìyùnsuàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "数乘",
+    "en": "scalar multiplication",
+    "pinyin": "shùchéng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "定理",
+    "en": "theorem",
+    "pinyin": "dìnglǐ",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "坐标分量",
+    "en": "coordinate component",
+    "pinyin": "zuòbiāo fēnliàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "平移不变性",
+    "en": "translation invariance",
+    "pinyin": "píngyí bùbiànxìng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "夹角",
+    "en": "included angle",
+    "pinyin": "jiājiǎo",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "数量积",
+    "en": "scalar product",
+    "pinyin": "shùliàngjī",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "内积",
+    "en": "inner product",
+    "pinyin": "nèijī",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "空间",
+    "en": "space",
+    "pinyin": "kōngjiān",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "空间直角坐标系",
+    "en": "rectangular coordinate system in space",
+    "pinyin": "kōngjiān zhíjiǎo zuòbiāoxì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "竖轴",
+    "en": "vertical axis",
+    "pinyin": "shùzhóu",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "右手系",
+    "en": "right-handed system",
+    "pinyin": "yòushǒuxì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "卦限",
+    "en": "octant",
+    "pinyin": "guàxiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "竖坐标",
+    "en": "vertical coordinate",
+    "pinyin": "shùzuòbiāo",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "共面",
+    "en": "coplanar",
+    "pinyin": "gòngmiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "法向量",
+    "en": "normal vector",
+    "pinyin": "fǎxiàngliàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "点法式方程",
+    "en": "point-normal equation",
+    "pinyin": "diǎnfǎshì fāngchéng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "方向向量",
+    "en": "direction vector",
+    "pinyin": "fāngxiàng xiàngliàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "参数方程",
+    "en": "parameter equation",
+    "pinyin": "cānshù fāngchéng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "点向式方程",
+    "en": "point-direction equation",
+    "pinyin": "diǎnxiàngshì fāngchéng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "趋近于",
+    "en": "to approach to",
+    "pinyin": "qūjìn yú",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "极限",
+    "en": "limit",
+    "pinyin": "jíxiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "收敛于",
+    "en": "to converge to",
+    "pinyin": "shōuliǎn yú",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "邻域",
+    "en": "neighborhood",
+    "pinyin": "lín yù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "中心",
+    "en": "center",
+    "pinyin": "zhōngxīn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "去心邻域",
+    "en": "deleted neighborhood",
+    "pinyin": "qùxīn lín yù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "左邻域",
+    "en": "left neighborhood",
+    "pinyin": "zuǒlín yù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "右邻域",
+    "en": "right neighborhood",
+    "pinyin": "yòulín yù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "左去心邻域",
+    "en": "left deleted neighborhood",
+    "pinyin": "zuǒ qùxīn lín yù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "右去心邻域",
+    "en": "right deleted neighborhood",
+    "pinyin": "yòu qùxīn lín yù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "左极限",
+    "en": "left limit",
+    "pinyin": "zuǒ jíxiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "右极限",
+    "en": "right limit",
+    "pinyin": "yòu jíxiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "连续",
+    "en": "continuous",
+    "pinyin": "liánxù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "左连续",
+    "en": "left continuous",
+    "pinyin": "zuǒliánxù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "右连续",
+    "en": "right continuous",
+    "pinyin": "yòuliánxù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "基本初等函数",
+    "en": "basic elementary function",
+    "pinyin": "jīběn chūděng hánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "常数函数",
+    "en": "constant function",
+    "pinyin": "chángshù hánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "连续函数",
+    "en": "continuous function",
+    "pinyin": "liánxù hánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "无穷小量",
+    "en": "infinitesimal",
+    "pinyin": "wúqióng xiǎoliàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "高阶无穷小量",
+    "en": "higher order infinitesimal",
+    "pinyin": "gāojiē wúqióng xiǎoliàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "同阶无穷小量",
+    "en": "same order infinitesimal",
+    "pinyin": "tóngjiē wúqióng xiǎoliàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "等价无穷小量",
+    "en": "equivalent infinitesimal",
+    "pinyin": "děngjià wúqióng xiǎoliàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "位移",
+    "en": "displacement",
+    "pinyin": "wèiyí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "比值",
+    "en": "ratio",
+    "pinyin": "bǐzhí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "平均速度",
+    "en": "average speed",
+    "pinyin": "píngjūn sùdù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "瞬时速度",
+    "en": "instantaneous speed",
+    "pinyin": "shùnshí sùdù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "光滑曲线",
+    "en": "smooth curve",
+    "pinyin": "guānghuá qūxiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "割线",
+    "en": "secant line",
+    "pinyin": "gēxiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "切线",
+    "en": "tangent line",
+    "pinyin": "qiēxiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "变化率",
+    "en": "rate of change",
+    "pinyin": "biànhuàlǜ",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "可导",
+    "en": "derivable",
+    "pinyin": "kědǎo",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "导数",
+    "en": "derivative",
+    "pinyin": "dǎoshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "导函数",
+    "en": "derivative function",
+    "pinyin": "dǎohánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "左导数",
+    "en": "left derivative",
+    "pinyin": "zuǒdǎoshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "右导数",
+    "en": "right derivative",
+    "pinyin": "yòudǎoshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "复合函数",
+    "en": "composite function",
+    "pinyin": "fùhé hánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "二阶导数",
+    "en": "second derivative",
+    "pinyin": "èrjiē dǎoshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "三阶导数",
+    "en": "third derivative",
+    "pinyin": "sānjiē dǎoshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "四阶导数",
+    "en": "fourth derivative",
+    "pinyin": "sìjiē dǎoshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "n阶导数",
+    "en": "n-th derivative",
+    "pinyin": "n-jiē dǎoshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "高阶导数",
+    "en": "higher derivative",
+    "pinyin": "gāojiē dǎoshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "多项式",
+    "en": "polynomial",
+    "pinyin": "duōxiàngshì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "显函数",
+    "en": "explicit function",
+    "pinyin": "xiǎnhánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "隐函数",
+    "en": "implicit function",
+    "pinyin": "yǐnhánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "参数函数",
+    "en": "parametric function",
+    "pinyin": "cānshù hánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "极大值",
+    "en": "local maximum",
+    "pinyin": "jídàzhí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "极小值",
+    "en": "local minimum",
+    "pinyin": "jíxiǎozhí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "极值",
+    "en": "extremum",
+    "pinyin": "jízhí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "极值点",
+    "en": "extreme point",
+    "pinyin": "jízhídiǎn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "驻点",
+    "en": "stationary point",
+    "pinyin": "zhùdiǎn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "必要条件",
+    "en": "necessary condition",
+    "pinyin": "bìyào tiáojiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "充分条件",
+    "en": "sufficient condition",
+    "pinyin": "chōngfèn tiáojiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "加法原理",
+    "en": "addition principle",
+    "pinyin": "jiāfǎ yuánlǐ",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "乘法原理",
+    "en": "multiplication principle",
+    "pinyin": "chéngfǎ yuánlǐ",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "排列",
+    "en": "arrangement",
+    "pinyin": "páiliè",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "排列数",
+    "en": "number of arrangement",
+    "pinyin": "páilièshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "整除",
+    "en": "divide exactly",
+    "pinyin": "zhěngchú",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "组合",
+    "en": "combination",
+    "pinyin": "zǔhé",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "组合数",
+    "en": "number of combination",
+    "pinyin": "zǔhéshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "二项式定理",
+    "en": "binomial theorem",
+    "pinyin": "èrxiàngshì dìnglǐ",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "展开式",
+    "en": "expansion",
+    "pinyin": "zhǎnkāishì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "随机试验",
+    "en": "random trial",
+    "pinyin": "suījī shìyàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "样本点",
+    "en": "sample point",
+    "pinyin": "yàngběndiǎn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "样本空间",
+    "en": "sample space",
+    "pinyin": "yàngběn kōngjiān",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "随机事件",
+    "en": "random event",
+    "pinyin": "suījī shìjiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "必然事件",
+    "en": "certain event",
+    "pinyin": "bìrán shìjiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "不可能事件",
+    "en": "impossible event",
+    "pinyin": "bù kěnéng shìjiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "互斥事件/互不相容事件",
+    "en": "mutually exclusive events",
+    "pinyin": "hùchì shìjiàn / hùbù xiāngróng shìjiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "对立事件",
+    "en": "complementary events",
+    "pinyin": "duìlì shìjiàn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "概率",
+    "en": "probability",
+    "pinyin": "gàilǜ",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "古典概型",
+    "en": "classical probability model",
+    "pinyin": "gǔdiǎn gàixíng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "条件概率",
+    "en": "conditional probability",
+    "pinyin": "tiáojiàn gàilǜ",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "概率乘法公式",
+    "en": "probability multiplication formula",
+    "pinyin": "gàilǜ chéngfǎ gōngshì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "全概率公式",
+    "en": "total probability formula",
+    "pinyin": "quángàilǜ gōngshì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "贝叶斯公式",
+    "en": "Bayes formula",
+    "pinyin": "Bèiyèsī gōngshì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "相互独立",
+    "en": "mutually independent",
+    "pinyin": "xiānghù dúlì",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "随机变量",
+    "en": "random variable",
+    "pinyin": "suījī biànliàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "离散型随机变量",
+    "en": "discrete random variable",
+    "pinyin": "lísànxíng suījī biànliàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "连续型随机变量",
+    "en": "continuous random variable",
+    "pinyin": "liánxùxíng suījī biànliàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "概率分布律",
+    "en": "probability distribution law",
+    "pinyin": "gàilǜ fēnbùlǜ",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "数学期望",
+    "en": "mathematical expectation",
+    "pinyin": "shùxué qīwàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "方差",
+    "en": "variance",
+    "pinyin": "fāngchā",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "曲边梯形",
+    "en": "trapezoid with curved edge",
+    "pinyin": "qūbiān tīxíng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "面积",
+    "en": "area",
+    "pinyin": "miànjī",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "正态分布",
+    "en": "normal distribution",
+    "pinyin": "zhèngtài fēnbù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "高斯分布",
+    "en": "Gauss distribution",
+    "pinyin": "Gāosī fēnbù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "标准差",
+    "en": "standard deviation",
+    "pinyin": "biāozhǔnchā",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "概率密度函数",
+    "en": "probability density function",
+    "pinyin": "gàilǜ mìdù hánshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "标准正态分布",
+    "en": "standard normal distribution",
+    "pinyin": "biāozhǔn zhèngtài fēnbù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "总体",
+    "en": "population",
+    "pinyin": "zǒngtǐ",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "个体",
+    "en": "individual",
+    "pinyin": "gètǐ",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "样本",
+    "en": "sample",
+    "pinyin": "yàngběn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "样本容量",
+    "en": "sample size",
+    "pinyin": "yàngběn róngliàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "样本观测值",
+    "en": "sample observation",
+    "pinyin": "yàngběn guāncèzhí",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "分布",
+    "en": "distribution",
+    "pinyin": "fēnbù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "简单随机样本",
+    "en": "simple random sample",
+    "pinyin": "jiǎndān suíjī yàngběn",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "简单随机抽样",
+    "en": "simple random sampling",
+    "pinyin": "jiǎndān suíjī chōuyàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "分层随机抽样",
+    "en": "stratified random sampling",
+    "pinyin": "fēncéng suíjī chōuyàng",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "平均数",
+    "en": "mean",
+    "pinyin": "píngjūnshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "中位数",
+    "en": "median",
+    "pinyin": "zhōngwèishù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "众数",
+    "en": "mode",
+    "pinyin": "zhòngshù",
+    "symbol": "",
+    "meaning": ""
+  },
+  {
+    "zh": "n",
+    "en": "n",
+    "pinyin": "en",
+    "symbol": "N",
+    "meaning": "非负整数集/自然数集"
+  },
+  {
+    "zh": "n星/z正",
+    "en": "n star/z plus",
+    "pinyin": "en xing / z zheng",
+    "symbol": "N*/Z⁺",
+    "meaning": "正整数集"
+  },
+  {
+    "zh": "z",
+    "en": "z",
+    "pinyin": "zhěng shù jí",
+    "symbol": "Z",
+    "meaning": "整数集"
+  },
+  {
+    "zh": "q",
+    "en": "q",
+    "pinyin": "yǒu lǐ shù jí",
+    "symbol": "Q",
+    "meaning": "有理数集"
+  },
+  {
+    "zh": "r",
+    "en": "r",
+    "pinyin": "shí shù jí",
+    "symbol": "R",
+    "meaning": "实数集"
+  },
+  {
+    "zh": "属于",
+    "en": "to belong to",
+    "pinyin": "shǔ yú",
+    "symbol": "∈",
+    "meaning": "(元素)属于(集合)"
+  },
+  {
+    "zh": "不属于",
+    "en": "to not belong to",
+    "pinyin": "bù shǔ yú",
+    "symbol": "∉",
+    "meaning": "(元素)不属于(集合)"
+  },
+  {
+    "zh": "空集",
+    "en": "empty set",
+    "pinyin": "kōng jí",
+    "symbol": "∅",
+    "meaning": "空集"
+  },
+  {
+    "zh": "包含于",
+    "en": "to be included in",
+    "pinyin": "bāo hán yú",
+    "symbol": "⊆",
+    "meaning": "(前面的集合)包含于(后面的集合)或(前面的集合)是(后面的集合)的子集"
+  },
+  {
+    "zh": "真包含于",
+    "en": "to be properly included in",
+    "pinyin": "zhēn bāo hán yú",
+    "symbol": "⊊",
+    "meaning": "(前面的集合)包含于而不等于(后面的集合)或(前面的集合)是(后面的集合)的真子集"
+  },
+  {
+    "zh": "等于",
+    "en": "to equal to",
+    "pinyin": "děng yú",
+    "symbol": "=",
+    "meaning": "(前面)等于(后面)"
+  },
+  {
+    "zh": "交",
+    "en": "intersection",
+    "pinyin": "jiāo",
+    "symbol": "∩",
+    "meaning": "(前面的集合)与(后面的集合)的交"
+  },
+  {
+    "zh": "并",
+    "en": "union",
+    "pinyin": "bìng",
+    "symbol": "∪",
+    "meaning": "(前面的集合)与(后面的集合)的并"
+  },
+  {
+    "zh": "等价于",
+    "en": "to be equivalent to",
+    "pinyin": "děng jià yú",
+    "symbol": "⇔",
+    "meaning": "前者和后者意思一样"
+  },
+  {
+    "zh": "加；正（的）",
+    "en": "①plus；②positive",
+    "pinyin": "①jiā; ②zhèng (de)",
+    "symbol": "+",
+    "meaning": "①在两个数之间出现时表示加运算，读“加”；②在单个数字前出现时表示正数，读“正（的）”"
+  },
+  {
+    "zh": "减；负（的）",
+    "en": "①minus；②negative",
+    "pinyin": "①jiǎn; ②fù (de)",
+    "symbol": "-",
+    "meaning": "①在两个数之间出现时表示减运算，读“减”；②在单个数字前出现时表示负数，读“负（的）”"
+  },
+  {
+    "zh": "乘",
+    "en": "times",
+    "pinyin": "chéng",
+    "symbol": "×",
+    "meaning": "乘法运算符号"
+  },
+  {
+    "zh": "除以",
+    "en": "divided by",
+    "pinyin": "chú yǐ",
+    "symbol": "÷",
+    "meaning": "除法运算符号"
+  },
+  {
+    "zh": "大于",
+    "en": "larger than",
+    "pinyin": "dà yú",
+    "symbol": ">",
+    "meaning": "前者比后者大"
+  },
+  {
+    "zh": "大于等于",
+    "en": "not less than",
+    "pinyin": "dà yú děng yú",
+    "symbol": "≥",
+    "meaning": "前者比后者大或者前者等于后者"
+  },
+  {
+    "zh": "小于",
+    "en": "less than",
+    "pinyin": "xiǎo yú",
+    "symbol": "<",
+    "meaning": "前者比后者小"
+  },
+  {
+    "zh": "小于等于",
+    "en": "not larger than",
+    "pinyin": "xiǎo yú děng yú",
+    "symbol": "≤",
+    "meaning": "前者比后者小或者前者等于后者"
+  },
+  {
+    "zh": "二分之a加b",
+    "en": "a plus b over two",
+    "pinyin": "èr fēn zhī a jiā b",
+    "symbol": "(a+b)/2",
+    "meaning": "a与b和的一半"
+  },
+  {
+    "zh": "根号下ab",
+    "en": "square root of a times b",
+    "pinyin": "gēn hào xià ab",
+    "symbol": "√ab",
+    "meaning": "a与b乘积的算术平方根"
+  },
+  {
+    "zh": "a的n次幂",
+    "en": "the n-th power of a",
+    "pinyin": "a de n cì mì",
+    "symbol": "aⁿ",
+    "meaning": "n个a相乘"
+  },
+  {
+    "zh": "n次根号下a",
+    "en": "n-th root of a",
+    "pinyin": "n cì gēn hào xià a",
+    "symbol": "ⁿ√a",
+    "meaning": "a的n次方根"
+  },
+  {
+    "zh": "delta",
+    "en": "delta",
+    "pinyin": "délítǎ",
+    "symbol": "Δ",
+    "meaning": "Δ=b²-4ac"
+  },
+  {
+    "zh": "无穷",
+    "en": "infinity",
+    "pinyin": "wúqióng",
+    "symbol": "∞",
+    "meaning": "无限大"
+  },
+  {
+    "zh": "正无穷",
+    "en": "positive infinity",
+    "pinyin": "zhèng wúqióng",
+    "symbol": "+∞",
+    "meaning": "正无限大"
+  },
+  {
+    "zh": "负无穷",
+    "en": "negative infinity",
+    "pinyin": "fù wúqióng",
+    "symbol": "-∞",
+    "meaning": "负无限大"
+  },
+  {
+    "zh": "左闭右开区间2到正无穷",
+    "en": "left closed and right open interval from two to positive infinity",
+    "pinyin": "zuǒ bì yòu kāi qūjiān èr dào zhèng wúqióng",
+    "symbol": "[2, +∞)",
+    "meaning": "{x∈R | 2≤x<+∞}"
+  },
+  {
+    "zh": "开区间1到2",
+    "en": "open interval from one to two",
+    "pinyin": "kāi qūjiān yī dào èr",
+    "symbol": "(1, 2)",
+    "meaning": "{x∈R | 1<x<2}"
+  },
+  {
+    "zh": "闭区间1到2",
+    "en": "closed interval from one to two",
+    "pinyin": "bì qū jiān yī dào èr",
+    "symbol": "[1, 2]",
+    "meaning": "{x∈R | 1≤x≤2}"
+  },
+  {
+    "zh": "左开右闭区间负无穷到1",
+    "en": "left open and right closed interval from negative infinity to one",
+    "pinyin": "zuǒ kāi yòu bì qū jiān fù wú qióng dào yī",
+    "symbol": "(-∞, 1]",
+    "meaning": "{x∈R | -∞<x≤1}"
+  },
+  {
+    "zh": "a的绝对值",
+    "en": "the absolute value of a",
+    "pinyin": "a de jué duì zhí",
+    "symbol": "|a|",
+    "meaning": "数a的绝对值"
+  },
+  {
+    "zh": "对任意的",
+    "en": "for any, for every",
+    "pinyin": "duì rèn yì de",
+    "symbol": "∀",
+    "meaning": "对任意的，对每一个"
+  },
+  {
+    "zh": "存在",
+    "en": "to exist",
+    "pinyin": "cún zài",
+    "symbol": "∃",
+    "meaning": "存在"
+  },
+  {
+    "zh": "y等于f(x)",
+    "en": "y equals f(x)",
+    "pinyin": "y děng yú f(x)",
+    "symbol": "y=f(x)",
+    "meaning": "函数y=f(x)"
+  },
+  {
+    "zh": "函数y=f(x)的定义域",
+    "en": "domain of function y=f(x)",
+    "pinyin": "hán shù y=f(x) de dìng yì yù",
+    "symbol": "D_(f)",
+    "meaning": "函数y=f(x)的定义域"
+  },
+  {
+    "zh": "函数y=f(x)的值域",
+    "en": "range of function y=f(x)",
+    "pinyin": "hán shù y=f(x) de zhí yù",
+    "symbol": "R_(f)",
+    "meaning": "函数y=f(x)的值域"
+  },
+  {
+    "zh": "y等于f逆x",
+    "en": "y equals f minus one x",
+    "pinyin": "y děng yú f nì x",
+    "symbol": "y=f⁻¹(x)",
+    "meaning": "函数y=f(x)的反函数"
+  },
+  {
+    "zh": "a的负m次幂",
+    "en": "the minus m-th power of a",
+    "pinyin": "a de fù m cì mì",
+    "symbol": "a^(-m)",
+    "meaning": "a的负m次幂"
+  },
+  {
+    "zh": "a的m次幂分之一",
+    "en": "one over the m-th power of a",
+    "pinyin": "a de m cì mì fēn zhī yī",
+    "symbol": "1/a^(m)",
+    "meaning": "a的m次幂分之一"
+  },
+  {
+    "zh": "a的n分之m次幂",
+    "en": "a to the power of m over n",
+    "pinyin": "a de n fēn zhī m cì mì",
+    "symbol": "a^((m/n))",
+    "meaning": "a的n分之m次幂"
+  },
+  {
+    "zh": "n次根号(下)a的m次幂",
+    "en": "the n-th root of the m-th power of a",
+    "pinyin": "n cì gēn hào xià a de m cì mì",
+    "symbol": "ⁿ√a^(m)",
+    "meaning": "n次根号(下)a的m次幂"
+  },
+  {
+    "zh": "a的负n分之m次幂",
+    "en": "a to the power of minus m over n",
+    "pinyin": "a de fù n fēn zhī m cì mì",
+    "symbol": "a^((-m/n))",
+    "meaning": "a的负n分之m次幂"
+  },
+  {
+    "zh": "n次根号(下)a的m次幂分之一",
+    "en": "one over the n-th root of the m-th power of a",
+    "pinyin": "n cì gēn hào xià a de m cì mì fēn zhī yī",
+    "symbol": "1/ⁿ√a^(m)",
+    "meaning": "n次根号(下)a的m次幂分之一"
+  },
+  {
+    "zh": "以a为底N的对数",
+    "en": "log a n",
+    "pinyin": "yǐ a wéi dǐ N de duì shù",
+    "symbol": "log_(a)N",
+    "meaning": "以a为底N的对数"
+  },
+  {
+    "zh": "sine α",
+    "en": "sine α",
+    "pinyin": "zhèng xián jiǎo α",
+    "symbol": "sinα",
+    "meaning": "角α的正弦"
+  },
+  {
+    "zh": "cosine α",
+    "en": "cosine α",
+    "pinyin": "yú xián jiǎo α",
+    "symbol": "cosα",
+    "meaning": "角α的余弦"
+  },
+  {
+    "zh": "tangent α",
+    "en": "tangent α",
+    "pinyin": "zhèng qiē jiǎo α",
+    "symbol": "tanα",
+    "meaning": "角α的正切"
+  },
+  {
+    "zh": "cotangent α",
+    "en": "cotangent α",
+    "pinyin": "yú qiē jiǎo α",
+    "symbol": "cotα",
+    "meaning": "角α的余切"
+  },
+  {
+    "zh": "secant α",
+    "en": "secant α",
+    "pinyin": "jiǎo α de zhènggē",
+    "symbol": "secα",
+    "meaning": "角α的正割"
+  },
+  {
+    "zh": "cosecant α",
+    "en": "cosecant α",
+    "pinyin": "jiǎo α de yúgē",
+    "symbol": "cscα",
+    "meaning": "角α的余割"
+  },
+  {
+    "zh": "y等于arc sine x",
+    "en": "y equals arc sine x",
+    "pinyin": "fǎnzhèngxián hánshù",
+    "symbol": "y=arcsinx",
+    "meaning": "反正弦函数"
+  },
+  {
+    "zh": "y等于arc cosine x",
+    "en": "y equals arc cosine x",
+    "pinyin": "fǎnyúxián hánshù",
+    "symbol": "y=arccosx",
+    "meaning": "反余弦函数"
+  },
+  {
+    "zh": "y等于arc tangent x",
+    "en": "y equals arc tangent x",
+    "pinyin": "fǎnzhèngqiē hánshù",
+    "symbol": "y=arctanx",
+    "meaning": "反正切函数"
+  },
+  {
+    "zh": "y等于arc cotangent x",
+    "en": "y equals arc cotangent x",
+    "pinyin": "fǎnyúqiē hánshù",
+    "symbol": "y=arccotx",
+    "meaning": "反余切函数"
+  },
+  {
+    "zh": "a n",
+    "en": "a n",
+    "pinyin": "shùliè",
+    "symbol": "{aₙ}",
+    "meaning": "数列"
+  },
+  {
+    "zh": "a n",
+    "en": "a n",
+    "pinyin": "shùliè de tōngxiàng",
+    "symbol": "aₙ",
+    "meaning": "数列的通项"
+  },
+  {
+    "zh": "d",
+    "en": "d",
+    "pinyin": "děngchā shùliè de gōngchā huò jùlí",
+    "symbol": "d",
+    "meaning": "等差数列的公差或者距离"
+  },
+  {
+    "zh": "S n",
+    "en": "S n",
+    "pinyin": "shùliè de qián n xiàng hé",
+    "symbol": "Sₙ",
+    "meaning": "数列的前n项和"
+  },
+  {
+    "zh": "sigma",
+    "en": "sigma",
+    "pinyin": "xī gǎ",
+    "symbol": "∑",
+    "meaning": "求和符号"
+  },
+  {
+    "zh": "q",
+    "en": "q",
+    "pinyin": "gōng bǐ",
+    "symbol": "q",
+    "meaning": "等比数列的公比"
+  },
+  {
+    "zh": "C",
+    "en": "C",
+    "pinyin": "fù shù jí",
+    "symbol": "C",
+    "meaning": "复数集"
+  },
+  {
+    "zh": "z的实部",
+    "en": "the real part of z",
+    "pinyin": "shí bù",
+    "symbol": "Re(z)",
+    "meaning": "复数z的实部"
+  },
+  {
+    "zh": "z的虚部",
+    "en": "the imaginary part of z",
+    "pinyin": "xū bù",
+    "symbol": "Im(z)",
+    "meaning": "复数z的虚部"
+  },
+  {
+    "zh": "z的共轭",
+    "en": "the conjugate of z",
+    "pinyin": "gòng niè",
+    "symbol": "z̄",
+    "meaning": "复数z的共轭"
+  },
+  {
+    "zh": "l₁平行于l₂",
+    "en": "l₁ parallel to l₂",
+    "pinyin": "píng xíng yú",
+    "symbol": "l₁∥l₂",
+    "meaning": "直线l₁与l₂平行"
+  },
+  {
+    "zh": "l₁垂直于l₂",
+    "en": "l₁ perpendicular to l₂",
+    "pinyin": "chuí zhí yú",
+    "symbol": "l₁⊥l₂",
+    "meaning": "直线l₁与l₂垂直"
+  },
+  {
+    "zh": "向量AB",
+    "en": "vector AB",
+    "pinyin": "xiàng liàng AB",
+    "symbol": "AB→",
+    "meaning": "以A为起点，以B为终点的向量"
+  },
+  {
+    "zh": "AB的模",
+    "en": "the modulus of AB",
+    "pinyin": "mó",
+    "symbol": "|AB→|",
+    "meaning": "向量AB的模"
+  },
+  {
+    "zh": "向量a",
+    "en": "vector a",
+    "pinyin": "xiàngliàng a",
+    "symbol": "a",
+    "meaning": "向量"
+  },
+  {
+    "zh": "向量a与向量b的夹角",
+    "en": "the included angle of the vectors a and b",
+    "pinyin": "xiàngliàng a yǔ xiàngliàng b de jiājiǎo",
+    "symbol": "<a,b>",
+    "meaning": "两个向量的夹角"
+  },
+  {
+    "zh": "向量a与向量b的内积",
+    "en": "the inner product of the vectors a and b",
+    "pinyin": "xiàngliàng a yǔ xiàngliàng b de nèijī",
+    "symbol": "a·b",
+    "meaning": "两个向量的内积"
+  },
+  {
+    "zh": "P₁,P₂两点间的距离",
+    "en": "the distance between points P₁ and P₂",
+    "pinyin": "P₁, P₂ liǎng diǎn jiān de jùlí",
+    "symbol": "|P₁P₂|",
+    "meaning": "P₁,P₂两点间的距离"
+  },
+  {
+    "zh": "aₙ的极限",
+    "en": "the limit of aₙ",
+    "pinyin": "aₙ de jíxiàn",
+    "symbol": "lim_((n→)_(∞))aₙ",
+    "meaning": "数列{aₙ}的极限"
+  },
+  {
+    "zh": "f(x)的导数",
+    "en": "the derivative of f(x)",
+    "pinyin": "f(x) de dǎoshù",
+    "symbol": "f'(x)",
+    "meaning": "函数f(x)的导函数"
+  },
+  {
+    "zh": "f(x)的二阶导数",
+    "en": "the second-order derivative of f(x)",
+    "pinyin": "f(x) de èr jiē dǎoshù",
+    "symbol": "f''(x)",
+    "meaning": "函数f(x)的二阶导函数"
+  },
+  {
+    "zh": "f(x)的三阶导数",
+    "en": "the third-order derivative of f(x)",
+    "pinyin": "f(x) de sān jiē dǎoshù",
+    "symbol": "f'''(x)",
+    "meaning": "函数f(x)的三阶导函数"
+  },
+  {
+    "zh": "f(x)的四阶导数",
+    "en": "the fourth-order derivative of f(x)",
+    "pinyin": "f(x) de sì jiē dǎoshù",
+    "symbol": "f⁽⁴⁾(x)",
+    "meaning": "函数f(x)的四阶导函数"
+  },
+  {
+    "zh": "f(x)的n阶导数",
+    "en": "the n-th derivative of f(x)",
+    "pinyin": "f(x) de n jiē dǎoshù",
+    "symbol": "f⁽ⁿ⁾(x)",
+    "meaning": "函数f(x)的n阶导函数"
+  },
+  {
+    "zh": "a n m",
+    "en": "a n m",
+    "pinyin": "A n m",
+    "symbol": "Aₙ^(m)",
+    "meaning": "从n个不同的元素中任取m个元素的排列数"
+  },
+  {
+    "zh": "n的阶乘",
+    "en": "the factorial of n",
+    "pinyin": "n de jiē chéng",
+    "symbol": "n!",
+    "meaning": "从1到n的所有自然数的连乘积"
+  },
+  {
+    "zh": "C n m",
+    "en": "C n m",
+    "pinyin": "C n m",
+    "symbol": "Cₙ^(m)",
+    "meaning": "从n个不同元素中取出m个元素的组合数"
+  },
+  {
+    "zh": "A的对立事件",
+    "en": "the complementary events of A",
+    "pinyin": "A de duì lì shì jiàn",
+    "symbol": "Ā",
+    "meaning": "随机事件A的对立事件"
+  },
+  {
+    "zh": "事件A发生的概率",
+    "en": "the probability of Event A",
+    "pinyin": "shì jiàn A fā shēng de gài lǜ",
+    "symbol": "P(A)",
+    "meaning": "随机事件A发生的概率"
+  },
+  {
+    "zh": "在事件B发生的条件下，事件A发生的概率",
+    "en": "the probability of Event A under the condition of Event B",
+    "pinyin": "zài shì jiàn B fā shēng de tiáo jiàn xià, shì jiàn A fā shēng de gài lǜ",
+    "symbol": "P(A|B)",
+    "meaning": "条件概率"
+  },
+  {
+    "zh": "X的数学期望",
+    "en": "the mathematical expectation of X",
+    "pinyin": "X de shù xué qī wàng",
+    "symbol": "E(X)",
+    "meaning": "随机变量X的数学期望"
+  },
+  {
+    "zh": "X的方差",
+    "en": "the variance of X",
+    "pinyin": "X de fāng chā",
+    "symbol": "D(X)",
+    "meaning": "随机变量X的方差"
+  },
+  {
+    "zh": "正态分布",
+    "en": "the normal distribution",
+    "pinyin": "zhèng tài fēn bù",
+    "symbol": "N(μ,σ²)",
+    "meaning": "数学期望为μ，方差为σ²的正态分布"
+  },
+  {
+    "zh": "标准正态分布",
+    "en": "the standard normal distribution",
+    "pinyin": "biāo zhǔn zhèng tài fēn bù",
+    "symbol": "N(0,1)",
+    "meaning": "标准正态分布"
+  },
+  {
+    "zh": "加",
+    "en": "plus / add",
+    "pinyin": "jiā",
+    "symbol": "+",
+    "meaning": ""
+  },
+  {
+    "zh": "减",
+    "en": "minus / subtract",
+    "pinyin": "jiǎn",
+    "symbol": "−",
+    "meaning": ""
+  },
+  {
+    "zh": "乘",
+    "en": "times / multiply",
+    "pinyin": "chéng",
+    "symbol": "×",
+    "meaning": ""
+  },
+  {
+    "zh": "除",
+    "en": "divided by",
+    "pinyin": "chú",
+    "symbol": "÷",
+    "meaning": ""
+  },
+  {
+    "zh": "等于",
+    "en": "equals",
+    "pinyin": "děng yú",
+    "symbol": "=",
+    "meaning": ""
+  },
+  {
+    "zh": "不等于",
+    "en": "not equal to",
+    "pinyin": "bù děng yú",
+    "symbol": "≠",
+    "meaning": ""
+  },
+  {
+    "zh": "极限",
+    "en": "limit",
+    "pinyin": "jí xiàn",
+    "symbol": "lim",
+    "meaning": ""
+  },
+  {
+    "zh": "积分",
+    "en": "integral",
+    "pinyin": "jī fēn",
+    "symbol": "∫",
+    "meaning": ""
+  },
+  {
+    "zh": "求和",
+    "en": "summation",
+    "pinyin": "qiú hé",
+    "symbol": "∑",
+    "meaning": ""
+  },
+  {
+    "zh": "平方根",
+    "en": "square root",
+    "pinyin": "píng fāng gēn",
+    "symbol": "√",
+    "meaning": ""
+  }
+]

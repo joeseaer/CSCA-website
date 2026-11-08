@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "node scripts/run-astro.mjs dev --host 127.0.0.1",
-    "build": "node scripts/run-astro.mjs build",
+    "build": "node scripts/run-astro.mjs build && node scripts/check-static.mjs",
     "preview": "node scripts/run-astro.mjs preview --host 127.0.0.1",
     "check": "node scripts/run-astro.mjs check",
     "format": "prettier --write src scripts *.mjs *.json README.md .prettierrc.json",

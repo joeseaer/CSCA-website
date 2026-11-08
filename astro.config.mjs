@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 
 export default defineConfig({
   output: 'static',
-  site: 'https://joeseaer.github.io',
+  site: process.env.SITE_URL || 'https://www.hubcsca.dcpstudios.top',
   base: process.env.BASE_PATH || '/',
   trailingSlash: 'always',
   devToolbar: { enabled: false },

@@ -1,0 +1,73 @@
+---
+import Icon from './Icon.astro';
+import BrandLogo from './BrandLogo.astro';
+import { site, asset } from '../data/site';
+---
+
+<footer class="site-footer" id="about">
+  <div class="footer-main section-container">
+    <div class="footer-brand">
+      <a class="brand" href={asset('')} aria-label="HubCSCA 首页"><BrandLogo /></a><p>
+        {site.tagline}
+      </p><p class="footer-about">陪国际学生一起，把备考变成一条清楚的路</p>
+    </div><div class="footer-links">
+      <div>
+        <h2>课程与辅导</h2><button type="button" data-open-contact>线下课程</button><a
+          href={site.platform}
+          target="_blank"
+          rel="noopener noreferrer">在线学习 ↗</a
+        ><button type="button" data-open-contact>一对一辅导</button>
+      </div><div>
+        <h2>备考资源</h2><a href={asset('') + '#preparation'}>CSCA 指南</a><a
+          href={asset('resources/')}>学习资源</a
+        ><a href={asset('') + '#faq'}>常见问题</a>
+      </div><div>
+        <h2>HUBCSCA</h2><a href={site.platform} target="_blank" rel="noopener noreferrer"
+          >了解 HubCSCA ↗</a
+        ><button type="button" data-open-contact>了解我们</button><button
+          type="button"
+          data-open-contact>联系我们</button
+        >
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom section-container">
+    <p>© {new Date().getFullYear()} HubCSCA All rights reserved</p><p>
+      HubCSCA 与官方 CSCA 组织无关
+    </p><a href={asset('')} class="back-top">返回顶部 <Icon name="arrow" size={17} /></a>
+  </div>
+</footer>
+
+<dialog
+  id="contact-dialog"
+  class="contact-dialog hub-contact-dialog"
+  aria-labelledby="dialog-title"
+  aria-describedby="dialog-description"
+>
+  <div class="dialog-content">
+    <button
+      class="dialog-close round-button"
+      type="button"
+      data-close-contact
+      aria-label="关闭咨询窗口"><Icon name="close" size={20} /></button
+    >
+
+    <h2 id="dialog-title">了解 HubCSCA</h2>
+    <p id="dialog-description">微信扫码，了解课程与学习支持</p>
+    <div class="contact-qr-frame">
+      <img
+        src={asset('images/hubcsca-wechat-contact.jpg')}
+        alt="HubCSCA 微信联系二维码，联系人 Jason"
+        width="851"
+        height="1087"
+        loading="lazy"
+      />
+    </div>
+
+    <a
+      class="contact-qr-save"
+      href={asset('images/hubcsca-wechat-contact.jpg')}
+      download="HubCSCA-微信联系二维码.jpg">保存二维码 <Icon name="down" size={16} /></a
+    >
+  </div>
+</dialog>

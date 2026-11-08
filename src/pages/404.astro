@@ -3,10 +3,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { base } from '../data/site';
 ---
 
-<BaseLayout title="页面未找到 | HubCSCA"
-  ><main class="not-found">
-    <span>404</span><h1>这一步，换个方向</h1><p>
-      你要找的页面暂时不在这里回到首页，继续找到适合你的备考起点
-    </p><a class="button button-primary hub-primary" href={base}>返回首页 →</a>
+<BaseLayout title="页面未找到 | HubCSCA" preloadHero={false}
+  ><main id="main" class="not-found">
+    <span>404</span><h1>页面未找到</h1>
+    <a class="button button-primary hub-primary" href={base}>返回首页 →</a>
   </main></BaseLayout
 >
