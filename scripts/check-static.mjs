@@ -4,6 +4,12 @@ import { resolve, dirname, relative, sep } from 'node:path';
 const root = resolve('dist');
 const base = (process.env.BASE_PATH || '/').replace(/\/?$/, '/');
 const failures = [];
+// Public pages may link only to this website or the HubCSCA learning platform.
+const ownedHosts = new Set([
+  'hubcsca.dcpstudios.top',
+  'www.hubcsca.dcpstudios.top',
+  'joeseaer.github.io',
+]);
 const walk = (directory) =>
   readdirSync(directory).flatMap((name) => {
     const path = resolve(directory, name);
@@ -25,7 +31,13 @@ for (const page of pages) {
   const html = readFileSync(page, 'utf8');
   if (!html.includes('name="viewport"')) failures.push(`Missing viewport: ${relative(root, page)}`);
   for (const [, attribute, reference] of html.matchAll(/\b(href|src)="([^"]+)"/g)) {
-    if (/^(?:https?:|data:|mailto:|tel:|\/\/)/i.test(reference)) continue;
+    if (/^(?:https?:|\/\/)/i.test(reference)) {
+      const url = new URL(reference, 'https://www.hubcsca.dcpstudios.top');
+      if (!ownedHosts.has(url.hostname) || url.username || url.password)
+        failures.push(`Non-HubCSCA ${attribute}: ${reference} in ${relative(root, page)}`);
+      continue;
+    }
+    if (/^(?:data:|mailto:|tel:)/i.test(reference)) continue;
     const [pathname, anchor] = reference.split('#');
     let target;
     if (!pathname) target = page;

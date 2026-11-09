@@ -10,7 +10,7 @@ export const syllabus = [
     subject: 'Mathematics',
     description: '2025 版 · 48 道单选题 · 60 分钟 · 100 分',
     topics: ['集合与不等式', '函数、数列与导数', '几何与代数', '概率与统计'],
-    href: 'https://csca.cn/files/CSCA%20Mathematics%20Examination%20Syllabus-2025.pdf',
+    href: 'resources/syllabus/mathematics-2025.pdf',
     format: '官方 PDF · English',
   },
   {
@@ -19,7 +19,7 @@ export const syllabus = [
     subject: '专业中文 · 文科',
     description: '2025 版 · 单项选择题 · 90 分钟 · 100 分',
     topics: ['汉字与词语', '语段与语句', '专业阅读', '人文社科话题'],
-    href: 'https://csca.cn/files/CSCA%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2-%E6%96%87%E7%A7%91%E4%B8%AD%E6%96%87-2025%E7%89%88.pdf',
+    href: 'resources/syllabus/chinese-humanities-2025.pdf',
     format: '官方 PDF · 中文',
   },
   {
@@ -28,7 +28,7 @@ export const syllabus = [
     subject: '专业中文 · 理科',
     description: '2025 版 · 单项选择题 · 90 分钟 · 100 分',
     topics: ['数理概念表达', '专业课程词汇', '实验与图表', '学术阅读与交流'],
-    href: 'https://csca.cn/files/CSCA%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B2-%E7%90%86%E7%A7%91%E4%B8%AD%E6%96%87-2025%E7%89%88.pdf',
+    href: 'resources/syllabus/chinese-stem-2025.pdf',
     format: '官方 PDF · 中文',
   },
   {
@@ -37,7 +37,7 @@ export const syllabus = [
     subject: 'Physics',
     description: '2025 版 · 48 道单选题 · 60 分钟 · 100 分',
     topics: ['力学', '电磁学', '热学', '光学与近代物理'],
-    href: 'https://csca.cn/files/CSCA%20Physics%20Examination%20Syllabus-2025.pdf',
+    href: 'resources/syllabus/physics-2025.pdf',
     format: '官方 PDF · English',
   },
   {
@@ -46,7 +46,7 @@ export const syllabus = [
     subject: 'Chemistry',
     description: '2025 版 · 48 道单选题 · 60 分钟 · 100 分',
     topics: ['基本概念与计算', '物质性质与反应', '化学理论', '实验与应用'],
-    href: 'https://csca.cn/files/CSCA%20Chemistry%20Examination%20Syllabus-2025.pdf',
+    href: 'resources/syllabus/chemistry-2025.pdf',
     format: '官方 PDF · English',
   },
 ];
