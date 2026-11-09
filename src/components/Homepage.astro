@@ -8,6 +8,8 @@ import LearningStory from './LearningStory.astro';
 import ExamSchedule from './ExamSchedule.astro';
 import { site } from '../data/site';
 import PreparationJourney from './PreparationJourney.astro';
+import { localeFromUrl } from '../i18n/locale';
+const en = localeFromUrl(Astro.url) === 'en';
 ---
 
 <SiteHeader current="home" />
@@ -18,7 +20,30 @@ import PreparationJourney from './PreparationJourney.astro';
       <div class="hero-copy">
         <p class="eyebrow"><Icon name="cap" size={23} />国际学生 CSCA 备考平台</p>
         <h1 id="hero-title">
-          <span>HubCSCA 助力 CSCA 备考，</span><span>线下教学 + 线上工具，<em>双重赋能</em></span>
+          {
+            en ? (
+              <>
+                <>
+                  <span>
+                    Prepare for CSCA
+                    <br />
+                    with HubCSCA
+                  </span>
+                  <span class="hero-en-support">In-person teaching + online tools</span>
+                  <em>Learn with confidence</em>
+                </>
+              </>
+            ) : (
+              <>
+                <>
+                  <span>HubCSCA 助力 CSCA 备考，</span>
+                  <span>
+                    线下教学 + 线上工具，<em>双重赋能</em>
+                  </span>
+                </>
+              </>
+            )
+          }
         </h1>
         <p class="hero-description">
           提供全科备考支持，线下精品课程结合线上智能练习，系统提升学习效率与应试能力
@@ -134,7 +159,21 @@ import PreparationJourney from './PreparationJourney.astro';
       <div class="closing-orbits" aria-hidden="true"><i></i><i></i><i></i></div>
       <div class="closing-content">
         <h2 id="contact-title">
-          和 <span>HubCSCA</span> 一起，<br class="mobile-break" />清晰地开始
+          {
+            en ? (
+              <>
+                Start with clarity,
+                <br />
+                start with <span>HubCSCA</span>
+              </>
+            ) : (
+              <>
+                和 <span>HubCSCA</span> 一起，
+                <br class="mobile-break" />
+                清晰地开始
+              </>
+            )
+          }
         </h2>
         <p>线下精品课程 + 线上智能练习，让每一步备考更有方向</p>
         <div class="closing-actions">

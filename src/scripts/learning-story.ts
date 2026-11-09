@@ -1,4 +1,5 @@
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const en = document.documentElement.lang === 'en';
 const clamp = (n: number) => Math.max(0, Math.min(1, n));
 const segment = (p: number, start: number, end: number) => clamp((p - start) / (end - start));
 
@@ -42,7 +43,9 @@ export function initStudentStories() {
       else dot.removeAttribute('aria-current');
     });
     if (status)
-      status.textContent = `第 ${current + 1} 条，共 ${panels.length} 条学生反馈：${dots[current].textContent?.trim()}`;
+      status.textContent = en
+        ? `Student story ${current + 1} of ${panels.length}: ${dots[current].textContent?.trim()}`
+        : `第 ${current + 1} 条，共 ${panels.length} 条学生反馈：${dots[current].textContent?.trim()}`;
     if (reducedMotion.matches) return settle();
     animations = [
       outgoing.animate(

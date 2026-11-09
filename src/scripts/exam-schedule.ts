@@ -3,8 +3,9 @@ import { examSchedule, scheduleState } from '../data/exam-schedule';
 export function initExamSchedule() {
   const section = document.querySelector<HTMLElement>('[data-exam-schedule]');
   if (!section) return;
+  const en = document.documentElement.lang === 'en';
   const updateToday = () => {
-    const state = scheduleState();
+    const state = scheduleState(new Date(), en ? 'en' : 'zh');
     section.querySelectorAll<HTMLElement>('[data-milestone]').forEach((item, index) => {
       const active = index === state.current;
       item.classList.toggle('is-current', active);
@@ -17,7 +18,14 @@ export function initExamSchedule() {
       }
     });
     const prefix = section.querySelector('[data-exam-prefix]');
-    if (prefix) prefix.textContent = state.ended ? '本场' : '下一场';
+    if (prefix)
+      prefix.textContent = en
+        ? state.ended
+          ? 'Current exam'
+          : 'Next exam'
+        : state.ended
+          ? '本场'
+          : '下一场';
   };
   updateToday();
   document.addEventListener('visibilitychange', () => {
@@ -30,12 +38,12 @@ export function initExamSchedule() {
   if (![...select.options].some((option) => option.value === localZone)) {
     const option = document.createElement('option');
     option.value = localZone;
-    option.textContent = `当前时区 · ${localZone}`;
+    option.textContent = en ? `Local time zone · ${localZone}` : `当前时区 · ${localZone}`;
     select.add(option, 0);
   }
   select.value = localZone;
   const updateZone = () => {
-    const formatter = new Intl.DateTimeFormat('zh-CN', {
+    const formatter = new Intl.DateTimeFormat(en ? 'en-GB' : 'zh-CN', {
       timeZone: select.value,
       year: 'numeric',
       month: 'long',

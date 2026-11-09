@@ -67,7 +67,7 @@ export const examSchedule = {
   ],
 };
 
-export function scheduleState(now = new Date()) {
+export function scheduleState(now = new Date(), locale: 'zh' | 'en' = 'zh') {
   const parts = new Intl.DateTimeFormat('en-CA', {
     timeZone: 'Asia/Shanghai',
     year: 'numeric',
@@ -90,7 +90,10 @@ export function scheduleState(now = new Date()) {
             : 7;
   return {
     current,
-    label: `今天 · ${Number(part('month'))}月${Number(part('day'))}日`,
+    label:
+      locale === 'en'
+        ? `Today · ${new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Shanghai', month: 'short', day: 'numeric' }).format(now)}`
+        : `今天 · ${Number(part('month'))}月${Number(part('day'))}日`,
     ended: date > '2026-11-15',
   };
 }

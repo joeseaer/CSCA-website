@@ -1,5 +1,6 @@
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { resolve, dirname, relative, sep } from 'node:path';
+import { parse } from 'parse5';
 
 const root = resolve('dist');
 const base = (process.env.BASE_PATH || '/').replace(/\/?$/, '/');
@@ -15,12 +16,62 @@ for (const route of [
   'resources/index.html',
   'zh/index.html',
   'zh/resources/index.html',
+  'en/index.html',
+  'en/resources/index.html',
   '404.html',
 ]) {
   if (!existsSync(resolve(root, route))) failures.push(`Missing route: ${route}`);
 }
 
 const pages = walk(root).filter((path) => path.endsWith('.html'));
+const nodes = (node) => [node, ...(node.childNodes || []).flatMap(nodes)];
+const attribute = (node, name) => node?.attrs?.find((item) => item.name === name)?.value;
+// English pages must be complete static HTML and retain the original media/documents.
+for (const route of ['index.html', 'resources/index.html']) {
+  const chinese = parse(readFileSync(resolve(root, route), 'utf8'), { scriptingEnabled: false });
+  const english = parse(readFileSync(resolve(root, 'en', route), 'utf8'), {
+    scriptingEnabled: false,
+  });
+  const enNodes = nodes(english);
+  if (
+    attribute(
+      enNodes.find((node) => node.tagName === 'html'),
+      'lang',
+    ) !== 'en'
+  )
+    failures.push(`Missing English document language: en/${route}`);
+  const media = (document) =>
+    nodes(document).flatMap((node) =>
+      ['img', 'image', 'source'].includes(node.tagName)
+        ? [attribute(node, 'src') || attribute(node, 'href') || attribute(node, 'srcset') || '']
+        : [],
+    );
+  if (JSON.stringify(media(chinese)) !== JSON.stringify(media(english)))
+    failures.push(`English page changed original media: ${route}`);
+  const downloads = (document) =>
+    nodes(document)
+      .map((node) => attribute(node, 'href'))
+      .filter((href) => href && /\.(pdf|docx|csv)(?:[?#]|$)/i.test(href));
+  if (JSON.stringify(downloads(chinese)) !== JSON.stringify(downloads(english)))
+    failures.push(`English page changed download documents: ${route}`);
+  const copy = (node, preserve = false) => {
+    const keep =
+      preserve ||
+      ['script', 'style'].includes(node.tagName) ||
+      attribute(node, 'data-preserve-language') !== undefined ||
+      (node.tagName !== 'html' && attribute(node, 'lang') === 'zh-CN');
+    if (!keep && node.nodeName === '#text' && /\p{Script=Han}/u.test(node.value))
+      failures.push(`Untranslated English text in en/${route}: ${node.value.trim()}`);
+    for (const child of node.childNodes || []) copy(child, keep);
+  };
+  copy(english);
+  const counterpart = enNodes.find(
+    (node) => node.tagName === 'a' && attribute(node, 'hreflang') === 'zh-CN',
+  );
+  const expected = `${base}${route === 'index.html' ? '' : 'resources/'}`;
+  if (attribute(counterpart, 'href') !== expected)
+    failures.push(`Incorrect Chinese language switch: en/${route}`);
+}
 for (const page of pages) {
   const html = readFileSync(page, 'utf8');
   if (!html.includes('name="viewport"')) failures.push(`Missing viewport: ${relative(root, page)}`);

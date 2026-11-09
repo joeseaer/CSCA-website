@@ -2,12 +2,15 @@
 import Icon from './Icon.astro';
 import BrandLogo from './BrandLogo.astro';
 import { site, asset } from '../data/site';
+import { localeFromUrl, pageUrl } from '../i18n/locale';
+const home = pageUrl('home', localeFromUrl(Astro.url));
+const resources = pageUrl('resources', localeFromUrl(Astro.url));
 ---
 
 <footer class="site-footer" id="about">
   <div class="footer-main section-container">
     <div class="footer-brand">
-      <a class="brand" href={asset('')} aria-label="HubCSCA 首页"><BrandLogo /></a><p>
+      <a class="brand" href={home} aria-label="HubCSCA 首页"><BrandLogo /></a><p>
         {site.tagline}
       </p><p class="footer-about">陪国际学生一起，把备考变成一条清楚的路</p>
     </div><div class="footer-links">
@@ -18,9 +21,9 @@ import { site, asset } from '../data/site';
           rel="noopener noreferrer">在线学习 ↗</a
         ><button type="button" data-open-contact>一对一辅导</button>
       </div><div>
-        <h2>备考资源</h2><a href={asset('') + '#preparation'}>CSCA 指南</a><a
-          href={asset('resources/')}>学习资源</a
-        ><a href={asset('') + '#faq'}>常见问题</a>
+        <h2>备考资源</h2><a href={home + '#preparation'}>CSCA 指南</a><a href={resources}
+          >学习资源</a
+        ><a href={home + '#faq'}>常见问题</a>
       </div><div>
         <h2>HUBCSCA</h2><a href={site.platform} target="_blank" rel="noopener noreferrer"
           >了解 HubCSCA ↗</a
@@ -34,7 +37,7 @@ import { site, asset } from '../data/site';
   <div class="footer-bottom section-container">
     <p>© {new Date().getFullYear()} HubCSCA All rights reserved</p><p>
       HubCSCA 与官方 CSCA 组织无关
-    </p><a href={asset('')} class="back-top">返回顶部 <Icon name="arrow" size={17} /></a>
+    </p><a href={home} class="back-top">返回顶部 <Icon name="arrow" size={17} /></a>
   </div>
 </footer>
 

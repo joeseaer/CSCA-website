@@ -2,6 +2,7 @@ import { initLearningStory, initStudentStories } from './learning-story';
 import { initExamSchedule } from './exam-schedule';
 
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const en = document.documentElement.lang === 'en';
 const $ = <T extends HTMLElement>(selector: string, root: ParentNode = document) =>
   root.querySelector<T>(selector);
 const $$ = <T extends HTMLElement>(selector: string, root: ParentNode = document) => [
@@ -103,7 +104,16 @@ function initNavigation() {
   const setMenu = (open: boolean, focusTrigger = false) => {
     menu.hidden = !open;
     toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? '关闭导航菜单' : '打开导航菜单');
+    toggle.setAttribute(
+      'aria-label',
+      en
+        ? open
+          ? 'Close navigation menu'
+          : 'Open navigation menu'
+        : open
+          ? '关闭导航菜单'
+          : '打开导航菜单',
+    );
     header.classList.toggle('is-menu-open', open);
     document.body.classList.toggle('menu-open', open);
     if (focusTrigger) toggle.focus();
@@ -237,11 +247,17 @@ function initMethods() {
   pause?.addEventListener('click', () => {
     manuallyPaused = !manuallyPaused;
     pause.setAttribute('aria-pressed', String(manuallyPaused));
-    pause.textContent = manuallyPaused ? '继续自动切换 ▷' : '暂停自动切换 Ⅱ';
+    pause.textContent = en
+      ? manuallyPaused
+        ? 'Resume slideshow ▷'
+        : 'Pause slideshow Ⅱ'
+      : manuallyPaused
+        ? '继续自动切换 ▷'
+        : '暂停自动切换 Ⅱ';
     controller?.reset();
   });
   if (pause && reduceMotion.matches) {
-    pause.textContent = '手动切换';
+    pause.textContent = en ? 'Manual slideshow' : '手动切换';
     pause.disabled = true;
   }
   controller = autoplay(section, 8500, () => select(current + 1, false), {

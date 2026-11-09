@@ -2,6 +2,8 @@
 import Icon from './Icon.astro';
 import { testimonials } from '../data/content';
 import { communityMetrics, learningNodes } from '../data/community';
+import { localeFromUrl } from '../i18n/locale';
+const en = localeFromUrl(Astro.url) === 'en';
 ---
 
 <section
@@ -50,9 +52,19 @@ import { communityMetrics, learningNodes } from '../data/community';
 
   <div class="learning-story-inner">
     <div class="trust-intro">
-      <h2>来自全球 CSCA 学生的<span>信赖与选择</span></h2><p>
-        专业的教学团队、完善的学习资源、线上线下相结合的高效备考体验
-      </p>
+      <h2>
+        {
+          en ? (
+            <>
+              Chosen by CSCA students <span>around the world</span>
+            </>
+          ) : (
+            <>
+              来自全球 CSCA 学生的<span>信赖与选择</span>
+            </>
+          )
+        }
+      </h2><p>专业的教学团队、完善的学习资源、线上线下相结合的高效备考体验</p>
     </div>
     <div
       class="student-stories"
@@ -129,7 +141,23 @@ import { communityMetrics, learningNodes } from '../data/community';
     </div>
 
     <div class="journey-heading">
-      <h2 id="community-title">同一场 CSCA，<wbr />一路有 <span>HubCSCA</span></h2>
+      <h2 id="community-title">
+        {
+          en ? (
+            <>
+              One CSCA journey,
+              <br />
+              with <span>HubCSCA</span> all the way
+            </>
+          ) : (
+            <>
+              同一场 CSCA，
+              <wbr />
+              一路有 <span>HubCSCA</span>
+            </>
+          )
+        }
+      </h2>
       <p>线下课程、在线练习、学习社群，陪你把备考走得更稳</p>
     </div>
 
@@ -197,11 +225,29 @@ import { communityMetrics, learningNodes } from '../data/community';
           <div class="journey-metric" data-journey-metric>
             <strong
               data-story-count={metric.confirmed ? metric.target : undefined}
-              data-count-suffix={metric.suffix}
-              data-final-value={metric.confirmed ? metric.display : '—'}
-              aria-label={metric.confirmed ? metric.display : '数据待确认'}
+              data-count-suffix={en && metric.suffix !== '+' ? '' : metric.suffix}
+              data-final-value={
+                metric.confirmed
+                  ? en && metric.suffix !== '+'
+                    ? String(metric.target)
+                    : metric.display
+                  : '—'
+              }
+              aria-label={
+                metric.confirmed
+                  ? en && metric.suffix !== '+'
+                    ? String(metric.target)
+                    : metric.display
+                  : '数据待确认'
+              }
             >
-              <span aria-hidden="true">{metric.confirmed ? metric.display : '—'}</span>
+              <span aria-hidden="true">
+                {metric.confirmed
+                  ? en && metric.suffix !== '+'
+                    ? String(metric.target)
+                    : metric.display
+                  : '—'}
+              </span>
             </strong>
             <>
               <span class="metric-rule" aria-hidden="true" />

@@ -6,6 +6,8 @@ import { journeySteps } from '../data/journey';
 import { examSchedule, scheduleState } from '../data/exam-schedule';
 import { site } from '../data/site';
 import '../styles/preparation-journey.css';
+import { localeFromUrl } from '../i18n/locale';
+const en = localeFromUrl(Astro.url) === 'en';
 const today = scheduleState();
 ---
 
@@ -18,7 +20,27 @@ const today = scheduleState();
   <div class="journey-container">
     <div class="prep-journey-heading">
       <div class="journey-brand" aria-hidden="true"><span></span><BrandLogo /><span></span></div>
-      <h2 id="method-title">把备考，变成<span>一条清楚的路<i aria-hidden="true"></i></span></h2>
+      <h2 id="method-title">
+        {
+          en ? (
+            <>
+              Make preparation{' '}
+              <span>
+                a clear path forward
+                <i aria-hidden="true" />
+              </span>
+            </>
+          ) : (
+            <>
+              把备考，变成
+              <span>
+                一条清楚的路
+                <i aria-hidden="true" />
+              </span>
+            </>
+          )
+        }
+      </h2>
       <p>用工具、练习、复盘和辅导，把每一步都走得更稳</p>
     </div>
     <div class="journey-shell">
@@ -216,13 +238,13 @@ const today = scheduleState();
                           <span>英文翻译</span>
                         </div>
                         <div>
-                          <strong>
+                          <strong lang="zh-CN">
                             圆心<small>yuán xīn</small>
                           </strong>
                           <strong>center of a circle</strong>
                         </div>
                         <div>
-                          <strong>
+                          <strong lang="zh-CN">
                             函数<small>hán shù</small>
                           </strong>
                           <strong>function</strong>

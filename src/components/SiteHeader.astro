@@ -1,13 +1,16 @@
 ---
 import Icon from './Icon.astro';
 import BrandLogo from './BrandLogo.astro';
-import { site, asset } from '../data/site';
+import { site } from '../data/site';
+import { localeFromUrl, pageUrl } from '../i18n/locale';
 interface Props {
   current?: 'home' | 'resources';
 }
 const { current = 'home' } = Astro.props;
-const home = asset('');
-const resources = asset('resources/');
+const locale = localeFromUrl(Astro.url);
+const home = pageUrl('home', locale);
+const resources = pageUrl('resources', locale);
+const languagePage = current === 'resources' ? 'resources' : 'home';
 const resourceLinks = [
   { id: 'syllabus', label: '考试大纲', icon: 'book' },
   { id: 'formulas', label: '数学公式', icon: 'chart' },
@@ -66,10 +69,26 @@ const resourceLinks = [
     <div class="nav-actions">
       <details class="language-dropdown nav-dropdown" data-nav-dropdown>
         <summary class="nav-link" aria-label="网站语言：中文"
-          ><Icon name="globe" size={20} /><span>中文</span><Icon name="down" size={14} /></summary
+          ><Icon name="globe" size={20} /><span>{locale === 'en' ? 'English' : '中文'}</span><Icon
+            name="down"
+            size={14}
+          /></summary
         >
         <div class="dropdown-panel language-panel">
-          <span lang="zh-CN">中文 <Icon name="check" size={16} /></span>
+          <a
+            href={pageUrl(languagePage, 'zh')}
+            lang="zh-CN"
+            hreflang="zh-CN"
+            aria-current={locale === 'zh' ? 'page' : undefined}
+            >中文 {locale === 'zh' && <Icon name="check" size={16} />}</a
+          >
+          <a
+            href={pageUrl(languagePage, 'en')}
+            lang="en"
+            hreflang="en"
+            aria-current={locale === 'en' ? 'page' : undefined}
+            >English {locale === 'en' && <Icon name="check" size={16} />}</a
+          >
         </div>
       </details>
       <button class="button nav-contact" type="button" data-open-contact>联系我们</button>
@@ -106,6 +125,16 @@ const resourceLinks = [
     <button type="button" class="button button-primary hub-primary mobile-contact" data-open-contact
       >联系我们 <Icon name="arrow" size={19} /></button
     >
-    <p class="mobile-language"><Icon name="globe" size={18} /> 中文</p>
+    <p class="mobile-language">
+      <Icon name="globe" size={18} /><a
+        href={pageUrl(languagePage, 'zh')}
+        lang="zh-CN"
+        hreflang="zh-CN">中文</a
+      ><span aria-hidden="true">/</span><a
+        href={pageUrl(languagePage, 'en')}
+        lang="en"
+        hreflang="en">English</a
+      >
+    </p>
   </nav>
 </header>
