@@ -2,8 +2,6 @@
 export const examSchedule = {
   startsAt: '2026-11-14T00:00:00+08:00',
   endsAt: '2026-11-16T00:00:00+08:00',
-  registrationUrl: 'https://csca.cn/',
-  sourceUrl: 'https://csca.cn/articles/news/5845493510871449664',
   milestones: [
     {
       title: '报名开始',

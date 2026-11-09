@@ -53,19 +53,13 @@ const state = scheduleState();
     </div>
     <p class="schedule-notice">
       <Icon name="clock" size={21} /><span
-        >未公布具体日期的节点仅显示月份，标注“预计”的日期与时刻为参考安排，所有时间均为北京时间，<a
-          href={examSchedule.sourceUrl}
-          target="_blank"
-          rel="noopener noreferrer">以 CSCA 官方公告为准 <span aria-hidden="true">↗</span></a
-        ></span
+        >未公布具体日期的节点仅显示月份，标注“预计”的日期与时刻为参考安排，所有时间均为北京时间，以
+        CSCA 官方公告为准</span
       >
     </p>
     <div class="schedule-actions">
-      <a
-        class="button schedule-register"
-        href={examSchedule.registrationUrl}
-        target="_blank"
-        rel="noopener noreferrer">前往 csca.cn 报名 <Icon name="arrow" size={23} /></a
+      <button type="button" class="button schedule-register" data-open-contact
+        >咨询备考安排 <Icon name="arrow" size={23} /></button
       >
       <details class="schedule-timezone" data-schedule-timezone>
         <summary>你所在时区的考试当天时间 <Icon name="down" size={20} /></summary>

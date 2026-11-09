@@ -32,17 +32,14 @@ const resourceLinks = [
         <summary class="nav-link">课程 <Icon name="down" size={16} /></summary>
         <div class="dropdown-panel">
           <a href={`${home}#contact`}>课程与辅导概览 <Icon name="arrow" size={15} /></a>
-          <a href={site.openClass} target="_blank" rel="noopener noreferrer"
-            >免费公开课 <span class="external-mark">↗</span></a
+          <a href={site.platform} target="_blank" rel="noopener noreferrer"
+            >HubCSCA 在线学习 <span class="external-mark">↗</span></a
           >
-          <a href={`${site.courses}/stem-classes`} target="_blank" rel="noopener noreferrer"
-            >理科系统学习班 <span class="external-mark">↗</span></a
+          <button type="button" data-open-contact
+            >线下课程咨询 <Icon name="chat" size={15} /></button
           >
-          <a href={`${site.courses}/chinese-classes`} target="_blank" rel="noopener noreferrer"
-            >专业中文系统学习班 <span class="external-mark">↗</span></a
-          >
-          <a href={`${site.courses}/one-to-one`} target="_blank" rel="noopener noreferrer"
-            >1 对 1 私教补习 <span class="external-mark">↗</span></a
+          <button type="button" data-open-contact
+            >一对一辅导咨询 <Icon name="chat" size={15} /></button
           >
         </div>
       </details>
@@ -93,11 +90,9 @@ const resourceLinks = [
     >
     <details>
       <summary>课程 <Icon name="down" size={18} /></summary><div>
-        <a href={site.openClass} target="_blank" rel="noopener noreferrer">免费公开课 ↗</a><a
-          href={site.courses}
-          target="_blank"
-          rel="noopener noreferrer">系统课程与一对一辅导 ↗</a
-        >
+        <a href={site.platform} target="_blank" rel="noopener noreferrer">HubCSCA 在线学习 ↗</a>
+        <button type="button" data-open-contact>线下课程咨询</button>
+        <button type="button" data-open-contact>一对一辅导咨询</button>
       </div>
     </details>
     <details>

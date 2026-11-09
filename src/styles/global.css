@@ -340,6 +340,7 @@ summary::-webkit-details-marker {
   height: 18px;
 }
 .dropdown-panel > a,
+.dropdown-panel > button,
 .language-panel > span {
   display: flex;
   align-items: center;
@@ -353,7 +354,16 @@ summary::-webkit-details-marker {
     background 0.2s,
     color 0.2s;
 }
-.dropdown-panel > a:hover {
+.dropdown-panel > button {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.dropdown-panel > a:hover,
+.dropdown-panel > button:hover {
   background: #f0f4ff;
   color: var(--blue);
 }
@@ -429,10 +439,19 @@ summary::-webkit-details-marker {
   background: #f5f7ff;
   border-radius: 12px;
 }
-.mobile-menu > details a {
+.mobile-menu > details a,
+.mobile-menu > details button {
   display: block;
   padding: 12px 0;
   font-size: 15px;
+}
+.mobile-menu > details button {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
 }
 .mobile-contact {
   background: var(--coral);
