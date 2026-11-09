@@ -5,6 +5,10 @@ import '../styles/hub-closing.css';
 import '../styles/learning-story.css';
 import '../styles/hub-faq.css';
 import { site, asset } from '../data/site';
+import { localeFromUrl, pageUrl } from '../i18n/locale';
+import '../styles/english.css';
+const locale = localeFromUrl(Astro.url);
+const page = Astro.url.pathname.includes('/resources') ? 'resources' : 'home';
 interface Props {
   title?: string;
   description?: string;
@@ -18,7 +22,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="zh-CN">
+<html lang={locale === 'en' ? 'en' : 'zh-CN'}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,6 +31,8 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <link rel="alternate" hreflang="zh-CN" href={new URL(pageUrl(page, 'zh'), Astro.site)} />
+    <link rel="alternate" hreflang="en" href={new URL(pageUrl(page, 'en'), Astro.site)} />
     <link rel="icon" type="image/png" href={asset('images/hubcsca-logo.png')} />
     {
       preloadHero && (

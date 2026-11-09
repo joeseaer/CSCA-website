@@ -1,4 +1,5 @@
 const library = document.querySelector<HTMLElement>('[data-library]');
+const en = document.documentElement.lang === 'en';
 
 if (library) {
   const search = library.querySelector<HTMLInputElement>('#resource-query');
@@ -29,7 +30,10 @@ if (library) {
     if (title) title.textContent = button.dataset.moduleTitle || '';
     if (link && button.dataset.moduleHref) {
       link.href = button.dataset.moduleHref;
-      link.setAttribute('aria-label', `打开${button.dataset.moduleTitle}`);
+      link.setAttribute(
+        'aria-label',
+        en ? `Open ${button.dataset.moduleTitle}` : `打开${button.dataset.moduleTitle}`,
+      );
     }
     screens.forEach((screen) => {
       const selected = screen.dataset.stageScreen === button.dataset.moduleScreen;
@@ -109,7 +113,7 @@ if (library) {
     });
     if (status) {
       status.hidden = !query;
-      status.textContent = query ? `${count} 条匹配结果` : '';
+      status.textContent = query ? (en ? `${count} matching results` : `${count} 条匹配结果`) : '';
     }
     if (empty) empty.hidden = visibleSections > 0;
     syncStage();

@@ -3,6 +3,7 @@ import Icon from './Icon.astro';
 import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
 import { asset, site } from '../data/site';
+import { localeFromUrl, pageUrl } from '../i18n/locale';
 import {
   syllabus,
   formulaGroups,
@@ -102,7 +103,7 @@ const moduleScreens: Record<string, string> = {
       <span class="hero-math hero-math-three">∑</span>
     </div>
     <div class="resource-container resource-hero-content">
-      <a class="resource-breadcrumb" href={asset('')}>
+      <a class="resource-breadcrumb" href={pageUrl('home', localeFromUrl(Astro.url))}>
         <span>首页</span>
         <Icon name="right" size={14} />
         <span>资源库</span>

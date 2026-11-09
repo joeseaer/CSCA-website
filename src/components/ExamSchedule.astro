@@ -41,6 +41,10 @@ const state = scheduleState();
               <div class="schedule-event">
                 <h3>{milestone.title}</h3>
                 <div class="schedule-date">
+                  <strong>
+                    {milestone.date}
+                    {milestone.dateEnd && <span>{milestone.dateEnd}</span>}
+                  </strong>
                   <span>{milestone.time}</span>
                   {milestone.hours && <span class="schedule-hours">{milestone.hours}</span>}
                 </div>

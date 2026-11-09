@@ -1,0 +1,225 @@
+/* English copy shares the Chinese components and assets, with room for longer words. */
+html:lang(en) {
+  word-break: normal;
+}
+html:lang(en) .desktop-nav {
+  gap: clamp(16px, 2vw, 30px);
+}
+html:lang(en) .nav-link {
+  font-size: 14px;
+  white-space: nowrap;
+}
+html:lang(en) .nav-actions {
+  gap: 18px;
+}
+html:lang(en) .hero h1 {
+  font-size: clamp(32px, 3.2vw, 50px);
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+html:lang(en) .hero h1 > span {
+  white-space: normal;
+}
+html:lang(en) .hero h1 em {
+  display: inline-block;
+  font-size: 0.82em;
+}
+html:lang(en) .hero h1 .hero-en-support {
+  font-size: 0.48em;
+  font-weight: 550;
+  letter-spacing: -0.01em;
+  margin: 18px 0 12px;
+}
+html:lang(en) .hero-description {
+  font-size: 16px;
+  line-height: 1.7;
+}
+html:lang(en) .eyebrow {
+  font-size: 12px;
+}
+html:lang(en) .subjects-float {
+  font-size: 11px;
+}
+html:lang(en) .trust-intro h2 {
+  font-size: clamp(28px, 3vw, 44px);
+}
+html:lang(en) .learning-story .story-quote {
+  font-size: clamp(18px, 2.1vw, 30px);
+  letter-spacing: -0.02em;
+}
+html:lang(en) .journey-heading h2 {
+  font-size: clamp(32px, 4.4vw, 66px);
+  letter-spacing: -0.04em;
+}
+html:lang(en) .node-label {
+  white-space: normal;
+  font-size: 12px;
+  width: 120px;
+  text-align: center;
+}
+html:lang(en) .journey-metric p {
+  font-size: 15px;
+}
+html:lang(en) .schedule-event h3 {
+  font-size: clamp(13px, 1.1vw, 17px);
+  line-height: 1.35;
+  white-space: normal;
+  min-height: 3em;
+}
+html:lang(en) .schedule-date {
+  font-size: 13px;
+}
+html:lang(en) .schedule-event p {
+  font-size: 13px;
+}
+html:lang(en) .schedule-notice {
+  font-size: 13px;
+}
+html:lang(en) .prep-journey-heading h2 {
+  font-size: clamp(34px, 4.2vw, 62px);
+}
+html:lang(en) .journey-tab-copy strong {
+  font-size: clamp(16px, 1.4vw, 21px);
+}
+html:lang(en) .journey-tab-copy > span {
+  font-size: clamp(11px, 0.9vw, 13px);
+  line-height: 1.55;
+}
+html:lang(en) .journey-tab {
+  padding: 18px 16px;
+  gap: 12px;
+}
+html:lang(en) .journey-tab-icon {
+  width: 43px;
+  height: 46px;
+}
+html:lang(en) .journey-panel-heading h3 {
+  font-size: clamp(21px, 2vw, 30px);
+}
+html:lang(en) .journey-feature-tags {
+  flex-wrap: wrap;
+}
+html:lang(en) .journey-scene {
+  width: 100%;
+}
+html:lang(en) .journey-scene h4 {
+  font-size: 18px;
+}
+html:lang(en) .journey-scene h5 {
+  font-size: 15px;
+}
+html:lang(en) .journey-scene-footer {
+  flex-wrap: wrap;
+  gap: 12px;
+}
+html:lang(en) .journey-scene-footer > span {
+  font-size: 11px;
+}
+html:lang(en) .journey-mini-timeline strong {
+  font-size: 9px;
+}
+html:lang(en) .journey-mini-timeline span {
+  font-size: 9px;
+}
+html:lang(en) .faq-question {
+  font-size: 19px;
+}
+html:lang(en) .faq-tabs button {
+  font-size: 14px;
+}
+html:lang(en) .closing-card h2 {
+  font-size: clamp(36px, 4.8vw, 72px);
+  line-height: 1.15;
+}
+html:lang(en) .resource-hero h1 {
+  font-size: clamp(70px, 9vw, 138px);
+}
+html:lang(en) .resource-section-heading h2 {
+  font-size: clamp(36px, 4vw, 60px);
+}
+html:lang(en) .syllabus-name h3 {
+  font-size: 22px;
+}
+html:lang(en) .resource-category {
+  font-size: 13px;
+}
+html:lang(en) .app-module-name strong {
+  font-size: 18px;
+}
+html:lang(en) .app-module-features {
+  font-size: 12px;
+}
+@media (min-width: 761px) {
+  html:lang(en) .journey-panel-2 .journey-scene {
+    min-height: 500px;
+  }
+  html:lang(en) .journey-panel-3 .journey-scene {
+    min-height: 520px;
+  }
+}
+@media (max-width: 767px) {
+  html:lang(en) .hero h1 {
+    font-size: clamp(31px, 8vw, 43px);
+  }
+  html:lang(en) .hero-description {
+    font-size: 13px;
+  }
+  html:lang(en) .hero-actions {
+    flex-wrap: wrap;
+    gap: 12px 22px;
+  }
+  html:lang(en) .button-hero {
+    font-size: 14px;
+  }
+  html:lang(en) .hero-link {
+    font-size: 14px;
+  }
+  html:lang(en) .learning-story .story-stage {
+    min-height: 360px;
+  }
+  html:lang(en) .learning-story .story-quote {
+    font-size: 19px;
+    line-height: 1.5;
+  }
+  html:lang(en) .node-label {
+    width: 105px;
+    font-size: 11px;
+  }
+  html:lang(en) .journey-metric p {
+    font-size: 12px;
+  }
+  html:lang(en) .journey-tab-copy strong {
+    font-size: 17px;
+  }
+  html:lang(en) .journey-scene h4 {
+    font-size: clamp(12px, 3.5vw, 16px);
+  }
+  html:lang(en) .journey-scene h5 {
+    font-size: 12px;
+  }
+  html:lang(en) .journey-feature-tags {
+    gap: 6px;
+  }
+  html:lang(en) .journey-feature-tags > span {
+    font-size: 10px;
+  }
+  html:lang(en) .faq-tabs {
+    flex-wrap: wrap;
+    border-radius: 24px;
+  }
+  html:lang(en) .faq-tabs button {
+    flex: 1 1 40%;
+  }
+  html:lang(en) .faq-question {
+    font-size: 16px;
+  }
+  html:lang(en) .resource-hero h1 {
+    font-size: clamp(56px, 13vw, 88px);
+  }
+  html:lang(en) .resource-categories {
+    flex-wrap: wrap;
+  }
+  html:lang(en) .resource-section-heading h2 {
+    font-size: 32px;
+  }
+}
