@@ -1,6 +1,18 @@
 ---
 import { asset } from '../data/site';
 import Icon from './Icon.astro';
+import { localeFromUrl } from '../i18n/locale';
+const en = localeFromUrl(Astro.url) === 'en';
+const labels: Record<string, string> = {
+  拍照搜题: 'Photo Search',
+  翻译助手: 'Translate',
+  题库训练: 'Question Bank',
+  我的笔记: 'My Notes',
+  首页: 'Home',
+  相机: 'Camera',
+  我的: 'Profile',
+};
+const label = (text: string) => (en ? labels[text] : text);
 const appTools = [
   { title: '拍照搜题', icon: 'camera', tone: 'camera' },
   { title: '翻译助手', icon: 'globe', tone: 'translate' },
@@ -18,7 +30,7 @@ const tabs = [
 
 <svg
   class="hero-scene"
-  data-preserve-language
+  data-preserve-language={en ? undefined : true}
   viewBox="0 0 1536 1024"
   width="1536"
   height="1024"
@@ -27,6 +39,13 @@ const tabs = [
   aria-label="HubCSCA 智能学习场景：学生与学习界面"
 >
   <defs>
+    <clipPath id="scene-english-labels">
+      <rect x="392" y="278" width="180" height="64"></rect>
+      <rect x="297" y="515" width="188" height="65"></rect>
+    </clipPath>
+    <clipPath id="scene-english-middle-label">
+      <rect x="350" y="397" width="204" height="65"></rect>
+    </clipPath>
     <clipPath id="scene-native-app-content"><rect width="374" height="354" rx="18"></rect></clipPath
     >
     <clipPath id="scene-original-laptop"
@@ -42,6 +61,28 @@ const tabs = [
     width="1536"
     height="1024"
   />
+  {
+    en && (
+      <>
+        <image
+          data-scene-english-labels
+          href={asset('images/hubcsca-scene-labels-en.png')}
+          width="1536"
+          height="1024"
+          clip-path="url(#scene-english-labels)"
+        />
+        <g transform="matrix(.9 0 0 1 35 0)">
+          <image
+            data-scene-english-labels
+            href={asset('images/hubcsca-scene-labels-en.png')}
+            width="1536"
+            height="1024"
+            clip-path="url(#scene-english-middle-label)"
+          />
+        </g>
+      </>
+    )
+  }
   <!-- Content follows the original panel's measured plane, not a new floating box. -->
   <g
     data-scene-dashboard
@@ -49,26 +90,27 @@ const tabs = [
     clip-path="url(#scene-native-app-content)"
   >
     <foreignObject width="374" height="354">
-      <div class="scene-app" aria-hidden="true">
+      <div class:list={['scene-app', { 'scene-app-en': en }]} aria-hidden="true">
         <div class="app-top">
           <div>
             <Icon name="cap" size={21} /><span
-              ><small>国家与年级</small><strong>英国 · 大学一年级</strong></span
+              ><small>{en ? 'Country & year' : '国家与年级'}</small><strong
+                >{en ? 'UK · University Year 1' : '英国 · 大学一年级'}</strong
+              ></span
             ><Icon name="down" size={11} />
           </div>
           <div>
             <Icon name="calendar" size={21} /><span
-              ><small>下一场考试</small><strong>9 天 03:09:09</strong><small
-                >2026-11-14 · UTC+8</small
-              ></span
+              ><small>{en ? 'Next exam' : '下一场考试'}</small><strong
+                >{en ? '9d 03:09:09' : '9 天 03:09:09'}</strong
+              ><small>2026-11-14 · UTC+8</small></span
             >
           </div>
         </div>
         <div class="app-schedule">
-          <Icon name="clock" size={15} /><strong>CSCA 考试时间表</strong><Icon
-            name="down"
-            size={12}
-          />
+          <Icon name="clock" size={15} /><strong
+            >{en ? 'CSCA Exam Schedule' : 'CSCA 考试时间表'}</strong
+          ><Icon name="down" size={12} />
         </div>
         <div class="app-tools">
           {
@@ -76,33 +118,46 @@ const tabs = [
               <div class={`app-tool app-tool-${tool.tone}`}>
                 <>
                   <Icon name={tool.icon} size={24} />
-                  <strong>{tool.title}</strong>
+                  <strong>{label(tool.title)}</strong>
                 </>
               </div>
             ))
           }
         </div>
         <div class="app-booking">
-          <span><strong>预约课程</strong><small>中英双语 · 线上 / 线下 · 多课程预约</small></span
+          <span
+            ><strong>{en ? 'Book a Lesson' : '预约课程'}</strong><small
+              >{
+                en
+                  ? 'English / Chinese · Online / In person'
+                  : '中英双语 · 线上 / 线下 · 多课程预约'
+              }</small
+            ></span
           ><Icon name="play" size={24} /><Icon name="right" size={15} />
         </div>
         <div class="app-review">
           <div>
-            <Icon name="book" size={13} /><strong>每日巩固</strong><small>每天温习一点</small>
+            <Icon name="book" size={13} /><strong>{en ? 'Daily Review' : '每日巩固'}</strong><small
+              >{en ? 'A little every day' : '每天温习一点'}</small
+            >
           </div><article>
-            <small>AI 知识点总结</small><strong>导数的应用</strong><p>
-              导数的应用知识点复习总结
-            </p><span>精选总结 <Icon name="right" size={12} /></span>
+            <small>{en ? 'AI Study Summary' : 'AI 知识点总结'}</small><strong
+              >{en ? 'Applying Derivatives' : '导数的应用'}</strong
+            ><p>
+              {en ? 'Key concepts, worked examples & revision' : '导数的应用知识点复习总结'}
+            </p><span>{en ? 'Featured' : '精选总结'} <Icon name="right" size={12} /></span>
           </article>
         </div>
-        <div class="app-ask"><Icon name="chat" size={16} /><strong>问AI</strong></div>
+        <div class="app-ask">
+          <Icon name="chat" size={16} /><strong>{en ? 'Ask AI' : '问AI'}</strong>
+        </div>
         <div class="app-tabs">
           {
             tabs.map((tab, i) => (
               <span class:list={{ active: i === 0 }}>
                 <>
                   <Icon name={tab.icon} size={15} />
-                  <small>{tab.title}</small>
+                  <small>{label(tab.title)}</small>
                 </>
               </span>
             ))
@@ -343,5 +398,19 @@ const tabs = [
   }
   .app-tabs small {
     font-size: 7px;
+  }
+  .scene-app-en .app-tool strong {
+    font-size: 8px;
+    white-space: nowrap;
+  }
+  .scene-app-en .app-top strong {
+    font-size: 9px;
+  }
+  .scene-app-en .app-review article > strong {
+    font-size: 16px;
+    padding-right: 20px;
+  }
+  .scene-app-en .app-review article > small {
+    padding-right: 48px;
   }
 </style>
