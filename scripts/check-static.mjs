@@ -42,7 +42,9 @@ for (const route of ['index.html', 'resources/index.html']) {
     failures.push(`Missing English document language: en/${route}`);
   const media = (document) =>
     nodes(document).flatMap((node) =>
-      ['img', 'image', 'source'].includes(node.tagName)
+      ['img', 'image', 'source'].includes(node.tagName) &&
+      // Only the English hero's clipped lettering overlay is intentionally different.
+      attribute(node, 'data-scene-english-labels') === undefined
         ? [attribute(node, 'src') || attribute(node, 'href') || attribute(node, 'srcset') || '']
         : [],
     );
