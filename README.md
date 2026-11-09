@@ -59,7 +59,7 @@ src/
 public/
   images/        页面实际使用的图片与二维码
   fonts/         字体授权文件
-  resources/     本站提供的官方大纲 PDF、双语术语 JSON、CSV 和原始 DOCX
+  resources/     双语术语 JSON、CSV 和原始 DOCX
 scripts/         本地开发与构建入口
 ```
 
@@ -67,9 +67,9 @@ scripts/         本地开发与构建入口
 
 页面包含响应式导航、HubCSCA 首屏、评价轮播、滚动学习路径、数据展示、考试时间表、时区换算、四步功能展示、FAQ 与微信二维码咨询，支持键盘操作和减少动画偏好
 
-“了解 HubCSCA”链接到学习平台，课程与备考咨询入口展示微信二维码。页面仅保留本站和 HubCSCA 学习平台的链接，不跳转其他产品或第三方网站。
+“了解 HubCSCA”链接到学习平台，咨询入口展示微信二维码。资源库直接提供考试大纲、公式表、双语术语及小程序功能介绍；课程入口使用 HubCSCA 平台和咨询二维码，不跳转 PrepPals，其他官方链接保留。
 
-资源数据位于 `src/data/resources.ts`。考试大纲为 CSCA 官方文件的本站副本，保留原文并按版本命名，更新官方版本时需同步替换；双语术语来自现有词汇库；数学公式为常用公式整理。所有正文在构建时生成 HTML，搜索和分类由浏览器增强，无运行时 API。`npm run build` 会核对页面、站内链接、下载文件、锚点及外部链接域名白名单。
+资源数据位于 `src/data/resources.ts`。考试大纲链接到 CSCA 官方文件；双语术语来自现有词汇库；数学公式为常用公式整理。所有正文在构建时生成 HTML，搜索和分类由浏览器增强，无运行时 API。`npm run build` 会核对页面、站内链接、下载文件和锚点。
 
 服务器部署与自动拉取配置见 [scripts/deployment/README.md](scripts/deployment/README.md)。自定义域名为 `www.hubcsca.dcpstudios.top`，与已有学习平台域名分开。
 
