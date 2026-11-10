@@ -1,6 +1,7 @@
 ---
 import Icon from './Icon.astro';
 import BrandLogo from './BrandLogo.astro';
+import SubjectSwitcher from './SubjectSwitcher.astro';
 import { site } from '../data/site';
 import { localeFromUrl, pageUrl } from '../i18n/locale';
 interface Props {
@@ -19,7 +20,8 @@ const resourceLinks = [
 ];
 ---
 
-<header class="site-header" data-header>
+<header class:list={['site-header', { 'has-subjects': current === 'home' }]} data-header>
+  {current === 'home' && <SubjectSwitcher />}
   <nav class="nav-container" aria-label="主导航">
     <a class="brand" href={home} aria-label="HubCSCA 首页">
       <BrandLogo />

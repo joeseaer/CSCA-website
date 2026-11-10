@@ -4,111 +4,34 @@ import '../styles/subjects.css';
 
 const en = localeFromUrl(Astro.url) === 'en';
 const subjects = [
-  { id: 'math', label: en ? 'Mathematics' : '数学' },
+  { id: 'math', label: en ? 'Math' : '数学' },
   { id: 'physics', label: en ? 'Physics' : '物理' },
   { id: 'chemistry', label: en ? 'Chemistry' : '化学' },
   { id: 'chinese', label: en ? 'Chinese' : '专业中文' },
 ];
 ---
 
-<section
-  class="subject-switcher"
-  id="subjects"
-  aria-labelledby="subjects-title"
-  data-subject-switcher
->
-  <div class="section-container">
-    <h2 id="subjects-title">{en ? 'Subjects' : '科目'}</h2>
-    <div
-      class="subject-tabs"
-      role="tablist"
-      aria-label={en ? 'Subjects' : '科目'}
-      data-subject-tabs
-    >
-      {
-        subjects.map((subject, index) => (
-          <button
-            type="button"
-            role="tab"
-            id={`subject-tab-${subject.id}`}
-            aria-controls={`subject-panel-${subject.id}`}
-            aria-selected={index === 0 ? 'true' : 'false'}
-            tabindex={index === 0 ? 0 : -1}
-            data-subject-tab
-          >
-            <span>{en && subject.id === 'math' ? 'Math' : subject.label}</span>
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M5 12h14m-6-6 6 6-6 6" />
-            </svg>
-          </button>
-        ))
-      }
-    </div>
-    <div class="subject-panels">
-      {
-        subjects.map((subject, index) => (
-          <section
-            class="subject-panel"
-            role="tabpanel"
-            id={`subject-panel-${subject.id}`}
-            aria-labelledby={`subject-tab-${subject.id}`}
-            tabindex="0"
-            hidden={index !== 0}
-            data-subject-panel
-          >
-            <div class="subject-copy">
-              <h3>{subject.label}</h3>
-              <div class="subject-content" data-subject-content />
-            </div>
-            <svg class="subject-art" viewBox="0 0 400 240" fill="none" aria-hidden="true">
-              <g class="subject-art-guide">
-                <path d="M0 60h400M0 120h400M0 180h400M80 0v240M160 0v240M240 0v240M320 0v240" />
-                <circle cx="200" cy="120" r="104" />
-              </g>
-              {subject.id === 'math' && (
-                <g class="subject-art-main">
-                  <path d="M48 200h310M100 220V24" class="subject-art-axis" />
-                  <path d="M50 40Q200 330 350 40" pathLength="1" class="subject-art-draw" />
-                  <circle cx="200" cy="185" r="6" class="subject-art-dot" />
-                  <circle cx="100" cy="120" r="4" class="subject-art-dot" />
-                </g>
-              )}
-              {subject.id === 'physics' && (
-                <g class="subject-art-main subject-art-orbit">
-                  <ellipse cx="200" cy="120" rx="142" ry="53" />
-                  <ellipse cx="200" cy="120" rx="142" ry="53" transform="rotate(60 200 120)" />
-                  <ellipse cx="200" cy="120" rx="142" ry="53" transform="rotate(-60 200 120)" />
-                  <circle cx="200" cy="120" r="13" class="subject-art-dot" />
-                  <circle cx="342" cy="120" r="6" class="subject-art-dot" />
-                </g>
-              )}
-              {subject.id === 'chemistry' && (
-                <g class="subject-art-main">
-                  <path
-                    d="m146 28 80 46v92l-80 46-80-46V74Zm80 46 80-46 80 46v92l-80 46-80-46M82 83v74m64 37 64-37m32-74 64-37m64 37v74"
-                    pathLength="1"
-                    class="subject-art-draw"
-                  />
-                  <circle cx="146" cy="28" r="6" class="subject-art-dot" />
-                  <circle cx="306" cy="212" r="6" class="subject-art-dot" />
-                </g>
-              )}
-              {subject.id === 'chinese' && (
-                <g class="subject-art-main">
-                  <path
-                    d="M200 63Q139 24 58 44v150q81-20 142 19 61-39 142-19V44q-81-20-142 19Zm0 0v150M83 77q49-9 91 14m-91 18q49-9 91 14m-91 18q49-9 91 14m52-64q42-23 91-14m-91 46q42-23 91-14m-91 46q42-23 91-14"
-                    pathLength="1"
-                    class="subject-art-draw"
-                  />
-                </g>
-              )}
-            </svg>
-          </section>
-        ))
-      }
-    </div>
+<div class="subject-switcher" id="subjects" data-subject-switcher>
+  <div
+    class="subject-options"
+    role="group"
+    aria-label={en ? 'Subjects' : '科目'}
+    data-subject-options
+  >
+    {
+      subjects.map((subject, index) => (
+        <button
+          type="button"
+          aria-pressed={index === 0 ? 'true' : 'false'}
+          tabindex={index === 0 ? 0 : -1}
+          data-subject={subject.id}
+        >
+          {subject.label}
+        </button>
+      ))
+    }
   </div>
-</section>
+</div>
 
 <script>
   import '../scripts/subjects';

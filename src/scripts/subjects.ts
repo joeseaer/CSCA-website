@@ -1,33 +1,56 @@
 const switcher = document.querySelector<HTMLElement>('[data-subject-switcher]');
 
 if (switcher) {
-  const tablist = switcher.querySelector<HTMLElement>('[data-subject-tabs]');
-  const tabs = [...switcher.querySelectorAll<HTMLButtonElement>('[data-subject-tab]')];
-  const panels = [...switcher.querySelectorAll<HTMLElement>('[data-subject-panel]')];
+  const options = switcher.querySelector<HTMLElement>('[data-subject-options]');
+  const buttons = [...switcher.querySelectorAll<HTMLButtonElement>('[data-subject]')];
+  const storageKey = 'hubcsca.site.subject';
 
-  const select = (index: number, keyboard = false) => {
+  const select = (index: number, keyboard = false, persist = true) => {
     switcher.classList.toggle('is-keyboard-switch', keyboard);
-    tablist?.style.setProperty('--subject-index', String(index));
-    tabs.forEach((tab, position) => {
+    options?.style.setProperty('--subject-index', String(index));
+    buttons.forEach((button, position) => {
       const selected = position === index;
-      tab.setAttribute('aria-selected', String(selected));
-      tab.tabIndex = selected ? 0 : -1;
-      panels[position].hidden = !selected;
+      button.setAttribute('aria-pressed', String(selected));
+      button.tabIndex = selected ? 0 : -1;
     });
-    if (keyboard) tabs[index].focus();
+    const subject = buttons[index].dataset.subject || 'math';
+    document.documentElement.dataset.subject = subject;
+    if (persist) {
+      try {
+        localStorage.setItem(storageKey, subject);
+      } catch {
+        /* Selection still works without storage. */
+      }
+    }
+    if (keyboard) buttons[index].focus();
   };
 
-  tabs.forEach((tab, index) => {
-    tab.addEventListener('click', (event) => select(index, event.detail === 0));
-    tab.addEventListener('keydown', (event) => {
+  let saved = 'math';
+  try {
+    saved = localStorage.getItem(storageKey) || saved;
+  } catch {
+    /* Use the default subject. */
+  }
+  select(
+    Math.max(
+      0,
+      buttons.findIndex((button) => button.dataset.subject === saved),
+    ),
+    false,
+    false,
+  );
+
+  buttons.forEach((button, index) => {
+    button.addEventListener('click', (event) => select(index, event.detail === 0));
+    button.addEventListener('keydown', (event) => {
       if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
       event.preventDefault();
       const next =
         event.key === 'Home'
           ? 0
           : event.key === 'End'
-            ? tabs.length - 1
-            : (index + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+            ? buttons.length - 1
+            : (index + (event.key === 'ArrowRight' ? 1 : -1) + buttons.length) % buttons.length;
       select(next, true);
     });
   });

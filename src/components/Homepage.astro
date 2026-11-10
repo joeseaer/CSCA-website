@@ -8,7 +8,6 @@ import LearningStory from './LearningStory.astro';
 import ExamSchedule from './ExamSchedule.astro';
 import { site } from '../data/site';
 import PreparationJourney from './PreparationJourney.astro';
-import SubjectSwitcher from './SubjectSwitcher.astro';
 import { localeFromUrl } from '../i18n/locale';
 const en = localeFromUrl(Astro.url) === 'en';
 ---
@@ -80,8 +79,6 @@ const en = localeFromUrl(Astro.url) === 'en';
       ><path d="M0 14Q600 65 1200 14V70H0Z" fill="url(#hero-wave-fill)"></path></svg
     >
   </section>
-
-  <SubjectSwitcher />
 
   <LearningStory />
 
